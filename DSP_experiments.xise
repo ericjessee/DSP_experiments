@@ -22,26 +22,23 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
-    <file xil_pn:name="ipcore_dir/sinGen.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="29"/>
-    </file>
     <file xil_pn:name="src/verif/pcm_gen.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="3"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="36"/>
     </file>
     <file xil_pn:name="src/verif/pcm_gen_tb.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="3"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="4"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="37"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="37"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="37"/>
     </file>
     <file xil_pn:name="ipcore_dir/sin_lut.xco" xil_pn:type="FILE_COREGEN">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="36"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="36"/>
     </file>
-    <file xil_pn:name="ipcore_dir/sinGen.xise" xil_pn:type="FILE_COREGENISE">
-      <association xil_pn:name="Implementation" xil_pn:seqID="30"/>
+    <file xil_pn:name="src/common/shift_register.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="44"/>
     </file>
     <file xil_pn:name="ipcore_dir/sin_lut.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="37"/>
@@ -301,7 +298,7 @@
     <property xil_pn:name="Shift Register Minimum Size spartan6" xil_pn:value="2" xil_pn:valueState="default"/>
     <property xil_pn:name="Show All Models" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Simulation Model Target" xil_pn:value="Verilog" xil_pn:valueState="default"/>
-    <property xil_pn:name="Simulation Run Time ISim" xil_pn:value="1000 ns" xil_pn:valueState="default"/>
+    <property xil_pn:name="Simulation Run Time ISim" xil_pn:value="5ms" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Simulation Run Time Map" xil_pn:value="1000 ns" xil_pn:valueState="default"/>
     <property xil_pn:name="Simulation Run Time Par" xil_pn:value="1000 ns" xil_pn:valueState="default"/>
     <property xil_pn:name="Simulation Run Time Translate" xil_pn:value="1000 ns" xil_pn:valueState="default"/>
