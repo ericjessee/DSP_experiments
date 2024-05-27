@@ -1,6 +1,7 @@
 //pcm_gen.v
 //author: Eric Jessee
 //sine-wave pcm audio data generator for testing
+//outputs 24-bit stereo i2s audio data on adata
 
 module pcm_gen(
     input scki,
@@ -59,7 +60,7 @@ localparam
     transition = 0,
     send       = 1;
 
-reg [5:0] word_ctr;
+reg [6:0] frame_ctr;
 
 always @(posedge scki) begin
     if(!rst)begin
@@ -71,19 +72,14 @@ always @(posedge scki) begin
     end
 end
 
-always @(posedge scki) begin
+//state transition logic
+always @(*)begin
     case(state)
         transition: begin
-            word_ctr <= 5'd0;
-            lrck <= ~lrck;
-            //i think i'm misunderstanding
-            //but this always seems to happen twice?
-            lut_addr <= lut_addr + 1; //get next frame
             next_state <= send;
         end
         send: begin
-            word_ctr <= word_ctr + 1;
-            if (word_ctr >= 5'd24) begin
+            if(frame_ctr >= 6'd31)begin
                 next_state <= transition;
             end else begin
                 next_state <= send;
@@ -92,11 +88,26 @@ always @(posedge scki) begin
     endcase
 end
 
+//output flops
+always @(posedge scki) begin
+    case(state)
+        transition: begin
+            frame_ctr <= 6'd0;
+            lrck <= ~lrck;
+            lut_addr <= lut_addr + 1; //get next frame
+        end
+        send: begin
+            frame_ctr <= frame_ctr + 1;
+        end
+    endcase
+end
+
+//state-dependent outputs
 always @(*) begin
     case(state)
         transition: begin
             load_sdata <= 1'b1;
-            shift_data <= 1'b0;       
+            shift_data <= 1'b0;
         end
         send: begin
             load_sdata <= 1'b0;
