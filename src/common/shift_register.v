@@ -4,6 +4,8 @@
 //auto-converted from SystemVerilog using sv2v
 //https://github.com/zachjs/sv2v
 
+`timescale 1ns/1ps
+
 module shift_register (
 	i_clk,
 	i_rst_n,

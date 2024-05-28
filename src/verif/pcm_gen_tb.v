@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module pcm_gen_tb();
 
 reg clk;

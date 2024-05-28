@@ -3,6 +3,8 @@
 //sine-wave pcm audio data generator for testing
 //outputs 24-bit stereo i2s audio data on adata
 
+`timescale 1ns/1ps
+
 module pcm_gen(
     input scki,
     input rst,
@@ -43,6 +45,8 @@ shift_register #( .WIDTH(24) ) sreg(
     .o_carryout(adata)
 );
 
+//lut address rollover
+//how to achieve different frequencies?
 always @(posedge scki) begin
     if(!rst) begin
         lut_addr <= 12'h0;
