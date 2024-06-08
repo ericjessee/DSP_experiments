@@ -43,9 +43,10 @@ NET "i_adc_lrck" LOC = 27 | IOSTANDARD = LVTTL;
 
 NET "i_scki" LOC = 24 | IOSTANDARD = LVTTL;
 
-NET "o_dac_muteb" LOC = 22 | IOSTANDARD = LVTTL;
-NET "o_dac_lrck" LOC = 17 | IOSTANDARD = LVTTL;
+NET "o_dac_nmute" LOC = 22 | IOSTANDARD = LVTTL;
 NET "o_dac_adata" LOC = 15 | IOSTANDARD = LVTTL;
+NET "o_dac_bck" LOC = 17 | IOSTANDARD = LVTTL;
+NET "o_dac_lrck" LOC = 17 | IOSTANDARD = LVTTL;
 
 NET "o_pll_csel" LOC = 12 | IOSTANDARD = LVTTL;
 NET "o_pll_fs1" LOC = 10 | IOSTANDARD = LVTTL;
