@@ -17,22 +17,22 @@ NET "led<5>" LOC = P126 | IOSTANDARD = LVTTL;
 NET "led<6>" LOC = P124 | IOSTANDARD = LVTTL;
 NET "led<7>" LOC = P123 | IOSTANDARD = LVTTL;
 
-NET "o_adc_fmt" LOC = P51 | IOSTANDARD = LVTTL;
-NET "o_adc_md1" LOC = P41 | IOSTANDARD = LVTTL;
-NET "o_adc_md2" LOC = P35 | IOSTANDARD = LVTTL;
-NET "i_adc_adata" LOC = P33 | IOSTANDARD = LVTTL;
-NET "i_adc_bck" LOC = P30 | IOSTANDARD = LVTTL;
-NET "i_adc_lrck" LOC = P27 | IOSTANDARD = LVTTL;
+NET "o_adc_fmt"   LOC = P51 | IOSTANDARD = LVTTL;
+NET "o_adc_md1"   LOC = P41 | IOSTANDARD = LVTTL;
+NET "o_adc_md2"   LOC = P35 | IOSTANDARD = LVTTL;
+NET "i_scki"      LOC = P33 | IOSTANDARD = LVTTL;
+NET "i_adc_lrck"  LOC = P30 | IOSTANDARD = LVTTL;
+NET "i_adc_adata" LOC = P27 | IOSTANDARD = LVTTL;
+NET "i_adc_bck"   LOC = P24 | IOSTANDARD = LVTTL;
 
-NET "i_scki" LOC = P24 | IOSTANDARD = LVTTL;
 
 NET "o_dac_nmute" LOC = P22 | IOSTANDARD = LVTTL;
 NET "o_dac_adata" LOC = P17 | IOSTANDARD = LVTTL;
-NET "o_dac_bck" LOC = P15 | IOSTANDARD = LVTTL;
-NET "o_dac_lrck" LOC = P12 | IOSTANDARD = LVTTL;
+NET "o_dac_bck"   LOC = P15 | IOSTANDARD = LVTTL;
+NET "o_dac_lrck"  LOC = P12 | IOSTANDARD = LVTTL;
 
-NET "o_pll_csel" LOC = P10 | IOSTANDARD = LVTTL;
-NET "o_pll_fs1" LOC = P8 | IOSTANDARD = LVTTL;
-NET "o_pll_fs2" LOC = P6 | IOSTANDARD = LVTTL;
-NET "o_pll_sr" LOC = P2 | IOSTANDARD = LVTTL;
+NET "o_pll_fs1"   LOC = P10 | IOSTANDARD = LVTTL;
+NET "o_pll_fs2"   LOC = P8 | IOSTANDARD = LVTTL;
+NET "o_pll_sr"    LOC = P6 | IOSTANDARD = LVTTL;
+NET "o_pll_csel"  LOC = P2 | IOSTANDARD = LVTTL;
 

@@ -60,6 +60,5 @@ module mojo_top(
   assign o_dac_bck = i_adc_bck;
   assign o_dac_lrck = ~i_adc_lrck; //dac and adc lrcks are opposite
 
-
 endmodule
 
