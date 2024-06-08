@@ -7,43 +7,29 @@ module mojo_top(
     input cclk,
     // Outputs to the 8 onboard LEDs
     output[7:0]led,
-    // AVR SPI connections
-    output spi_miso,
-    input spi_ss,
-    input spi_mosi,
-    input spi_sck,
-    // AVR ADC channel select
-    output [3:0] spi_channel,
-    // Serial connections
-    input avr_tx, // AVR Tx => FPGA Rx
-    output avr_rx, // AVR Rx => FPGA Tx
-    input avr_rx_busy, // AVR Rx buffer full
-    output avr_tx_debug,
-    output avr_rx_debug,
-    output avr_rx_busy_debug
 
     //audio system clk from pll
-    input i_scki;
+    input i_scki,
 
     //adc signals
-    output o_adc_fmt;
-    output o_adc_md1;
-    output o_adc_md2;
-    input  i_acd_adata;
-    input  i_adc_bck;
-    input  i_adc_lrck;
+    output o_adc_fmt,
+    output o_adc_md1,
+    output o_adc_md2,
+    input  i_adc_adata,
+    input  i_adc_bck,
+    input  i_adc_lrck,
 
     //dac signals
-    output o_dac_nmute;
-    output o_dac_adata;
-    output o_dac_bck;
-    output o_dac_lrck;
+    output o_dac_nmute,
+    output o_dac_adata,
+    output o_dac_bck,
+    output o_dac_lrck,
 
     //pll signals
-    output o_pll_csel;
-    output o_pll_fs1;
-    output o_pll_fs2;
-    output o_pll_sr;
+    output o_pll_csel,
+    output o_pll_fs1,
+    output o_pll_fs2,
+    output o_pll_sr
 
 );
 
@@ -64,9 +50,10 @@ module mojo_top(
   assign o_adc_md1 = 1'b1;
   assign o_adc_md2 = 1'b1;
   assign o_dac_nmute = 1'b1;
+  assign o_pll_csel = 1'b0;
   assign o_pll_fs1 = 1'b0;
-  assign o_pll_fs1 = 1'b0;
-  assign o_pll_fs1 = 1'b0;
+  assign o_pll_fs2 = 1'b0;
+  assign o_pll_sr = 1'b0;
   
   //digital audio signals
   assign o_dac_adata = i_adc_adata;

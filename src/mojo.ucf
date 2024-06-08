@@ -17,39 +17,22 @@ NET "led<5>" LOC = P126 | IOSTANDARD = LVTTL;
 NET "led<6>" LOC = P124 | IOSTANDARD = LVTTL;
 NET "led<7>" LOC = P123 | IOSTANDARD = LVTTL;
 
-NET "spi_mosi" LOC = P44 | IOSTANDARD = LVTTL;
-NET "spi_miso" LOC = P45 | IOSTANDARD = LVTTL;
-NET "spi_ss" LOC = P48 | IOSTANDARD = LVTTL;
-NET "spi_sck" LOC = P43 | IOSTANDARD = LVTTL;
-NET "spi_channel<0>" LOC = P46 | IOSTANDARD = LVTTL;
-NET "spi_channel<1>" LOC = P61 | IOSTANDARD = LVTTL;
-NET "spi_channel<2>" LOC = P62 | IOSTANDARD = LVTTL;
-NET "spi_channel<3>" LOC = P65 | IOSTANDARD = LVTTL;
+NET "o_adc_fmt" LOC = P51 | IOSTANDARD = LVTTL;
+NET "o_adc_md1" LOC = P41 | IOSTANDARD = LVTTL;
+NET "o_adc_md2" LOC = P35 | IOSTANDARD = LVTTL;
+NET "i_adc_adata" LOC = P33 | IOSTANDARD = LVTTL;
+NET "i_adc_bck" LOC = P30 | IOSTANDARD = LVTTL;
+NET "i_adc_lrck" LOC = P27 | IOSTANDARD = LVTTL;
 
-NET "avr_tx" LOC = P55 | IOSTANDARD = LVTTL;
-NET "avr_rx" LOC = P59 | IOSTANDARD = LVTTL;
-NET "avr_rx_busy" LOC = P39 | IOSTANDARD = LVTTL;
+NET "i_scki" LOC = P24 | IOSTANDARD = LVTTL;
 
-NET "avr_tx_debug" LOC=P57 | IOSTANDARD = LVTTL;     
-NET "avr_rx_debug" LOC=P58 | IOSTANDARD = LVTTL;
-NET "avr_rx_busy_debug" LOC=P66 | IOSTANDARD = LVTTL;
+NET "o_dac_nmute" LOC = P22 | IOSTANDARD = LVTTL;
+NET "o_dac_adata" LOC = P17 | IOSTANDARD = LVTTL;
+NET "o_dac_bck" LOC = P15 | IOSTANDARD = LVTTL;
+NET "o_dac_lrck" LOC = P12 | IOSTANDARD = LVTTL;
 
-NET "o_adc_fmt" LOC = 51 | IOSTANDARD = LVTTL;
-NET "o_adc_md1" LOC = 41 | IOSTANDARD = LVTTL;
-NET "o_adc_md2" LOC = 35 | IOSTANDARD = LVTTL;
-NET "i_adc_adata" LOC = 33 | IOSTANDARD = LVTTL;
-NET "i_adc_bck" LOC = 30 | IOSTANDARD = LVTTL;
-NET "i_adc_lrck" LOC = 27 | IOSTANDARD = LVTTL;
-
-NET "i_scki" LOC = 24 | IOSTANDARD = LVTTL;
-
-NET "o_dac_nmute" LOC = 22 | IOSTANDARD = LVTTL;
-NET "o_dac_adata" LOC = 15 | IOSTANDARD = LVTTL;
-NET "o_dac_bck" LOC = 17 | IOSTANDARD = LVTTL;
-NET "o_dac_lrck" LOC = 17 | IOSTANDARD = LVTTL;
-
-NET "o_pll_csel" LOC = 12 | IOSTANDARD = LVTTL;
-NET "o_pll_fs1" LOC = 10 | IOSTANDARD = LVTTL;
-NET "o_pll_fs2" LOC = 8 | IOSTANDARD = LVTTL;
-NET "o_pll_sr" LOC = 6 | IOSTANDARD = LVTTL;
+NET "o_pll_csel" LOC = P10 | IOSTANDARD = LVTTL;
+NET "o_pll_fs1" LOC = P8 | IOSTANDARD = LVTTL;
+NET "o_pll_fs2" LOC = P6 | IOSTANDARD = LVTTL;
+NET "o_pll_sr" LOC = P2 | IOSTANDARD = LVTTL;
 
