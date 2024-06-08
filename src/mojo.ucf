@@ -36,3 +36,7 @@ NET "o_pll_fs2"   LOC = P8 | IOSTANDARD = LVTTL;
 NET "o_pll_sr"    LOC = P6 | IOSTANDARD = LVTTL;
 NET "o_pll_csel"  LOC = P2 | IOSTANDARD = LVTTL;
 
+
+NET "debug_lrck"  LOC = P50 | IOSTANDARD = LVTTL;
+NET "debug_bck"   LOC = P40 | IOSTANDARD = LVTTL;
+NET "debug_adata" LOC = P34 | IOSTANDARD = LVTTL;

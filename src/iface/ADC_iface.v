@@ -36,6 +36,25 @@ module ADC_iface
 
     //TODO more thought. sequence counter?
     //axi interface?
-)
+);
 
-endmodule
+  //maybe someday we do sample rate selection
+  assign fmt = 1'b0;
+  assign md1 = 1'b1;
+  assign md2 = 1'b1;
+
+  //will shift in the data to create paralell words
+  reg shift_in;
+  shift_register #(.WIDTH(64)) sreg (
+   .i_clk(bclk),
+   .i_rst_n(rst),
+   .i_sdata(adata),
+   .i_shift(shift_in),
+   .i_load(1'b0),
+   .i_ldata(),
+   .o_data(data_word),
+   .o_carryout()
+  );
+
+
+  endmodule

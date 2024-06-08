@@ -29,9 +29,18 @@ module mojo_top(
     output o_pll_csel,
     output o_pll_fs1,
     output o_pll_fs2,
-    output o_pll_sr
+    output o_pll_sr,
 
+    //debug audio data
+    output debug_lrck,
+    output debug_bck,
+    output debug_adata
 );
+
+  //assign debug outputs here
+  assign debug_lrck = i_adc_lrck;
+  assign debug_bck = i_adc_bck;
+  assign debug_adata = i_adc_adata;
 
   wire rst = ~rst_n; // make reset active high
  
@@ -46,29 +55,34 @@ module mojo_top(
   //INITIAL TEST hard wire control signals
   //also loopback input to output
   //control signals:
-  assign o_adc_fmt = 1'b0;
-  assign o_adc_md1 = 1'b1;
-  assign o_adc_md2 = 1'b1;
   assign o_dac_nmute = 1'b1;
   assign o_pll_csel = 1'b0;
   assign o_pll_fs1 = 1'b0;
   assign o_pll_fs2 = 1'b0;
   assign o_pll_sr = 1'b0;
-  
-  //digital audio signals
-  //assign o_dac_adata = i_adc_adata;
-  assign o_dac_bck = i_adc_bck;
-  assign o_dac_lrck = ~i_adc_lrck; //dac and adc lrcks are opposite
-  
-  reg prev_sample;
-  reg delayed_sample;
-  assign o_dac_adata = delayed_sample;
 
-  //attempt a simple one-cycle delay
-  always @(posedge clk)begin
-    delayed_sample <= i_adc_adata;
-  end
+  //stubbing out DAC out for now
+  assign o_dac_lrck = 1'b0;
+  assign o_dac_adata = 1'b0;
+  assign o_dac_bck = 1'b0;
 
+  ADC_iface adc(
+      .clk(clk),
+      .rst(rst),
+      .scki(i_scki),
+      .adata(i_adc_adata),
+      .bclk(i_adc_bck),
+      .lrck(i_adc_lrck),
+
+      .fmt(o_adc_fmt),
+      .md1(o_adc_md1),
+      .md2(o_adc_md2),
+      
+      .mode(),
+      .word_valid(),
+      .word_ready(),
+      .data_word()
+  );  
 
 endmodule
 
