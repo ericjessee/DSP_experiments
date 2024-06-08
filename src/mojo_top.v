@@ -56,9 +56,18 @@ module mojo_top(
   assign o_pll_sr = 1'b0;
   
   //digital audio signals
-  assign o_dac_adata = i_adc_adata;
+  //assign o_dac_adata = i_adc_adata;
   assign o_dac_bck = i_adc_bck;
   assign o_dac_lrck = ~i_adc_lrck; //dac and adc lrcks are opposite
+  
+  reg prev_sample;
+  reg delayed_sample;
+  assign o_dac_adata = delayed_sample;
+
+  //attempt a simple one-cycle delay
+  always @(posedge clk)begin
+    delayed_sample <= i_adc_adata;
+  end
 
 
 endmodule
