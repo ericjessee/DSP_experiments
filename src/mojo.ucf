@@ -33,3 +33,22 @@ NET "avr_rx_busy" LOC = P39 | IOSTANDARD = LVTTL;
 NET "avr_tx_debug" LOC=P57 | IOSTANDARD = LVTTL;     
 NET "avr_rx_debug" LOC=P58 | IOSTANDARD = LVTTL;
 NET "avr_rx_busy_debug" LOC=P66 | IOSTANDARD = LVTTL;
+
+NET "o_adc_fmt" LOC = 51 | IOSTANDARD = LVTTL;
+NET "o_adc_md1" LOC = 41 | IOSTANDARD = LVTTL;
+NET "o_adc_md2" LOC = 35 | IOSTANDARD = LVTTL;
+NET "i_adc_adata" LOC = 33 | IOSTANDARD = LVTTL;
+NET "i_adc_bck" LOC = 30 | IOSTANDARD = LVTTL;
+NET "i_adc_lrck" LOC = 27 | IOSTANDARD = LVTTL;
+
+NET "i_scki" LOC = 24 | IOSTANDARD = LVTTL;
+
+NET "o_dac_muteb" LOC = 22 | IOSTANDARD = LVTTL;
+NET "o_dac_lrck" LOC = 17 | IOSTANDARD = LVTTL;
+NET "o_dac_adata" LOC = 15 | IOSTANDARD = LVTTL;
+
+NET "o_pll_csel" LOC = 12 | IOSTANDARD = LVTTL;
+NET "o_pll_fs1" LOC = 10 | IOSTANDARD = LVTTL;
+NET "o_pll_fs2" LOC = 8 | IOSTANDARD = LVTTL;
+NET "o_pll_sr" LOC = 6 | IOSTANDARD = LVTTL;
+
