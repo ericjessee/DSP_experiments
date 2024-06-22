@@ -83,7 +83,7 @@ always @(*)begin
             next_state <= send;
         end
         send: begin
-            if(frame_ctr >= 6'd31)begin
+            if(frame_ctr >= 6'd30)begin
                 next_state <= transition;
             end else begin
                 next_state <= send;
@@ -93,7 +93,7 @@ always @(*)begin
 end
 
 //output flops
-always @(posedge scki) begin
+always @(negedge scki) begin
     case(state)
         transition: begin
             frame_ctr <= 6'd0;
@@ -105,6 +105,12 @@ always @(posedge scki) begin
         end
     endcase
 end
+
+//always @(negedge scki) begin
+//    if(state == transition) begin
+//            lrck <= ~lrck;
+//        end
+//end
 
 //state-dependent outputs
 always @(*) begin

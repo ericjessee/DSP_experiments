@@ -14,11 +14,30 @@ wire [23:0] data_parallel;
 pcm_gen dut(
     .scki(clk),
     .rst(rst),
-
     .lrck(lrck),
     .bck(bck),
     .adata(adata),
     .data_parallel(data_parallel)
+);
+
+wire word_ready;
+wire [24:0] lword;
+wire [24:0] rword;
+ADC_iface dut2(
+    .clk(clk),
+    .rst(rst),
+    .scki(),
+    .adata(adata),
+    .bck(bck),
+    .lrck(lrck),
+    .fmt(),
+    .md1(),
+    .md2(),
+    .mode(),
+    .word_valid(),
+    .word_ready(word_ready),
+    .lword(lword),
+    .rword(rword)
 );
 
 
