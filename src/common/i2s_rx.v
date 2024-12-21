@@ -1,20 +1,25 @@
+//i2s_rx.v
+//author: Eric Jessee
+//based heavily on the suggested receiver circuit from here:
+//https://www.nxp.com/docs/en/user-manual/UM11732.pdf
+
 module i2s_rx(
     input bck,
     input lrck,
     input din,
-    output reg [24:0] l_dout;
-    output reg [24:0] r_dout;
+    output reg [23:0] l_dout,
+    output reg [23:0] r_dout
 );
-endmodule
 
 localparam word_size = 24;
 
 //generate the LR select D and pulse
 reg wsd;
 reg wsd_reg;
+wire wsp;
 assign wsp = wsd_reg ^ wsd;
 
-always (posedge bck) begin
+always @(posedge bck) begin
     wsd <= lrck;
     wsd_reg <= wsd;
 end
@@ -22,7 +27,7 @@ end
 //counter to generate the bit enables for the words
 reg [15:0] word_ctr;
 wire word_ctr_en;
-assign word_ctr_en = !(word_ctr == word_size)
+assign word_ctr_en = !(word_ctr == word_size);
 always @(negedge bck) begin
     if (wsp) begin
         word_ctr <= 0;
@@ -54,3 +59,5 @@ always @(posedge bck) begin
         end
     end
 end
+
+endmodule
