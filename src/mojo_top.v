@@ -32,6 +32,7 @@ module mojo_top(
     output o_pll_sr
 
 );
+  localparam delay_size = 128;
 
   wire rst = ~rst_n; // make reset active high
  
@@ -56,17 +57,25 @@ module mojo_top(
   assign o_pll_sr = 1'b0;
   
   //digital audio signals
-  //assign o_dac_adata = i_adc_adata;
+  //assign o_dac_adata = i_adc_adata; //directly pass through audio data
   assign o_dac_bck = i_adc_bck;
   assign o_dac_lrck = ~i_adc_lrck; //dac and adc lrcks are opposite
-  
-  reg prev_sample;
-  reg delayed_sample;
-  assign o_dac_adata = delayed_sample;
 
-  //attempt a simple one-cycle delay
+  //attempt a simple delay
+  reg [delay_size:0] delay_train; 
+  assign o_dac_adata = delay_train[0];
+
+  //delay train experiment
+  integer i;
   always @(posedge clk)begin
-    delayed_sample <= i_adc_adata;
+    if (rst) begin
+      delay_train <= 0;
+    end else begin
+      delay_train[0] <= i_adc_adata;
+      for (i=1; i<delay_size; i=i+1) begin
+        delay_train[i] <= delay_train[i-1];
+      end
+    end
   end
 
 
