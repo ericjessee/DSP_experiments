@@ -3,38 +3,32 @@ module mojo_top_tb();
 reg clk;
 reg rst_n;
 reg cclk;
-wire avr2fpga;
-wire fpga2avr;
-reg avr2fpga_busy;
+reg adata_bit;
 
-mojo_top mojo_top_message(
+// wire avr2fpga;
+// wire fpga2avr;
+// reg avr2fpga_busy;
+
+mojo_top mojo_top_dut(
     .clk(clk),
     .rst_n(rst_n),
     .cclk(cclk),
     .led(),
-    .spi_miso(),
-    .spi_ss(),
-    .spi_mosi(),
-    .spi_sck(),
-    .spi_channel(),
-    .avr_tx(avr2fpga),
-    .avr_rx(fpga2avr),
-    .avr_rx_busy(avr2fpga_busy)
-);
-
-mojo_top_2 mojo_top_avr(
-    .clk(clk),
-    .rst_n(rst_n),
-    .cclk(cclk),
-    .led(),
-    .spi_miso(),
-    .spi_ss(),
-    .spi_mosi(),
-    .spi_sck(),
-    .spi_channel(),
-    .avr_tx(fpga2avr),
-    .avr_rx(avr2fpga),
-    .avr_rx_busy(avr2fpga_busy)
+    .i_scki(),
+    .o_adc_fmt(),
+    .o_adc_md1(),
+    .o_adc_md2(),
+    .i_adc_adata(adata_bit),
+    .i_adc_bck(),
+    .i_adc_lrck(),
+    .o_dac_nmute(),
+    .o_dac_adata(),
+    .o_dac_bck(),
+    .o_dac_lrck(),
+    .o_pll_csel(),
+    .o_pll_fs1(),
+    .o_pll_fs2(),
+    .o_pll_sr()
 );
 
 //20ns == 50MHz
@@ -44,9 +38,10 @@ initial begin
     clk <= 0;
     cclk <= 1;
     rst_n <= 0;
-    avr2fpga_busy <=0;
+    adata_bit <= 0;
     #20
     rst_n <= 1;
+    adata_bit <= 1;
     #1000000000
     rst_n <= 1;
 end

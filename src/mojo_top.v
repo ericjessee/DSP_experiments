@@ -62,9 +62,10 @@ module mojo_top(
   assign o_dac_lrck = ~i_adc_lrck; //dac and adc lrcks are opposite
 
   //attempt a simple delay
-  reg [delay_size:0] delay_train; 
-  assign o_dac_adata = delay_train[0];
+  reg [delay_size-1:0] delay_train; 
+  assign o_dac_adata = delay_train[delay_size-1];
 
+  //this won't work - i think the other control signals need to be delayed as well.
   //delay train experiment
   integer i;
   always @(posedge clk)begin
