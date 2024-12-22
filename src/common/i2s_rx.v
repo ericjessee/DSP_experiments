@@ -3,15 +3,15 @@
 //based heavily on the suggested receiver circuit from here:
 //https://www.nxp.com/docs/en/user-manual/UM11732.pdf
 
-module i2s_rx(
+module i2s_rx
+#(parameter WORD_SIZE=24)
+(
     input bck,
     input lrck,
     input din,
     output reg [23:0] l_dout,
     output reg [23:0] r_dout
 );
-
-localparam word_size = 24;
 
 //generate the LR select D and pulse
 reg wsd;
@@ -27,17 +27,17 @@ end
 //counter to generate the bit enables for the words
 reg [15:0] word_ctr;
 wire word_ctr_en;
-assign word_ctr_en = !(word_ctr == word_size);
+assign word_ctr_en = !(word_ctr == WORD_SIZE);
 always @(negedge bck) begin
     if (wsp) begin
-        word_ctr <= 0;
+        word_ctr <= WORD_SIZE-1;
     end else if (word_ctr_en) begin
-        word_ctr <= word_ctr + 1;
+        word_ctr <= word_ctr - 1;
     end
 end
 
 //the data word
-reg [word_size:0] data;
+reg [WORD_SIZE-1:0] data;
 always @(posedge bck) begin
     data[word_ctr] <= din;
 end
@@ -50,7 +50,7 @@ assign r_wen = wsd & wsp;
 
 integer i;
 always @(posedge bck) begin
-    for (i=0; i<word_size; i=i+1) begin
+    for (i=0; i<WORD_SIZE; i=i+1) begin
         if (l_wen) begin
             l_dout <= data;
         end
