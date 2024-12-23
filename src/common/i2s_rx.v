@@ -9,8 +9,8 @@ module i2s_rx
     input bck,
     input lrck,
     input din,
-    output reg [23:0] l_dout,
-    output reg [23:0] r_dout
+    output reg [WORD_SIZE-1:0] l_dout,
+    output reg [WORD_SIZE-1:0] r_dout
 );
 
 //generate the LR select D and pulse
@@ -32,7 +32,7 @@ always @(negedge bck) begin
     if (wsp) begin
         word_ctr <= WORD_SIZE-1;
     end else if (word_ctr_en) begin
-        word_ctr <= word_ctr - 1;
+        word_ctr <= word_ctr - 16'b1;
     end
 end
 

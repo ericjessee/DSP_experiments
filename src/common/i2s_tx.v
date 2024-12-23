@@ -4,7 +4,7 @@ module i2s_tx
     input bck,
     input lrck,
     input [WORD_SIZE-1:0] l_din,
-    input [23:0] r_din,
+    input [WORD_SIZE-1:0] r_din,
     output dout
 );
 
