@@ -1,38 +1,68 @@
 #Created by Constraints Editor (xc6slx9-tqg144-3) - 2012/11/05
-NET "clk" TNM_NET = clk;
-TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50%;
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50 %;
+
+NET "clk" LOC = P56;
+NET "clk" IOSTANDARD = LVTTL;
+NET "rst_n" LOC = P38;
+NET "rst_n" IOSTANDARD = LVTTL;
+
+#NET "cclk" LOC = P70 | IOSTANDARD = LVTTL;
+NET "led[0]" LOC = P134;
+NET "led[0]" IOSTANDARD = LVTTL;
+NET "led[1]" LOC = P133;
+NET "led[1]" IOSTANDARD = LVTTL;
+NET "led[2]" LOC = P132;
+NET "led[2]" IOSTANDARD = LVTTL;
+NET "led[3]" LOC = P131;
+NET "led[3]" IOSTANDARD = LVTTL;
+NET "led[4]" LOC = P127;
+NET "led[4]" IOSTANDARD = LVTTL;
+NET "led[5]" LOC = P126;
+NET "led[5]" IOSTANDARD = LVTTL;
+NET "led[6]" LOC = P124;
+NET "led[6]" IOSTANDARD = LVTTL;
+NET "led[7]" LOC = P123;
+NET "led[7]" IOSTANDARD = LVTTL;
+
+NET "o_adc_fmt" LOC = P51;
+NET "o_adc_fmt" IOSTANDARD = LVTTL;
+NET "o_adc_md1" LOC = P41;
+NET "o_adc_md1" IOSTANDARD = LVTTL;
+NET "o_adc_md2" LOC = P35;
+NET "o_adc_md2" IOSTANDARD = LVTTL;
+NET "i_scki" LOC = P33;
+NET "i_scki" IOSTANDARD = LVTTL;
+NET "i_adc_lrck" IOSTANDARD = LVTTL;
+NET "i_adc_adata" LOC = P27;
+NET "i_adc_adata" IOSTANDARD = LVTTL;
+NET "i_adc_bck" IOSTANDARD = LVTTL;
+
+
+NET "o_dac_nmute" LOC = P22;
+NET "o_dac_nmute" IOSTANDARD = LVTTL;
+NET "o_dac_adata" LOC = P17;
+NET "o_dac_adata" IOSTANDARD = LVTTL;
+NET "o_dac_bck" LOC = P15;
+NET "o_dac_bck" IOSTANDARD = LVTTL;
+NET "o_dac_lrck" LOC = P12;
+NET "o_dac_lrck" IOSTANDARD = LVTTL;
+
+NET "o_pll_fs1" LOC = P10;
+NET "o_pll_fs1" IOSTANDARD = LVTTL;
+NET "o_pll_fs2" LOC = P8;
+NET "o_pll_fs2" IOSTANDARD = LVTTL;
+NET "o_pll_sr" LOC = P6;
+NET "o_pll_sr" IOSTANDARD = LVTTL;
+NET "o_pll_csel" LOC = P2;
+NET "o_pll_csel" IOSTANDARD = LVTTL;
+#Created by Constraints Editor (xc6slx9-tqg144-2) - 2024/12/22
+NET "i_adc_bck" TNM_NET = "i_adc_bck";
+TIMESPEC TS_i_adc_bck = PERIOD "i_adc_bck" 32 MHz HIGH 50 %;
+NET "i_adc_lrck" TNM_NET = "i_adc_lrck";
+TIMESPEC TS_i_adc_lrck = PERIOD "i_adc_lrck" 32 MHz HIGH 50 %;
 
 # PlanAhead Generated physical constraints 
-NET "clk" LOC = P56 | IOSTANDARD = LVTTL;
-NET "rst_n" LOC = P38 | IOSTANDARD = LVTTL;
 
-NET "cclk" LOC = P70 | IOSTANDARD = LVTTL;
-
-NET "led<0>" LOC = P134 | IOSTANDARD = LVTTL;
-NET "led<1>" LOC = P133 | IOSTANDARD = LVTTL;
-NET "led<2>" LOC = P132 | IOSTANDARD = LVTTL;
-NET "led<3>" LOC = P131 | IOSTANDARD = LVTTL;
-NET "led<4>" LOC = P127 | IOSTANDARD = LVTTL;
-NET "led<5>" LOC = P126 | IOSTANDARD = LVTTL;
-NET "led<6>" LOC = P124 | IOSTANDARD = LVTTL;
-NET "led<7>" LOC = P123 | IOSTANDARD = LVTTL;
-
-NET "o_adc_fmt"   LOC = P51 | IOSTANDARD = LVTTL;
-NET "o_adc_md1"   LOC = P41 | IOSTANDARD = LVTTL;
-NET "o_adc_md2"   LOC = P35 | IOSTANDARD = LVTTL;
-NET "i_scki"      LOC = P33 | IOSTANDARD = LVTTL;
-NET "i_adc_lrck"  LOC = P30 | IOSTANDARD = LVTTL;
-NET "i_adc_adata" LOC = P27 | IOSTANDARD = LVTTL;
-NET "i_adc_bck"   LOC = P24 | IOSTANDARD = LVTTL;
-
-
-NET "o_dac_nmute" LOC = P22 | IOSTANDARD = LVTTL;
-NET "o_dac_adata" LOC = P17 | IOSTANDARD = LVTTL;
-NET "o_dac_bck"   LOC = P15 | IOSTANDARD = LVTTL;
-NET "o_dac_lrck"  LOC = P12 | IOSTANDARD = LVTTL;
-
-NET "o_pll_fs1"   LOC = P10 | IOSTANDARD = LVTTL;
-NET "o_pll_fs2"   LOC = P8 | IOSTANDARD = LVTTL;
-NET "o_pll_sr"    LOC = P6 | IOSTANDARD = LVTTL;
-NET "o_pll_csel"  LOC = P2 | IOSTANDARD = LVTTL;
-
+NET "i_adc_bck" LOC = P24;
+NET "i_adc_lrck" LOC = P23;

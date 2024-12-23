@@ -56,19 +56,14 @@ module mojo_top(
   reg signed  [WORD_SIZE-1:0] l_tx_data_stored;
   reg signed  [WORD_SIZE-1:0] r_tx_data_stored;
 
-  reg prev_lrck;
-  always @(posedge i_adc_bck) begin
-    prev_lrck <= i_adc_lrck;
-    if (prev_lrck != i_adc_lrck) begin
-      if (prev_lrck) begin
-        r_tx_data_stored <= r_rx_data;
-      end else begin
-        l_tx_data_stored <= l_rx_data;
-      end
-    end
+  always @(posedge i_adc_lrck) begin
+    r_tx_data_stored <= r_rx_data;
+  end
+  always @(negedge i_adc_lrck) begin
+    l_tx_data_stored <= l_rx_data;
   end
 
-  i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_dut(
+  i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
     .lrck(i_adc_lrck),
     .din(i_adc_adata),
@@ -105,7 +100,7 @@ module mojo_top(
     end
 end
   
-  i2s_tx #(.WORD_SIZE(32))i2s_tx_dut(
+  i2s_tx #(.WORD_SIZE(32))i2s_tx_0(
     .bck(i_adc_bck),
     .lrck(tx_lrck),
     .l_din(tx_word_l),
