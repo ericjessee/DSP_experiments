@@ -49,10 +49,10 @@ module simple_ram(
 input clka;
 input [0 : 0] wea;
 input [5 : 0] addra;
-input [15 : 0] dina;
+input [23 : 0] dina;
 input clkb;
 input [5 : 0] addrb;
-output [15 : 0] doutb;
+output [23 : 0] doutb;
 
 // synthesis translate_off
 
@@ -95,8 +95,8 @@ output [15 : 0] doutb;
     .C_PRIM_TYPE(1),
     .C_READ_DEPTH_A(64),
     .C_READ_DEPTH_B(64),
-    .C_READ_WIDTH_A(16),
-    .C_READ_WIDTH_B(16),
+    .C_READ_WIDTH_A(24),
+    .C_READ_WIDTH_B(24),
     .C_RST_PRIORITY_A("CE"),
     .C_RST_PRIORITY_B("CE"),
     .C_RST_TYPE("SYNC"),
@@ -106,7 +106,7 @@ output [15 : 0] doutb;
     .C_USE_BRAM_BLOCK(0),
     .C_USE_BYTE_WEA(0),
     .C_USE_BYTE_WEB(0),
-    .C_USE_DEFAULT_DATA(0),
+    .C_USE_DEFAULT_DATA(1),
     .C_USE_ECC(0),
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
@@ -115,8 +115,8 @@ output [15 : 0] doutb;
     .C_WRITE_DEPTH_B(64),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
-    .C_WRITE_WIDTH_A(16),
-    .C_WRITE_WIDTH_B(16),
+    .C_WRITE_WIDTH_A(24),
+    .C_WRITE_WIDTH_B(24),
     .C_XDEVICEFAMILY("spartan6")
   )
   inst (

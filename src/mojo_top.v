@@ -59,10 +59,8 @@ module mojo_top(
   wire signed [SAMPLE_SIZE-1:0] r_rx_sample;
 
   //preserve sign bit and convert to 24 bit
-  assign l_rx_sample[23] = l_rx_data[31];
-  assign l_rx_sample[22:0] = l_rx_data[30:7];
-  assign r_rx_sample[23] = r_rx_data[31];
-  assign r_rx_sample[22:0] = r_rx_data[30:7];
+  assign l_rx_sample = l_rx_data[31:8];
+  assign r_rx_sample = r_rx_data[31:8];
 
   // reg signed  [WORD_SIZE-1:0] l_tx_data_stored;
   // reg signed  [WORD_SIZE-1:0] r_tx_data_stored;
@@ -75,7 +73,8 @@ module mojo_top(
   // end
 
   localparam IO_BUFF_SIZE = 64;
-  localparam IO_BUFF_PTR_BITS = $clog2(IO_BUFF_SIZE);
+  localparam IO_BUFF_PTR_BITS = 6;
+
   reg [IO_BUFF_PTR_BITS-1:0] l_rx_buff_ptr;
   reg l_rx_write_pulse;
   reg l_rx_buff_flush; //when the buffer is full, flush it to the process FIFO
@@ -84,14 +83,19 @@ module mojo_top(
   reg r_rx_write_pulse;
   reg r_rx_buff_flush; //when the buffer is full, flush it to the process FIFO
 
+  reg [IO_BUFF_PTR_BITS-1:0] l_tx_buff_ptr;
+  wire signed [SAMPLE_SIZE-1:0] l_tx_sample;
+
+  wire signed [SAMPLE_SIZE-1:0] r_tx_sample;
+
   simple_ram l_rx_buffer(
     .clka(i_adc_bck),
     .wea(l_rx_write_pulse),
     .addra(l_rx_buff_ptr),
     .dina(l_rx_sample),
     .clkb(i2_adc_bck),
-    .addrb(),
-    .doutb()
+    .addrb(l_tx_buff_ptr),
+    .doutb(l_tx_sample)
   );
 
   simple_ram r_rx_buffer(
@@ -99,37 +103,57 @@ module mojo_top(
     .wea(r_rx_write_pulse),
     .addra(r_rx_buff_ptr),
     .dina(r_rx_sample),
-    .douta()
+    .clkb(i2_adc_bck),
+    .addrb(l_tx_buff_ptr),
+    .doutb(r_tx_sample)
   );
 
   always @(negedge i_adc_lrck) begin
     l_rx_write_pulse <= 1'b1;
     if (l_rx_buff_ptr >= IO_BUFF_SIZE) begin
-      l_rx_buff_ptr <= IO_BUFF_PTR_BITS'b0;
+      l_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
       l_rx_buff_flush <= 1'b1;
     end else begin
-      l_rx_buff_ptr <= l_rx_buff_ptr + IO_BUFF_PTR_BITS'b1;
+      l_rx_buff_ptr <= l_rx_buff_ptr + 1'b1;
     end
   end
 
   always @(posedge i_adc_lrck) begin
     r_rx_write_pulse <= 1'b1;
     if (r_rx_buff_ptr >= IO_BUFF_SIZE) begin
-      r_rx_buff_ptr <= IO_BUFF_PTR_BITS'b0;
+      r_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
       r_rx_buff_flush <= 1'b1;
     end else begin
-      r_rx_buff_ptr <= r_rx_buff_ptr + IO_BUFF_PTR_BITS'b1;
+      r_rx_buff_ptr <= r_rx_buff_ptr + 1'b1;
     end
   end
 
-  always @(negedge i_adc_bck) begin
-    if (l_rx_write_pulse) begin
-      l_rx_write_pulse <= 1'b0;
-    end
-    if (r_rx_write_pulse) begin
-      r_rx_write_pulse <= 1'b0;
-    end
-  end
+  // always @(negedge i_adc_bck) begin
+  //   if (l_rx_write_pulse) begin
+  //     l_rx_write_pulse <= 1'b0;
+  //   end
+  //   if (r_rx_write_pulse) begin
+  //     r_rx_write_pulse <= 1'b0;
+  //   end
+  // end
+  wire [23:0] read_sample;
+  //process FIFO
+  buffer_fifo #(
+    .SAMPLE_SIZE(SAMPLE_SIZE),
+    .IO_BUFF_SIZE(IO_BUFF_SIZE),
+    .FIFO_DEPTH(16)
+  ) l_rx_fifo(
+    .clk(i_adc_bck),
+    .rst(rst),
+    .fill(l_rx_write_pulse),
+    .fill_done(l_rx_buff_flush),
+    .read(1'b1),
+    .read_done(1'b1),
+    .write_sample(l_rx_sample),
+    .write_ptr(l_rx_buff_ptr),
+    .read_sample(read_sample),
+    .read_ptr(6'b1)
+  );
 
   i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
@@ -159,12 +183,13 @@ module mojo_top(
         word_cnt <= 0;
         tx_lrck <= ~tx_lrck;
         if (tx_lrck) begin
-            tx_word_l <= l_tx_data_stored;
+            tx_word_l <= l_tx_sample;
         end else begin
-            tx_word_r <= r_tx_data_stored;
+            tx_word_r <= read_sample;
         end
     end else begin
         word_cnt <= word_cnt + 5'b1;
+        l_tx_buff_ptr <= word_cnt;
     end
 end
   
