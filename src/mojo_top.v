@@ -49,19 +49,79 @@ module mojo_top(
   assign o_pll_fs2 = 1'b0;
   assign o_pll_sr = 1'b0;
   
-  localparam WORD_SIZE = 32;
+  localparam WORD_SIZE   = 32;
+  localparam SAMPLE_SIZE = 24;
+
   //i2s interface modules
   wire signed [WORD_SIZE-1:0] l_rx_data;
   wire signed [WORD_SIZE-1:0] r_rx_data;
-  reg signed  [WORD_SIZE-1:0] l_tx_data_stored;
-  reg signed  [WORD_SIZE-1:0] r_tx_data_stored;
+
+  // reg signed  [WORD_SIZE-1:0] l_tx_data_stored;
+  // reg signed  [WORD_SIZE-1:0] r_tx_data_stored;
+
+  // always @(posedge i_adc_lrck) begin
+  //   r_tx_data_stored <= r_rx_data;
+  // end
+  // always @(negedge i_adc_lrck) begin
+  //   l_tx_data_stored <= l_rx_data;
+  // end
+
+  localparam IO_BUFF_SIZE = 64;
+  localparam IO_BUFF_PTR_BITS = $clog2(IO_BUFF_SIZE);
+  reg [IO_BUFF_PTR_BITS-1:0] l_rx_buff_ptr;
+  reg l_rx_write_pulse;
+  reg l_rx_buff_flush; //when the buffer is full, flush it to the process FIFO
+
+  reg [IO_BUFF_PTR_BITS-1:0] r_rx_buff_ptr;
+  reg r_rx_write_pulse;
+  reg r_rx_buff_flush; //when the buffer is full, flush it to the process FIFO
+
+  simple_ram l_rx_buffer(
+    .clka(i_adc_bck),
+    .wea(l_rx_write_pulse),
+    .addra(l_rx_buff_ptr),
+    .dina(l_rx_data),
+    .douta()
+  );
+
+  simple_ram r_rx_buffer(
+    .clka(i_adc_bck),
+    .wea(r_rx_write_pulse),
+    .addra(r_rx_buff_ptr),
+    .dina(r_rx_data),
+    .douta()
+  );
+
+
+  always @(negedge i_adc_lrck) begin
+    l_rx_write_pulse <= 1'b1;
+    if (l_rx_buff_ptr >= IO_BUFF_SIZE) begin
+      l_rx_buff_ptr <= IO_BUFF_PTR_BITS'b0;
+      l_rx_buff_flush <= 1'b1;
+    end else begin
+      l_rx_buff_ptr <= l_rx_buff_ptr + IO_BUFF_PTR_BITS'b1;
+    end
+  end
 
   always @(posedge i_adc_lrck) begin
-    r_tx_data_stored <= r_rx_data;
+    r_rx_write_pulse <= 1'b1;
+    if (r_rx_buff_ptr >= IO_BUFF_SIZE) begin
+      r_rx_buff_ptr <= IO_BUFF_PTR_BITS'b0;
+      r_rx_buff_flush <= 1'b1;
+    end else begin
+      r_rx_buff_ptr <= r_rx_buff_ptr + IO_BUFF_PTR_BITS'b1;
+    end
   end
-  always @(negedge i_adc_lrck) begin
-    l_tx_data_stored <= l_rx_data;
+
+  always @(negedge i_adc_bck) begin
+    if (l_rx_write_pulse) begin
+      l_rx_write_pulse <= 1'b0;
+    end
   end
+
+
+
+
 
   i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
