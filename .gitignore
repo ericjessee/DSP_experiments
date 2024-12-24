@@ -31,3 +31,4 @@ ipcore_dir/simple_ram/
 ipcore_dir/simple_ram_flist.txt
 ipcore_dir/simple_ram_xmdf.tcl
 ipcore_dir/summary.log
+ipcore_dir/edit_simple_ram.tcl

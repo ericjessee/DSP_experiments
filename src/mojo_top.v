@@ -54,7 +54,15 @@ module mojo_top(
 
   //i2s interface modules
   wire signed [WORD_SIZE-1:0] l_rx_data;
+  wire signed [SAMPLE_SIZE-1:0] l_rx_sample;
   wire signed [WORD_SIZE-1:0] r_rx_data;
+  wire signed [SAMPLE_SIZE-1:0] r_rx_sample;
+
+  //preserve sign bit and convert to 24 bit
+  assign l_rx_sample[23] = l_rx_data[31];
+  assign l_rx_sample[22:0] = l_rx_data[30:7];
+  assign r_rx_sample[23] = r_rx_data[31];
+  assign r_rx_sample[22:0] = r_rx_data[30:7];
 
   // reg signed  [WORD_SIZE-1:0] l_tx_data_stored;
   // reg signed  [WORD_SIZE-1:0] r_tx_data_stored;
@@ -80,18 +88,19 @@ module mojo_top(
     .clka(i_adc_bck),
     .wea(l_rx_write_pulse),
     .addra(l_rx_buff_ptr),
-    .dina(l_rx_data),
-    .douta()
+    .dina(l_rx_sample),
+    .clkb(i2_adc_bck),
+    .addrb(),
+    .doutb()
   );
 
   simple_ram r_rx_buffer(
     .clka(i_adc_bck),
     .wea(r_rx_write_pulse),
     .addra(r_rx_buff_ptr),
-    .dina(r_rx_data),
+    .dina(r_rx_sample),
     .douta()
   );
-
 
   always @(negedge i_adc_lrck) begin
     l_rx_write_pulse <= 1'b1;
@@ -117,11 +126,10 @@ module mojo_top(
     if (l_rx_write_pulse) begin
       l_rx_write_pulse <= 1'b0;
     end
+    if (r_rx_write_pulse) begin
+      r_rx_write_pulse <= 1'b0;
+    end
   end
-
-
-
-
 
   i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
