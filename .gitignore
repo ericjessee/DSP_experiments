@@ -21,3 +21,13 @@ src/mojo_legacy/
 src/verif/.pcm_gen.v.swp
 src/verif/.pcm_gen_tb.v.swp
 syn/
+ipcore_dir/create_simple_ram.tcl
+ipcore_dir/simple_ram.asy
+ipcore_dir/simple_ram.gise
+ipcore_dir/simple_ram.ngc
+ipcore_dir/simple_ram.sym
+ipcore_dir/simple_ram.veo
+ipcore_dir/simple_ram/
+ipcore_dir/simple_ram_flist.txt
+ipcore_dir/simple_ram_xmdf.tcl
+ipcore_dir/summary.log
