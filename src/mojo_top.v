@@ -67,17 +67,20 @@ module mojo_top(
 
   reg [IO_BUFF_PTR_BITS-1:0] l_rx_buff_ptr;
   reg l_rx_write_pulse;
-  reg l_rx_buff_flush; 
+  reg l_rx_buff_flush;
+  reg l_rx_flush_done;
 
   reg [IO_BUFF_PTR_BITS-1:0] r_rx_buff_ptr;
   reg r_rx_write_pulse;
   reg r_rx_buff_flush;
+  reg r_rx_flush_done;
 
   reg [IO_BUFF_PTR_BITS-1:0] l_tx_buff_ptr;
   wire signed [SAMPLE_SIZE-1:0] l_tx_sample;
 
   reg [IO_BUFF_PTR_BITS-1:0] l_rx_buff_flush_ptr;
   wire signed [SAMPLE_SIZE-1:0] l_rx_flush_sample;
+
 
 
   wire signed [SAMPLE_SIZE-1:0] r_tx_sample;
@@ -87,7 +90,7 @@ module mojo_top(
     .wea(l_rx_write_pulse),
     .addra(l_rx_buff_ptr),
     .dina(l_rx_sample),
-    .clkb(i2_adc_bck),
+    .clkb(i_adc_bck),
     .addrb(l_rx_buff_flush_ptr),
     .doutb(l_rx_flush_sample)
   );
@@ -97,56 +100,58 @@ module mojo_top(
     .wea(r_rx_write_pulse),
     .addra(r_rx_buff_ptr),
     .dina(r_rx_sample),
-    .clkb(i2_adc_bck),
+    .clkb(i_adc_bck),
     .addrb(l_tx_buff_ptr), //incorrect, assigned placeholders for ram generation
     .doutb(r_tx_sample)
   );
 
-  always @(negedge i_adc_lrck) begin
-    l_rx_write_pulse <= 1'b1; //should mimic the circuit from i2s to generate pulse
-    if (l_rx_buff_ptr >= IO_BUFF_SIZE) begin
-      l_rx_buff_f_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
-      l_rx_buff_flush <= 1'b1;
-    end else begin
-      l_rx_buff_ptr <= l_rx_buff_ptr + 1'b1;
-    end
-  end
-
-  always @(posedge i_adc_lrck) begin
-    r_rx_write_pulse <= 1'b1;
-    if (r_rx_buff_ptr >= IO_BUFF_SIZE) begin
-      r_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
-      r_rx_buff_flush <= 1'b1;
-    end else begin
-      r_rx_buff_ptr <= r_rx_buff_ptr + 1'b1;
-    end
-  end
-
+  reg prev_lrck;
   integer i;
   always @(negedge i_adc_bck) begin
-    if (l_rx_buff_flush) begin
-      if(l_rx_buff_flush_ptr > IO_BUFF_SIZE-1) begin
-        l_rx_flush_done <= 1'b1;
-        l_rx_buff_flush <= 1'b0;
+    if (rst) begin
+      l_rx_buff_ptr <= 0;
+      l_rx_write_pulse <= 0;
+      l_rx_buff_flush <= 0;
+      l_rx_flush_done <= 0;
+      l_rx_buff_flush_ptr <= 0;
+      prev_lrck <= 0;
+    end else begin
+      prev_lrck <= i_adc_lrck;
+
+      if (i_adc_lrck != prev_lrck) begin //lrck transition
+        //eventually extend this to handle both channels
+        if (prev_lrck == 1'b0) begin
+          l_rx_write_pulse <= 1'b1;
+          if (l_rx_buff_ptr >= IO_BUFF_SIZE-1) begin
+            l_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
+            l_rx_buff_flush <= 1'b1;
+          end else begin
+            l_rx_buff_ptr <= l_rx_buff_ptr + 1'b1;
+          end
+        end
       end else begin
-        l_rx_buff_flush_ptr <= l_rx_buff_flush_ptr + 1'b1;
+        //this current setup takes two cycles to write the sample to the rx buffer
+        //shouldn't matter since it takes 32 cycles to receive the next sample
+        //might cause problems when the buffer is flushed however
+        l_rx_write_pulse <= 1'b0;
       end
-    end
-    if (l_rx_flush_done) begin
-      l_rx_flush_done <= 1'b0;
+
+      if (l_rx_buff_flush) begin
+        if(l_rx_buff_flush_ptr >= IO_BUFF_SIZE-1) begin
+          l_rx_flush_done <= 1'b1;
+          l_rx_buff_flush <= 1'b0;
+        end else begin
+          l_rx_buff_flush_ptr <= l_rx_buff_flush_ptr + 1'b1;
+        end
+      end
+      if (l_rx_flush_done) begin
+        l_rx_flush_done <= 1'b0;
+        l_rx_buff_flush_ptr <= 0;
+      end
     end
   end
 
-  // always @(negedge i_adc_bck) begin
-  //   if (l_rx_write_pulse) begin
-  //     l_rx_write_pulse <= 1'b0;
-  //   end
-  //   if (r_rx_write_pulse) begin
-  //     r_rx_write_pulse <= 1'b0;
-  //   end
-  // end
-
-  wire [23:0] read_sample;
+  wire [SAMPLE_SIZE-1:0] read_sample;
   //process FIFO
   buffer_fifo #(
     .SAMPLE_SIZE(SAMPLE_SIZE),
@@ -157,10 +162,10 @@ module mojo_top(
     .rst(rst),
     .fill(l_rx_buff_flush),
     .fill_done(l_rx_flush_done),
-    .read(1'b1),
-    .read_done(1'b1),
+    .read(1'b0),
+    .read_done(1'b0),
     .write_sample(l_rx_flush_sample),
-    .write_ptr(l_rx_buff_ptr),
+    .write_ptr(l_rx_buff_flush_ptr),
     .read_sample(read_sample),
     .read_ptr(6'b1)
   );
