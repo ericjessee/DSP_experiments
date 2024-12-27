@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Fri Dec 27 22:42:51 2024
+# Date: Fri Dec 27 23:50:16 2024
 #
 ##############################################################
 #
@@ -42,7 +42,7 @@ SELECT FIR_Compiler family Xilinx,_Inc. 5.0
 CSET allow_rounding_approximation=false
 CSET bestprecision=false
 CSET chan_in_adv=0
-CSET clock_frequency=1
+CSET clock_frequency=50
 CSET coefficient_buffer_type=Automatic
 CSET coefficient_file=no_coe_file_loaded
 CSET coefficient_fractional_bits=0
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: 11301f82
+# CRC: 746aeda4
