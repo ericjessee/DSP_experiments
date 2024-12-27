@@ -73,6 +73,9 @@ module mojo_top(
   reg r_rx_buff_flush;
   reg r_rx_flush_done;
 
+  wire        [IO_BUFF_PTR_BITS-1:0] l_rx_buff_flush_ptr;
+  wire signed [SAMPLE_SIZE-1:0]      l_rx_buff_flush_sample;
+
   i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
     .lrck(i_adc_lrck),
@@ -88,7 +91,7 @@ module mojo_top(
     .dina(l_rx_sample),
     .clkb(i_adc_bck),
     .addrb(l_rx_buff_flush_ptr),
-    .doutb(l_rx_flush_sample)
+    .doutb(l_rx_buff_flush_sample)
   );
 
   simple_ram r_rx_buffer(
@@ -97,8 +100,57 @@ module mojo_top(
     .addra(r_rx_buff_ptr),
     .dina(r_rx_sample),
     .clkb(i_adc_bck),
-    .addrb(l_tx_buff_ptr), //incorrect, assigned placeholders for ram generation
-    .doutb(r_tx_sample)
+    .addrb(),
+    .doutb()
+  );
+
+  wire tx_buff_sel;
+  wire [31:0] l_tx_word;
+  wire [23:0] l_tx_sample_0;
+  wire [23:0] l_tx_sample_1;
+  assign l_tx_word = tx_buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
+
+  wire        [IO_BUFF_PTR_BITS-1:0] l_proc_out_buff_ptr;
+  wire signed [SAMPLE_SIZE-1:0]      l_proc_out_buff_sample;
+
+  simple_processor processor_0 (
+    .clk(clk),
+    .rst(rst),
+    .chunk_pulse(l_rx_buff_flush),
+
+    .input_buff_ptr(l_rx_buff_flush_ptr),
+    .input_buff_sample(l_rx_buff_flush_sample),
+
+    .output_buff_ptr(l_proc_out_buff_ptr),
+    .output_buff_sample(l_proc_out_buff_sample)
+  );
+
+  simple_ram l_tx_buffer_0(
+    .clka(i_adc_bck),
+    .wea(tx_buff_sel),
+    .addra(l_proc_out_buff_ptr),
+    .dina(l_proc_out_buff_sample),
+    .clkb(i_adc_bck),
+    .addrb(l_rx_buff_ptr),
+    .doutb(l_tx_sample_0)
+  );
+
+  simple_ram l_tx_buffer_1(
+    .clka(i_adc_bck),
+    .wea(!tx_buff_sel),
+    .addra(l_proc_out_buff_ptr),
+    .dina(l_proc_out_buff_sample),
+    .clkb(i_adc_bck),
+    .addrb(l_rx_buff_ptr),
+    .doutb(l_tx_sample_1)
+  );
+  
+  i2s_tx #(.WORD_SIZE(32))i2s_tx_0(
+    .bck(i_adc_bck),
+    .lrck(i_adc_lrck),
+    .l_din(l_tx_word),
+    .r_din(),
+    .dout(o_dac_adata)
   );
 
   reg prev_lrck;
@@ -109,7 +161,6 @@ module mojo_top(
       l_rx_write_pulse <= 0;
       l_rx_buff_flush <= 0;
       l_rx_flush_done <= 0;
-      l_rx_buff_flush_ptr <= 0;
       prev_lrck <= 0;
     end else begin
       prev_lrck <= i_adc_lrck;
@@ -133,55 +184,10 @@ module mojo_top(
       end
 
       if (l_rx_buff_flush) begin
-        if(l_rx_buff_flush_ptr >= IO_BUFF_SIZE-1) begin
-          l_rx_flush_done <= 1'b1;
           l_rx_buff_flush <= 1'b0;
-        end else begin
-          l_rx_buff_flush_ptr <= l_rx_buff_flush_ptr + 1'b1;
         end
       end
-      if (l_rx_flush_done) begin
-        l_rx_flush_done <= 1'b0;
-        l_rx_buff_flush_ptr <= 0;
-      end
-    end
   end
-
-  //TX section
-  wire tx_buff_sel;
-  wire [31:0] l_tx_word;
-  wire [23:0] l_tx_sample_0;
-  wire [23:0] l_tx_sample_1;
-  assign l_tx_word = tx_buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
-
-  simple_ram l_tx_buffer_0(
-    .clka(i_adc_bck),
-    .wea(tx_buff_sel),
-    .addra(),
-    .dina(),
-    .clkb(),
-    .addrb(),
-    .doutb(l_tx_sample_0)
-  );
-
-  simple_ram l_tx_buffer_1(
-    .clka(i_adc_bck),
-    .wea(!tx_buff_sel),
-    .addra(),
-    .dina(),
-    .clkb(),
-    .addrb(),
-    .doutb(l_tx_sample_1)
-  );
-
-  
-  i2s_tx #(.WORD_SIZE(32))i2s_tx_0(
-    .bck(i_adc_bck),
-    .lrck(i_adc_lrck),
-    .l_din(),
-    .r_din(),
-    .dout(o_dac_adata)
-  );
 
 endmodule
 

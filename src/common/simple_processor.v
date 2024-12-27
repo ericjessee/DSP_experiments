@@ -2,7 +2,7 @@ module simple_processor
 #(
     parameter SAMPLE_SIZE=24,
     parameter IO_BUFF_SIZE=64,
-    parameter IO_BUFF_PTR_BITS = $clog2(IO_BUFF_SIZE)
+    parameter IO_BUFF_PTR_BITS=$clog2(IO_BUFF_SIZE)
 )
 (
 )
