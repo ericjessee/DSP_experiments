@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Fri Dec 27 23:50:16 2024
+# Date: Sat Dec 28 23:15:43 2024
 #
 ##############################################################
 #
@@ -52,7 +52,7 @@ CSET coefficient_sign=Signed
 CSET coefficient_structure=Inferred
 CSET coefficient_width=16
 CSET coefficientsource=Vector
-CSET coefficientvector="-33, 313, 249, 318, 412, 519, 636, 763, 896, 1035, 1174, 1313, 1447, 1573, 1688, 1789, 1874, 1939, 1984, 2007, 2007, 1984, 1939, 1874, 1789, 1688, 1573, 1447, 1313, 1174, 1035, 896, 763, 636, 519, 412, 318, 249, 313, -33"
+CSET coefficientvector="-10, -51, -154, -315, -456, -398, 94, 1174, 2775, 4544, 5939, 6470, 5939, 4544, 2775, 1174, 94, -398, -456, -315, -154, -51, -10"
 CSET columnconfig=1
 CSET component_name=filter
 CSET data_buffer_type=Automatic
@@ -68,7 +68,7 @@ CSET gui_behaviour=Coregen
 CSET hardwareoversamplingrate=1
 CSET has_ce=false
 CSET has_data_valid=false
-CSET has_nd=false
+CSET has_nd=true
 CSET has_sclr=false
 CSET input_buffer_type=Automatic
 CSET inter_column_pipe_length=4
@@ -76,7 +76,7 @@ CSET interpolation_rate=1
 CSET multi_column_support=Disabled
 CSET number_channels=1
 CSET number_paths=1
-CSET optimization_goal=Area
+CSET optimization_goal=Speed
 CSET output_buffer_type=Automatic
 CSET output_rounding_mode=Full_Precision
 CSET output_width=40
@@ -87,7 +87,7 @@ CSET quantization=Integer_Coefficients
 CSET rate_change_type=Integer
 CSET ratespecification=Frequency_Specification
 CSET registered_output=true
-CSET sample_frequency=0.0441
+CSET sample_frequency=1
 CSET sampleperiod=1
 CSET sclr_deterministic=false
 CSET stopband_max=1.0
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: 746aeda4
+# CRC: c27eec47

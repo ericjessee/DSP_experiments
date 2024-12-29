@@ -4,7 +4,7 @@
 //https://www.nxp.com/docs/en/user-manual/UM11732.pdf
 
 module i2s_rx
-#(parameter WORD_SIZE=24)
+#(parameter WORD_SIZE=32)
 (
     input bck,
     input lrck,

@@ -1,5 +1,8 @@
+`timescale 1ns/1ps
+
 module mojo_top_tb();
 
+reg clk;
 reg rst_n;
 
 //adc signals
@@ -49,10 +52,12 @@ i2s_test_gen i2s_test_data(
 );
 
 //need to simulate both clock domains eventually
-always #100 i_adc_bck = ~i_adc_bck;
+always #177 i_adc_bck = ~i_adc_bck;
+always #10  clk       = ~clk;
 
 initial begin
     i_adc_bck <= 0;
+    clk <= 0;
     rst_n <= 0;
     #800
     rst_n <= 1;

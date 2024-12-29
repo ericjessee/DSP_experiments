@@ -89,7 +89,7 @@ module mojo_top(
     .wea(l_rx_write_pulse),
     .addra(l_rx_buff_ptr),
     .dina(l_rx_sample),
-    .clkb(i_adc_bck),
+    .clkb(clk),
     .addrb(l_rx_buff_flush_ptr),
     .doutb(l_rx_buff_flush_sample)
   );
@@ -104,7 +104,7 @@ module mojo_top(
     .doutb()
   );
 
-  wire tx_buff_sel;
+  reg         tx_buff_sel;
   wire [31:0] l_tx_word;
   wire [23:0] l_tx_sample_0;
   wire [23:0] l_tx_sample_1;
@@ -127,7 +127,7 @@ module mojo_top(
 
   simple_ram l_tx_buffer_0(
     .clka(i_adc_bck),
-    .wea(tx_buff_sel),
+    .wea(!tx_buff_sel),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -137,7 +137,7 @@ module mojo_top(
 
   simple_ram l_tx_buffer_1(
     .clka(i_adc_bck),
-    .wea(!tx_buff_sel),
+    .wea(tx_buff_sel),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -145,6 +145,8 @@ module mojo_top(
     .doutb(l_tx_sample_1)
   );
   
+  assign o_dac_bck = i_adc_bck;
+  assign o_dac_lrck = i_adc_lrck;
   i2s_tx #(.WORD_SIZE(32))i2s_tx_0(
     .bck(i_adc_bck),
     .lrck(i_adc_lrck),
@@ -162,6 +164,7 @@ module mojo_top(
       l_rx_buff_flush <= 0;
       l_rx_flush_done <= 0;
       prev_lrck <= 0;
+      tx_buff_sel <= 0;
     end else begin
       prev_lrck <= i_adc_lrck;
 
@@ -172,6 +175,7 @@ module mojo_top(
           if (l_rx_buff_ptr >= IO_BUFF_SIZE-1) begin
             l_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
             l_rx_buff_flush <= 1'b1;
+            tx_buff_sel <= ~tx_buff_sel;
           end else begin
             l_rx_buff_ptr <= l_rx_buff_ptr + 1'b1;
           end
