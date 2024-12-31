@@ -44,46 +44,57 @@ filter filter_0(
 
 localparam [1:0] 
     state_idle = 0,
-    state_wait_ready = 1,
-    state_wait_proc = 2;
+    state_chunk_delay = 1,
+    state_wait_ready = 2,
+    state_wait_proc = 3;
 
 reg [1:0] state;
 reg [1:0] next_state;
 
 reg [IO_BUFF_PTR_BITS-1:0] buff_ptr_next;
 
+reg [15:0] chunk_start_delay_ctr;
+reg [15:0] chunk_start_delay_ctr_next;
+localparam chunk_start_delay=256;
 //transition logic
 always @(*) begin
+    chunk_start_delay_ctr_next = 0;
+    buff_ptr_next = buff_ptr;
     if (state == state_idle) begin
         if (chunk_pulse) begin
-            next_state = state_wait_ready;
+            next_state = state_chunk_delay;
         end else begin
             next_state = state_idle;
         end
-        buff_ptr_next = buff_ptr;
+    end else if (state == state_chunk_delay) begin
+        if (chunk_start_delay_ctr < chunk_start_delay-1) begin
+            chunk_start_delay_ctr_next = chunk_start_delay_ctr + 1;
+            next_state = state_chunk_delay;
+        end else begin
+            chunk_start_delay_ctr_next = 0;
+            next_state = state_wait_ready;
+        end
     end else if (state == state_wait_ready) begin
         if (filter_ready_for_data) begin
             next_state = state_wait_proc;
         end else begin
             next_state = state_wait_ready;
         end
-        buff_ptr_next = buff_ptr;
     end else if (state == state_wait_proc) begin
         if (filter_output_ready) begin
             if (output_buff_ptr >= IO_BUFF_SIZE-1) begin
                 next_state = state_idle;
                 buff_ptr_next = 0;
+                chunk_start_delay_ctr_next = 0;
             end else begin
                 next_state = state_wait_ready;
                 buff_ptr_next = buff_ptr + {{IO_BUFF_PTR_BITS{1'b0}}, 1'b1};
             end
         end else begin
             next_state = state_wait_proc;
-            buff_ptr_next = buff_ptr;
         end
     end else begin
         next_state = state_idle;
-        buff_ptr_next = buff_ptr;
     end
 end
 
@@ -99,9 +110,11 @@ always @(posedge clk) begin
     if (rst) begin
         state <= state_idle;
         buff_ptr <= 0;
+        chunk_start_delay_ctr <= 0;
     end else begin
         state <= next_state;
         buff_ptr <= buff_ptr_next;
+        chunk_start_delay_ctr <= chunk_start_delay_ctr_next;
     end
 end
 

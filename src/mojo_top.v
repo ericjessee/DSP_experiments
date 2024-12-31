@@ -73,8 +73,13 @@ module mojo_top(
   reg r_rx_buff_flush;
   reg r_rx_flush_done;
 
+  reg         buff_sel;
   wire        [IO_BUFF_PTR_BITS-1:0] l_rx_buff_flush_ptr;
   wire signed [SAMPLE_SIZE-1:0]      l_rx_buff_flush_sample;
+  wire signed [SAMPLE_SIZE-1:0]      l_rx_buff_flush_sample_0;
+  wire signed [SAMPLE_SIZE-1:0]      l_rx_buff_flush_sample_1;
+
+  assign l_rx_buff_flush_sample = buff_sel ? l_rx_buff_flush_sample_0 : l_rx_buff_flush_sample_1;
 
   i2s_rx #(.WORD_SIZE(WORD_SIZE))i2s_rx_0(
     .bck(i_adc_bck),
@@ -84,14 +89,24 @@ module mojo_top(
     .r_dout(r_rx_data)
   );
 
-  simple_ram l_rx_buffer(
+  simple_ram l_rx_buffer_0(
     .clka(i_adc_bck),
-    .wea(l_rx_write_pulse),
+    .wea(!buff_sel),
     .addra(l_rx_buff_ptr),
     .dina(l_rx_sample),
     .clkb(clk),
     .addrb(l_rx_buff_flush_ptr),
-    .doutb(l_rx_buff_flush_sample)
+    .doutb(l_rx_buff_flush_sample_0)
+  );
+
+  simple_ram l_rx_buffer_1(
+    .clka(i_adc_bck),
+    .wea(buff_sel),
+    .addra(l_rx_buff_ptr),
+    .dina(l_rx_sample),
+    .clkb(clk),
+    .addrb(l_rx_buff_flush_ptr),
+    .doutb(l_rx_buff_flush_sample_1)
   );
 
   simple_ram r_rx_buffer(
@@ -104,11 +119,10 @@ module mojo_top(
     .doutb()
   );
 
-  reg         tx_buff_sel;
   wire [31:0] l_tx_word;
   wire [23:0] l_tx_sample_0;
   wire [23:0] l_tx_sample_1;
-  assign l_tx_word = tx_buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
+  assign l_tx_word = buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
 
   wire        [IO_BUFF_PTR_BITS-1:0] l_proc_out_buff_ptr;
   wire signed [SAMPLE_SIZE-1:0]      l_proc_out_buff_sample;
@@ -126,8 +140,8 @@ module mojo_top(
   );
 
   simple_ram l_tx_buffer_0(
-    .clka(i_adc_bck),
-    .wea(!tx_buff_sel),
+    .clka(clk),
+    .wea(!buff_sel),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -136,8 +150,8 @@ module mojo_top(
   );
 
   simple_ram l_tx_buffer_1(
-    .clka(i_adc_bck),
-    .wea(tx_buff_sel),
+    .clka(clk),
+    .wea(buff_sel),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -164,10 +178,9 @@ module mojo_top(
       l_rx_buff_flush <= 0;
       l_rx_flush_done <= 0;
       prev_lrck <= 0;
-      tx_buff_sel <= 0;
+      buff_sel <= 0;
     end else begin
       prev_lrck <= i_adc_lrck;
-
       if (i_adc_lrck != prev_lrck) begin //lrck transition
         //eventually extend this to handle both channels
         if (prev_lrck == 1'b0) begin
@@ -175,7 +188,7 @@ module mojo_top(
           if (l_rx_buff_ptr >= IO_BUFF_SIZE-1) begin
             l_rx_buff_ptr <= {IO_BUFF_PTR_BITS{1'b0}};
             l_rx_buff_flush <= 1'b1;
-            tx_buff_sel <= ~tx_buff_sel;
+            buff_sel <= ~buff_sel;
           end else begin
             l_rx_buff_ptr <= l_rx_buff_ptr + 1'b1;
           end
