@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sat Dec 28 23:15:43 2024
+# Date: Tue Dec 31 04:55:09 2024
 #
 ##############################################################
 #
@@ -78,8 +78,8 @@ CSET number_channels=1
 CSET number_paths=1
 CSET optimization_goal=Speed
 CSET output_buffer_type=Automatic
-CSET output_rounding_mode=Full_Precision
-CSET output_width=40
+CSET output_rounding_mode=Non_Symmetric_Rounding_Up
+CSET output_width=24
 CSET passband_max=0.5
 CSET passband_min=0.0
 CSET preference_for_other_storage=Automatic
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: c27eec47
+# CRC: 1f4035ea

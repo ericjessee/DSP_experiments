@@ -28,17 +28,17 @@ wire filter_output_ready;
 assign output_buff_write_pulse = filter_output_ready && (state == state_wait_proc);
 wire filter_ready_for_data;
 
-wire [39:0] filtered_data;
-//probably incorrect truncation
-// assign output_buff_sample = filtered_data[SAMPLE_SIZE-1:0];
-assign output_buff_sample = input_buff_sample;
+// wire [39:0] filtered_data;
+// //probably incorrect truncation
+// assign output_buff_sample = filtered_data[39:16];
+// assign output_buff_sample = input_buff_sample;
 
 filter filter_0(
     .rfd(filter_ready_for_data),
     .rdy(filter_output_ready),
     .nd(filter_new_data),
     .clk(clk),
-    .dout(filtered_data),
+    .dout(output_buff_sample),
     .din(input_buff_sample)
 );
 
@@ -55,7 +55,7 @@ reg [IO_BUFF_PTR_BITS-1:0] buff_ptr_next;
 
 reg [15:0] chunk_start_delay_ctr;
 reg [15:0] chunk_start_delay_ctr_next;
-localparam chunk_start_delay=256;
+localparam chunk_start_delay=64;
 //transition logic
 always @(*) begin
     chunk_start_delay_ctr_next = 0;
