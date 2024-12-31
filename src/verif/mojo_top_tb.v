@@ -29,7 +29,7 @@ mojo_top mojo_top_dut(
     .o_adc_md2(o_adc_md2),
     .i_adc_adata(i_adc_adata),
     .i_adc_bck(i_adc_bck),
-    .i_adc_lrck(i_adc_lrck),
+    .i_adc_lrck(!i_adc_lrck),
 
     //dac signals
     .o_dac_nmute(o_dac_nmute),
@@ -44,7 +44,9 @@ mojo_top mojo_top_dut(
     .o_pll_sr(o_pll_sr)
 );
 
-i2s_test_gen i2s_test_data(
+i2s_test_gen 
+#(.FUNC_FREQ(500))
+i2s_test_data(
     .bck(i_adc_bck),
     .rst_n(rst_n),
     .lrck(i_adc_lrck),
@@ -61,7 +63,7 @@ initial begin
     rst_n <= 0;
     #800
     rst_n <= 1;
-    #900000
+    #14209440
     rst_n <= 1;
     $finish;
 end

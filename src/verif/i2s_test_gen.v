@@ -24,6 +24,16 @@ function signed [SAMPLE_SIZE-1:0] square_wave;
     end
 endfunction
 
+wire [15:0] sine_phase_out;
+wire [11:0] sine_out;
+wire [23:0] sine_extended = {{12{sine_out[11]}}, sine_out}; //sign extend to 24 bit
+sine sine_lut (
+    .clk(bck),
+    .phase_in(func_phase),
+    .sine(sine_out),
+    .phase_out(sine_phase_out)
+);
+
 
 reg signed [SAMPLE_SIZE-1:0] l_test_sample;
 reg signed [SAMPLE_SIZE-1:0] r_test_sample;
@@ -60,8 +70,10 @@ always @(negedge bck) begin
         lrck <= ~lrck;
         func_idx <= func_idx + 1;
         if (lrck) begin
-            l_test_sample <= square_wave(func_phase);
-        end else begin
+            //l_test_sample <= square_wave(func_phase);
+            l_test_sample <= sine_extended;
+        end
+         else begin
             r_test_sample <= square_wave(func_phase);
         end
     end else begin
