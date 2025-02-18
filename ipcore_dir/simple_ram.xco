@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sat Dec 28 23:38:14 2024
+# Date: Mon Feb 17 23:24:25 2025
 #
 ##############################################################
 #
@@ -47,10 +47,10 @@ CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=9
 CSET coe_file=no_coe_file_loaded
-CSET collision_warnings=ALL
+CSET collision_warnings=NONE
 CSET component_name=simple_ram
-CSET disable_collision_warnings=false
-CSET disable_out_of_range_warnings=false
+CSET disable_collision_warnings=true
+CSET disable_out_of_range_warnings=true
 CSET ecc=false
 CSET ecctype=No_ECC
 CSET enable_32bit_address=false
@@ -105,4 +105,4 @@ CSET write_width_b=24
 MISC pkg_timestamp=2012-11-19T16:22:25Z
 # END Extra information
 GENERATE
-# CRC: c239439e
+# CRC: 2e66140b

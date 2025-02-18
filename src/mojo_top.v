@@ -119,13 +119,20 @@ module mojo_top(
     .doutb()
   );
 
-  wire [31:0] l_tx_word;
+  wire signed [31:0] l_tx_word;
   wire [23:0] l_tx_sample_0;
   wire [23:0] l_tx_sample_1;
   assign l_tx_word = buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
 
   wire        [IO_BUFF_PTR_BITS-1:0] l_proc_out_buff_ptr;
   wire signed [SAMPLE_SIZE-1:0]      l_proc_out_buff_sample;
+
+  wire l_wea_0;
+  wire l_wea_1;
+  wire l_write_pulse;
+
+  assign l_wea_0 = l_write_pulse & !buff_sel;
+  assign l_wea_1 = l_write_pulse & buff_sel;
 
   simple_processor processor_0 (
     .clk(clk),
@@ -136,12 +143,13 @@ module mojo_top(
     .input_buff_sample(l_rx_buff_flush_sample),
 
     .output_buff_ptr(l_proc_out_buff_ptr),
-    .output_buff_sample(l_proc_out_buff_sample)
+    .output_buff_sample(l_proc_out_buff_sample),
+    .output_buff_write_pulse(l_write_pulse)
   );
 
   simple_ram l_tx_buffer_0(
     .clka(clk),
-    .wea(!buff_sel),
+    .wea(l_wea_0),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -151,7 +159,7 @@ module mojo_top(
 
   simple_ram l_tx_buffer_1(
     .clka(clk),
-    .wea(buff_sel),
+    .wea(l_wea_1),
     .addra(l_proc_out_buff_ptr),
     .dina(l_proc_out_buff_sample),
     .clkb(i_adc_bck),
@@ -168,6 +176,15 @@ module mojo_top(
     .r_din(),
     .dout(o_dac_adata)
   );
+
+  integer tmp_ctr;
+  initial begin
+    tmp_ctr = 0;
+  end
+  always @(negedge i_adc_bck) begin
+    $display("%d, %d,", tmp_ctr, l_tx_word);
+    tmp_ctr = tmp_ctr + 1;
+  end
 
   reg prev_lrck;
   integer i;

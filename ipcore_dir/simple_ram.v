@@ -22,7 +22,7 @@
 *     devices, or systems.  Use in such applications are expressly             *
 *     prohibited.                                                              *
 *                                                                              *
-*     (c) Copyright 1995-2024 Xilinx, Inc.                                     *
+*     (c) Copyright 1995-2025 Xilinx, Inc.                                     *
 *     All rights reserved.                                                     *
 *******************************************************************************/
 // You must compile the wrapper file simple_ram.v when simulating
@@ -66,8 +66,8 @@ output [23 : 0] doutb;
     .C_BYTE_SIZE(9),
     .C_COMMON_CLK(0),
     .C_DEFAULT_DATA("0"),
-    .C_DISABLE_WARN_BHV_COLL(0),
-    .C_DISABLE_WARN_BHV_RANGE(0),
+    .C_DISABLE_WARN_BHV_COLL(1),
+    .C_DISABLE_WARN_BHV_RANGE(1),
     .C_ENABLE_32BIT_ADDRESS(0),
     .C_FAMILY("spartan6"),
     .C_HAS_AXI_ID(0),
@@ -102,7 +102,7 @@ output [23 : 0] doutb;
     .C_RST_TYPE("SYNC"),
     .C_RSTRAM_A(0),
     .C_RSTRAM_B(0),
-    .C_SIM_COLLISION_CHECK("ALL"),
+    .C_SIM_COLLISION_CHECK("NONE"),
     .C_USE_BRAM_BLOCK(0),
     .C_USE_BYTE_WEA(0),
     .C_USE_BYTE_WEB(0),

@@ -16,7 +16,8 @@ module simple_processor
 
     //output buffer memory interface
     output     [IO_BUFF_PTR_BITS-1:0] output_buff_ptr,
-    output     [SAMPLE_SIZE-1:0]      output_buff_sample
+    output     [SAMPLE_SIZE-1:0]      output_buff_sample,
+    output /*reg*/                    output_buff_write_pulse
 );
 
 reg [IO_BUFF_PTR_BITS-1:0] buff_ptr;
@@ -101,8 +102,14 @@ end
 //various output logic
 always @(*) begin
     case (state)
-        state_wait_proc:  filter_new_data = 1;
-        default:          filter_new_data = 0;
+        state_wait_proc: begin  
+            filter_new_data = 1;
+            //output_buff_data_valid = 1;
+        end
+        default: begin
+            filter_new_data = 0;
+            //output_buff_data_valid = 0;
+        end
     endcase
 end
 

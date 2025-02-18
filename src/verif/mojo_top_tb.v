@@ -57,6 +57,10 @@ i2s_test_data(
 always #177 i_adc_bck = ~i_adc_bck;
 always #10  clk       = ~clk;
 
+// always @(negedge clk) begin
+//     $display("data in: %h, data out: %h", i_adc_adata, o_dac_adata);
+// end
+
 initial begin
     i_adc_bck <= 0;
     clk <= 0;
