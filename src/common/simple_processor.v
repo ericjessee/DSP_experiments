@@ -59,8 +59,6 @@ reg [15:0] chunk_start_delay_ctr_next;
 localparam chunk_start_delay=64;
 //transition logic
 always @(*) begin
-    chunk_start_delay_ctr_next = 0;
-    buff_ptr_next = buff_ptr;
     if (state == state_idle) begin
         if (chunk_pulse) begin
             next_state = state_chunk_delay;
@@ -69,10 +67,8 @@ always @(*) begin
         end
     end else if (state == state_chunk_delay) begin
         if (chunk_start_delay_ctr < chunk_start_delay-1) begin
-            chunk_start_delay_ctr_next = chunk_start_delay_ctr + 1;
             next_state = state_chunk_delay;
         end else begin
-            chunk_start_delay_ctr_next = 0;
             next_state = state_wait_ready;
         end
     end else if (state == state_wait_ready) begin
@@ -85,11 +81,8 @@ always @(*) begin
         if (filter_output_ready) begin
             if (output_buff_ptr >= IO_BUFF_SIZE-1) begin
                 next_state = state_idle;
-                buff_ptr_next = 0;
-                chunk_start_delay_ctr_next = 0;
             end else begin
                 next_state = state_wait_ready;
-                buff_ptr_next = buff_ptr + {{IO_BUFF_PTR_BITS{1'b0}}, 1'b1};
             end
         end else begin
             next_state = state_wait_proc;
@@ -99,18 +92,28 @@ always @(*) begin
     end
 end
 
-//various output logic
+//output logic
 always @(*) begin
-    case (state)
-        state_wait_proc: begin  
-            filter_new_data = 1;
-            //output_buff_data_valid = 1;
+    chunk_start_delay_ctr_next = 0;
+    buff_ptr_next = buff_ptr;
+    filter_new_data = 0;
+    if (state == state_chunk_delay) begin
+        if (chunk_start_delay_ctr < chunk_start_delay-1) begin
+            chunk_start_delay_ctr_next = chunk_start_delay_ctr + 1;
+        end else begin
+            chunk_start_delay_ctr_next = 0;
         end
-        default: begin
-            filter_new_data = 0;
-            //output_buff_data_valid = 0;
+    end else if (state == state_wait_proc) begin
+        filter_new_data = 1;
+        if (filter_output_ready) begin
+            if (output_buff_ptr >= IO_BUFF_SIZE-1) begin
+                buff_ptr_next = 0;
+                chunk_start_delay_ctr_next = 0;
+            end else begin
+                buff_ptr_next = buff_ptr + {{IO_BUFF_PTR_BITS{1'b0}}, 1'b1};
+            end
         end
-    endcase
+    end
 end
 
 always @(posedge clk) begin
