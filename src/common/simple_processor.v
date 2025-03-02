@@ -37,8 +37,11 @@ wire filter_ready_for_data;
 filter filter_0(
     .rfd(filter_ready_for_data),
     .rdy(filter_output_ready),
+    .coef_we(1'b0),
     .nd(filter_new_data),
     .clk(clk),
+    .coef_ld(1'b0),
+    .coef_din(16'b0),
     .dout(output_buff_sample),
     .din(input_buff_sample)
 );

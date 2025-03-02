@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Tue Dec 31 04:55:09 2024
+# Date: Sun Mar  2 18:48:58 2025
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET clock_frequency=50
 CSET coefficient_buffer_type=Automatic
 CSET coefficient_file=no_coe_file_loaded
 CSET coefficient_fractional_bits=0
-CSET coefficient_reload=false
+CSET coefficient_reload=true
 CSET coefficient_sets=1
 CSET coefficient_sign=Signed
 CSET coefficient_structure=Inferred
@@ -60,7 +60,7 @@ CSET data_fractional_bits=0
 CSET data_sign=Signed
 CSET data_width=24
 CSET decimation_rate=1
-CSET displayreloadorder=false
+CSET displayreloadorder=true
 CSET filter_architecture=Systolic_Multiply_Accumulate
 CSET filter_selection=1
 CSET filter_type=Single_Rate
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: 1f4035ea
+# CRC: b6b75f69
