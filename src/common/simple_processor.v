@@ -34,16 +34,16 @@ wire filter_ready_for_data;
 // assign output_buff_sample = filtered_data[39:16];
 // assign output_buff_sample = input_buff_sample;
 
-filter filter_0(
+reg startup_pulse;
+wrapper wrapper_0(
+    .rst(rst),
     .rfd(filter_ready_for_data),
     .rdy(filter_output_ready),
-    .coef_we(1'b0),
     .nd(filter_new_data),
     .clk(clk),
-    .coef_ld(1'b0),
-    .coef_din(16'b0),
     .dout(output_buff_sample),
-    .din(input_buff_sample)
+    .din(input_buff_sample),
+    .load_coefs(startup_pulse)
 );
 
 localparam [1:0] 
@@ -119,14 +119,22 @@ always @(*) begin
     end
 end
 
+reg prev_rst;
+
 always @(posedge clk) begin
+	prev_rst <= rst;
     if (rst) begin
-        state <= state_idle;
-        buff_ptr <= 0;
+        state                 <= state_idle;
+        buff_ptr              <= 0;
         chunk_start_delay_ctr <= 0;
+        startup_pulse         <= 0;
     end else begin
-        state <= next_state;
-        buff_ptr <= buff_ptr_next;
+        if (prev_rst == 1)
+			startup_pulse <= 1;
+        if (startup_pulse)
+            startup_pulse <= 0;
+        state                 <= next_state;
+        buff_ptr              <= buff_ptr_next;
         chunk_start_delay_ctr <= chunk_start_delay_ctr_next;
     end
 end

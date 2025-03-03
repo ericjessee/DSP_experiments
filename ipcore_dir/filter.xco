@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sun Mar  2 18:48:58 2025
+# Date: Sun Mar  2 23:26:27 2025
 #
 ##############################################################
 #
@@ -49,7 +49,7 @@ CSET coefficient_fractional_bits=0
 CSET coefficient_reload=true
 CSET coefficient_sets=1
 CSET coefficient_sign=Signed
-CSET coefficient_structure=Inferred
+CSET coefficient_structure=Non_Symmetric
 CSET coefficient_width=16
 CSET coefficientsource=Vector
 CSET coefficientvector="-10, -51, -154, -315, -456, -398, 94, 1174, 2775, 4544, 5939, 6470, 5939, 4544, 2775, 1174, 94, -398, -456, -315, -154, -51, -10"
@@ -86,7 +86,7 @@ CSET preference_for_other_storage=Automatic
 CSET quantization=Integer_Coefficients
 CSET rate_change_type=Integer
 CSET ratespecification=Frequency_Specification
-CSET registered_output=true
+CSET registered_output=false
 CSET sample_frequency=1
 CSET sampleperiod=1
 CSET sclr_deterministic=false
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: b6b75f69
+# CRC: 1b92663d
