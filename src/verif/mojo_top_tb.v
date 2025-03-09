@@ -1,54 +1,75 @@
+`timescale 1ns/1ps
+
 module mojo_top_tb();
 
 reg clk;
 reg rst_n;
-reg cclk;
-wire avr2fpga;
-wire fpga2avr;
-reg avr2fpga_busy;
 
-mojo_top mojo_top_message(
+//adc signals
+reg i_adc_bck;
+wire i_adc_lrck;
+wire i_adc_adata;
+
+mojo_top mojo_top_dut(
+    // 50MHz clock input
     .clk(clk),
+    // Input from reset button (active low)
     .rst_n(rst_n),
+    // cclk input from AVR, high when AVR is ready
     .cclk(cclk),
-    .led(),
-    .spi_miso(),
-    .spi_ss(),
-    .spi_mosi(),
-    .spi_sck(),
-    .spi_channel(),
-    .avr_tx(avr2fpga),
-    .avr_rx(fpga2avr),
-    .avr_rx_busy(avr2fpga_busy)
+    // Outputs to the 8 onboard LEDs
+    .led(led),
+
+    //audio system clk from pll
+    .i_scki(i_scki),
+
+    //adc signals
+    .o_adc_fmt(o_adc_fmt),
+    .o_adc_md1(o_adc_md1),
+    .o_adc_md2(o_adc_md2),
+    .i_adc_adata(i_adc_adata),
+    .i_adc_bck(i_adc_bck),
+    .i_adc_lrck(!i_adc_lrck),
+
+    //dac signals
+    .o_dac_nmute(o_dac_nmute),
+    .o_dac_adata(o_dac_adata),
+    .o_dac_bck(o_dac_bck),
+    .o_dac_lrck(o_dac_lrck),
+
+    //pll signals
+    .o_pll_csel(o_pll_csel),
+    .o_pll_fs1(o_pll_fs1),
+    .o_pll_fs2(o_pll_fs2),
+    .o_pll_sr(o_pll_sr)
 );
 
-mojo_top_2 mojo_top_avr(
-    .clk(clk),
+i2s_test_gen 
+#(.FUNC_FREQ(500))
+i2s_test_data(
+    .bck(i_adc_bck),
     .rst_n(rst_n),
-    .cclk(cclk),
-    .led(),
-    .spi_miso(),
-    .spi_ss(),
-    .spi_mosi(),
-    .spi_sck(),
-    .spi_channel(),
-    .avr_tx(fpga2avr),
-    .avr_rx(avr2fpga),
-    .avr_rx_busy(avr2fpga_busy)
+    .lrck(i_adc_lrck),
+    .dout(i_adc_adata)
 );
 
-//20ns == 50MHz
-always #20 clk = ~clk;
+//need to simulate both clock domains eventually
+always #177 i_adc_bck = ~i_adc_bck;
+always #10  clk       = ~clk;
+
+// always @(negedge clk) begin
+//     $display("data in: %h, data out: %h", i_adc_adata, o_dac_adata);
+// end
 
 initial begin
+    i_adc_bck <= 0;
     clk <= 0;
-    cclk <= 1;
     rst_n <= 0;
-    avr2fpga_busy <=0;
-    #20
+    #800
     rst_n <= 1;
-    #1000000000
+    #14209440
     rst_n <= 1;
+    $finish;
 end
 
 endmodule

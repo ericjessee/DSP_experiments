@@ -1,0 +1,5935 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____
+//  /   /\/   /
+// /___/  \  /    Vendor: Xilinx
+// \   \   \/     Version: P.20131013
+//  \   \         Application: netgen
+//  /   /         Filename: sine.v
+// /___/   /\     Timestamp: Mon Dec 30 18:24:39 2024
+// \   \  /  \ 
+//  \___\/\___\
+//             
+// Command	: -w -sim -ofmt verilog /home/eric/Projects/DSP_experiments/ipcore_dir/tmp/_cg/sine.ngc /home/eric/Projects/DSP_experiments/ipcore_dir/tmp/_cg/sine.v 
+// Device	: 6slx9tqg144-2
+// Input file	: /home/eric/Projects/DSP_experiments/ipcore_dir/tmp/_cg/sine.ngc
+// Output file	: /home/eric/Projects/DSP_experiments/ipcore_dir/tmp/_cg/sine.v
+// # of Modules	: 1
+// Design Name	: sine
+// Xilinx        : /opt/Xilinx/14.7/ISE_DS/ISE/
+//             
+// Purpose:    
+//     This verilog netlist is a verification model and uses simulation 
+//     primitives which may not represent the true implementation of the 
+//     device, however the netlist is functionally correct and should not 
+//     be modified. This file cannot be synthesized and should only be used 
+//     with supported simulation tools.
+//             
+// Reference:  
+//     Command Line Tools User Guide, Chapter 23 and Synthesis and Simulation Design Guide, Chapter 6
+//             
+////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1 ns/1 ps
+
+module sine (
+  clk, phase_in, sine, phase_out
+)/* synthesis syn_black_box syn_noprune=1 */;
+  input clk;
+  input [15 : 0] phase_in;
+  output [11 : 0] sine;
+  output [15 : 0] phase_out;
+  
+  // synthesis translate_off
+  
+  wire sig00000001;
+  wire sig00000002;
+  wire sig00000003;
+  wire sig00000004;
+  wire sig00000005;
+  wire sig00000006;
+  wire sig00000007;
+  wire sig00000008;
+  wire sig00000009;
+  wire sig0000000a;
+  wire sig0000000b;
+  wire sig0000000c;
+  wire sig0000000d;
+  wire sig0000000e;
+  wire sig0000000f;
+  wire sig00000010;
+  wire sig00000011;
+  wire sig00000012;
+  wire sig00000013;
+  wire sig00000014;
+  wire sig00000015;
+  wire sig00000016;
+  wire sig00000017;
+  wire sig00000018;
+  wire sig00000019;
+  wire sig0000001a;
+  wire sig0000001b;
+  wire sig0000001c;
+  wire sig0000001d;
+  wire sig0000001e;
+  wire sig0000001f;
+  wire sig00000020;
+  wire sig00000021;
+  wire sig00000022;
+  wire sig00000023;
+  wire sig00000024;
+  wire sig00000025;
+  wire sig00000026;
+  wire sig00000027;
+  wire sig00000028;
+  wire sig00000029;
+  wire sig0000002a;
+  wire sig0000002b;
+  wire sig0000002c;
+  wire sig0000002d;
+  wire sig0000002e;
+  wire sig0000002f;
+  wire sig00000030;
+  wire sig00000031;
+  wire sig00000032;
+  wire sig00000033;
+  wire sig00000034;
+  wire sig00000035;
+  wire sig00000036;
+  wire sig00000037;
+  wire sig00000038;
+  wire sig00000039;
+  wire sig0000003a;
+  wire sig0000003b;
+  wire sig0000003c;
+  wire sig0000003d;
+  wire sig0000003e;
+  wire sig0000003f;
+  wire sig00000040;
+  wire sig00000041;
+  wire sig00000042;
+  wire sig00000043;
+  wire sig00000044;
+  wire sig00000045;
+  wire sig00000046;
+  wire sig00000047;
+  wire sig00000048;
+  wire sig00000049;
+  wire sig0000004a;
+  wire sig0000004b;
+  wire sig0000004c;
+  wire sig0000004d;
+  wire sig0000004e;
+  wire sig0000004f;
+  wire sig00000050;
+  wire sig00000051;
+  wire sig00000052;
+  wire sig00000053;
+  wire sig00000054;
+  wire sig00000055;
+  wire sig00000056;
+  wire sig00000057;
+  wire sig00000058;
+  wire sig00000059;
+  wire sig0000005a;
+  wire sig0000005b;
+  wire sig0000005c;
+  wire sig0000005d;
+  wire sig0000005e;
+  wire sig0000005f;
+  wire sig00000060;
+  wire sig00000061;
+  wire sig00000062;
+  wire sig00000063;
+  wire sig00000064;
+  wire sig00000065;
+  wire sig00000066;
+  wire sig00000067;
+  wire sig00000068;
+  wire sig00000069;
+  wire sig0000006a;
+  wire sig0000006b;
+  wire sig0000006c;
+  wire sig0000006d;
+  wire sig0000006e;
+  wire sig0000006f;
+  wire sig00000070;
+  wire sig00000071;
+  wire sig00000072;
+  wire sig00000073;
+  wire sig00000074;
+  wire sig00000075;
+  wire sig00000076;
+  wire sig00000077;
+  wire sig00000078;
+  wire sig00000079;
+  wire sig0000007a;
+  wire sig0000007b;
+  wire sig0000007c;
+  wire sig0000007d;
+  wire sig0000007e;
+  wire sig0000007f;
+  wire sig00000080;
+  wire sig00000081;
+  wire sig00000082;
+  wire sig00000083;
+  wire sig00000084;
+  wire sig00000085;
+  wire sig00000086;
+  wire sig00000087;
+  wire sig00000088;
+  wire sig00000089;
+  wire sig0000008a;
+  wire sig0000008b;
+  wire sig0000008c;
+  wire sig0000008d;
+  wire sig0000008e;
+  wire sig0000008f;
+  wire sig00000090;
+  wire sig00000091;
+  wire sig00000092;
+  wire sig00000093;
+  wire sig00000094;
+  wire sig00000095;
+  wire sig00000096;
+  wire sig00000097;
+  wire sig00000098;
+  wire sig00000099;
+  wire sig0000009a;
+  wire sig0000009b;
+  wire sig0000009c;
+  wire sig0000009d;
+  wire sig0000009e;
+  wire sig0000009f;
+  wire sig000000a0;
+  wire sig000000a1;
+  wire sig000000a2;
+  wire sig000000a3;
+  wire sig000000a4;
+  wire sig000000a5;
+  wire sig000000a6;
+  wire sig000000a7;
+  wire sig000000a8;
+  wire sig000000a9;
+  wire sig000000aa;
+  wire sig000000ab;
+  wire sig000000ac;
+  wire sig000000ad;
+  wire sig000000ae;
+  wire sig000000af;
+  wire sig000000b0;
+  wire sig000000b1;
+  wire sig000000b2;
+  wire sig000000b3;
+  wire sig000000b4;
+  wire sig000000b5;
+  wire sig000000b6;
+  wire sig000000b7;
+  wire sig000000b8;
+  wire sig000000b9;
+  wire sig000000ba;
+  wire sig000000bb;
+  wire sig000000bc;
+  wire sig000000bd;
+  wire sig000000be;
+  wire sig000000bf;
+  wire sig000000c0;
+  wire sig000000c1;
+  wire sig000000c2;
+  wire sig000000c3;
+  wire sig000000c4;
+  wire sig000000c5;
+  wire sig000000c6;
+  wire sig000000c7;
+  wire sig000000c8;
+  wire sig000000c9;
+  wire sig000000ca;
+  wire sig000000cb;
+  wire sig000000cc;
+  wire sig000000cd;
+  wire sig000000ce;
+  wire sig000000cf;
+  wire sig000000d0;
+  wire sig000000d1;
+  wire sig000000d2;
+  wire sig000000d3;
+  wire sig000000d4;
+  wire sig000000d5;
+  wire sig000000d6;
+  wire sig000000d7;
+  wire sig000000d8;
+  wire sig000000d9;
+  wire sig000000da;
+  wire sig000000db;
+  wire sig000000dc;
+  wire sig000000dd;
+  wire sig000000de;
+  wire sig000000df;
+  wire sig000000e0;
+  wire sig000000e1;
+  wire sig000000e2;
+  wire sig000000e3;
+  wire sig000000e4;
+  wire sig000000e5;
+  wire sig000000e6;
+  wire sig000000e7;
+  wire sig000000e8;
+  wire sig000000e9;
+  wire sig000000ea;
+  wire sig000000eb;
+  wire sig000000ec;
+  wire sig000000ed;
+  wire sig000000ee;
+  wire sig000000ef;
+  wire sig000000f0;
+  wire sig000000f1;
+  wire sig000000f2;
+  wire sig000000f3;
+  wire sig000000f4;
+  wire sig000000f5;
+  wire sig000000f6;
+  wire sig000000f7;
+  wire sig000000f8;
+  wire sig000000f9;
+  wire sig000000fa;
+  wire sig000000fb;
+  wire sig000000fc;
+  wire sig000000fd;
+  wire sig000000fe;
+  wire sig000000ff;
+  wire sig00000100;
+  wire sig00000101;
+  wire sig00000102;
+  wire sig00000103;
+  wire sig00000104;
+  wire sig00000105;
+  wire sig00000106;
+  wire sig00000107;
+  wire sig00000108;
+  wire sig00000109;
+  wire sig0000010a;
+  wire sig0000010b;
+  wire sig0000010c;
+  wire sig0000010d;
+  wire sig0000010e;
+  wire sig0000010f;
+  wire sig00000110;
+  wire sig00000111;
+  wire sig00000112;
+  wire sig00000113;
+  wire sig00000114;
+  wire sig00000115;
+  wire \NLW_blk000000c8_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c8_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000c9_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ca_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cb_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cc_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cd_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000ce_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000cf_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d0_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d1_DIA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPA<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPA<0>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOPB<0>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<31>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<30>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<29>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<28>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<27>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<26>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<25>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<24>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<23>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<22>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<21>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<20>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<19>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<18>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<17>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<16>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<15>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<14>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<13>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<12>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<11>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<10>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<9>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<8>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<7>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<6>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<5>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<4>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DOB<1>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<31>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<30>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<29>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<28>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<27>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<26>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<25>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<24>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<23>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<22>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<21>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<20>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<19>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<18>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<17>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<16>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<15>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<14>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<13>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<12>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<11>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<10>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<9>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<8>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<7>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<6>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<5>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<4>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<3>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<2>_UNCONNECTED ;
+  wire \NLW_blk000000d2_DIA<1>_UNCONNECTED ;
+  wire NLW_blk000000d3_Q15_UNCONNECTED;
+  wire NLW_blk000000d5_Q15_UNCONNECTED;
+  wire NLW_blk000000d7_Q15_UNCONNECTED;
+  wire NLW_blk000000d9_Q15_UNCONNECTED;
+  wire NLW_blk000000db_Q15_UNCONNECTED;
+  wire NLW_blk000000dd_Q15_UNCONNECTED;
+  wire NLW_blk000000df_Q15_UNCONNECTED;
+  wire NLW_blk000000e1_Q15_UNCONNECTED;
+  wire NLW_blk000000e3_Q15_UNCONNECTED;
+  wire NLW_blk000000e5_Q15_UNCONNECTED;
+  wire NLW_blk000000e7_Q15_UNCONNECTED;
+  wire NLW_blk000000e9_Q15_UNCONNECTED;
+  wire NLW_blk000000eb_Q15_UNCONNECTED;
+  wire NLW_blk000000ed_Q15_UNCONNECTED;
+  wire NLW_blk000000ef_Q15_UNCONNECTED;
+  wire NLW_blk000000f1_Q15_UNCONNECTED;
+  wire NLW_blk000000f3_Q15_UNCONNECTED;
+  wire NLW_blk000000f5_Q15_UNCONNECTED;
+  wire NLW_blk000000f7_Q15_UNCONNECTED;
+  wire NLW_blk000000f9_Q15_UNCONNECTED;
+  wire NLW_blk000000fb_Q15_UNCONNECTED;
+  wire NLW_blk000000fd_Q15_UNCONNECTED;
+  wire NLW_blk000000ff_Q15_UNCONNECTED;
+  wire NLW_blk00000101_Q15_UNCONNECTED;
+  wire NLW_blk00000103_Q15_UNCONNECTED;
+  wire NLW_blk00000105_Q15_UNCONNECTED;
+  wire NLW_blk00000107_Q15_UNCONNECTED;
+  wire NLW_blk00000109_Q15_UNCONNECTED;
+  wire NLW_blk0000010b_Q15_UNCONNECTED;
+  wire NLW_blk0000010d_Q15_UNCONNECTED;
+  wire NLW_blk0000010f_Q15_UNCONNECTED;
+  wire NLW_blk00000111_Q15_UNCONNECTED;
+  wire NLW_blk00000113_Q15_UNCONNECTED;
+  wire NLW_blk00000115_Q15_UNCONNECTED;
+  wire NLW_blk00000117_Q15_UNCONNECTED;
+  wire NLW_blk00000119_Q15_UNCONNECTED;
+  wire NLW_blk0000011b_Q15_UNCONNECTED;
+  wire NLW_blk0000011d_Q15_UNCONNECTED;
+  wire NLW_blk0000011f_Q15_UNCONNECTED;
+  wire NLW_blk00000121_Q15_UNCONNECTED;
+  wire NLW_blk00000123_Q15_UNCONNECTED;
+  wire NLW_blk00000125_Q15_UNCONNECTED;
+  wire [15 : 0] \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 ;
+  wire [11 : 0] \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 ;
+  assign
+    sine[11] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [11],
+    sine[10] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [10],
+    sine[9] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [9],
+    sine[8] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [8],
+    sine[7] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [7],
+    sine[6] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [6],
+    sine[5] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [5],
+    sine[4] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [4],
+    sine[3] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [3],
+    sine[2] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [2],
+    sine[1] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [1],
+    sine[0] = \U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [0],
+    phase_out[15] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [15],
+    phase_out[14] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [14],
+    phase_out[13] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [13],
+    phase_out[12] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [12],
+    phase_out[11] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [11],
+    phase_out[10] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [10],
+    phase_out[9] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [9],
+    phase_out[8] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [8],
+    phase_out[7] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [7],
+    phase_out[6] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [6],
+    phase_out[5] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [5],
+    phase_out[4] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [4],
+    phase_out[3] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [3],
+    phase_out[2] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [2],
+    phase_out[1] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [1],
+    phase_out[0] = \U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [0];
+  VCC   blk00000001 (
+    .P(sig00000001)
+  );
+  GND   blk00000002 (
+    .G(sig00000002)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000003 (
+    .C(clk),
+    .D(phase_in[15]),
+    .Q(sig00000012)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000004 (
+    .C(clk),
+    .D(phase_in[14]),
+    .Q(sig00000011)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000005 (
+    .C(clk),
+    .D(phase_in[13]),
+    .Q(sig00000010)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000006 (
+    .C(clk),
+    .D(phase_in[12]),
+    .Q(sig0000000f)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000007 (
+    .C(clk),
+    .D(phase_in[11]),
+    .Q(sig0000000e)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000008 (
+    .C(clk),
+    .D(phase_in[10]),
+    .Q(sig0000000d)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000009 (
+    .C(clk),
+    .D(phase_in[9]),
+    .Q(sig0000000c)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000a (
+    .C(clk),
+    .D(phase_in[8]),
+    .Q(sig0000000b)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000b (
+    .C(clk),
+    .D(phase_in[7]),
+    .Q(sig0000000a)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000c (
+    .C(clk),
+    .D(phase_in[6]),
+    .Q(sig00000009)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000d (
+    .C(clk),
+    .D(phase_in[5]),
+    .Q(sig00000008)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000e (
+    .C(clk),
+    .D(phase_in[4]),
+    .Q(sig00000007)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000000f (
+    .C(clk),
+    .D(phase_in[3]),
+    .Q(sig00000006)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000010 (
+    .C(clk),
+    .D(phase_in[2]),
+    .Q(sig00000005)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000011 (
+    .C(clk),
+    .D(phase_in[1]),
+    .Q(sig00000004)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000012 (
+    .C(clk),
+    .D(phase_in[0]),
+    .Q(sig00000003)
+  );
+  XORCY   blk00000013 (
+    .CI(sig00000013),
+    .LI(sig000000e9),
+    .O(sig0000004d)
+  );
+  XORCY   blk00000014 (
+    .CI(sig00000014),
+    .LI(sig00000058),
+    .O(sig0000004c)
+  );
+  MUXCY   blk00000015 (
+    .CI(sig00000014),
+    .DI(sig00000002),
+    .S(sig00000058),
+    .O(sig00000013)
+  );
+  XORCY   blk00000016 (
+    .CI(sig00000015),
+    .LI(sig00000057),
+    .O(sig0000004b)
+  );
+  MUXCY   blk00000017 (
+    .CI(sig00000015),
+    .DI(sig00000002),
+    .S(sig00000057),
+    .O(sig00000014)
+  );
+  XORCY   blk00000018 (
+    .CI(sig00000016),
+    .LI(sig00000056),
+    .O(sig0000004a)
+  );
+  MUXCY   blk00000019 (
+    .CI(sig00000016),
+    .DI(sig00000002),
+    .S(sig00000056),
+    .O(sig00000015)
+  );
+  XORCY   blk0000001a (
+    .CI(sig00000017),
+    .LI(sig00000055),
+    .O(sig00000049)
+  );
+  MUXCY   blk0000001b (
+    .CI(sig00000017),
+    .DI(sig00000002),
+    .S(sig00000055),
+    .O(sig00000016)
+  );
+  XORCY   blk0000001c (
+    .CI(sig00000018),
+    .LI(sig00000054),
+    .O(sig00000048)
+  );
+  MUXCY   blk0000001d (
+    .CI(sig00000018),
+    .DI(sig00000002),
+    .S(sig00000054),
+    .O(sig00000017)
+  );
+  XORCY   blk0000001e (
+    .CI(sig00000019),
+    .LI(sig00000053),
+    .O(sig00000047)
+  );
+  MUXCY   blk0000001f (
+    .CI(sig00000019),
+    .DI(sig00000002),
+    .S(sig00000053),
+    .O(sig00000018)
+  );
+  XORCY   blk00000020 (
+    .CI(sig0000001a),
+    .LI(sig00000052),
+    .O(sig00000046)
+  );
+  MUXCY   blk00000021 (
+    .CI(sig0000001a),
+    .DI(sig00000002),
+    .S(sig00000052),
+    .O(sig00000019)
+  );
+  XORCY   blk00000022 (
+    .CI(sig0000001b),
+    .LI(sig00000051),
+    .O(sig00000045)
+  );
+  MUXCY   blk00000023 (
+    .CI(sig0000001b),
+    .DI(sig00000002),
+    .S(sig00000051),
+    .O(sig0000001a)
+  );
+  XORCY   blk00000024 (
+    .CI(sig0000001c),
+    .LI(sig00000050),
+    .O(sig00000044)
+  );
+  MUXCY   blk00000025 (
+    .CI(sig0000001c),
+    .DI(sig00000002),
+    .S(sig00000050),
+    .O(sig0000001b)
+  );
+  XORCY   blk00000026 (
+    .CI(sig0000001d),
+    .LI(sig0000004f),
+    .O(sig00000043)
+  );
+  MUXCY   blk00000027 (
+    .CI(sig0000001d),
+    .DI(sig00000002),
+    .S(sig0000004f),
+    .O(sig0000001c)
+  );
+  XORCY   blk00000028 (
+    .CI(sig00000002),
+    .LI(sig0000001e),
+    .O(sig00000042)
+  );
+  MUXCY   blk00000029 (
+    .CI(sig00000002),
+    .DI(sig0000004e),
+    .S(sig0000001e),
+    .O(sig0000001d)
+  );
+  XORCY   blk0000002a (
+    .CI(sig0000001f),
+    .LI(sig000000ea),
+    .O(sig00000064)
+  );
+  XORCY   blk0000002b (
+    .CI(sig00000020),
+    .LI(sig0000006e),
+    .O(sig00000063)
+  );
+  MUXCY   blk0000002c (
+    .CI(sig00000020),
+    .DI(sig00000002),
+    .S(sig0000006e),
+    .O(sig0000001f)
+  );
+  XORCY   blk0000002d (
+    .CI(sig00000021),
+    .LI(sig0000006d),
+    .O(sig00000062)
+  );
+  MUXCY   blk0000002e (
+    .CI(sig00000021),
+    .DI(sig00000002),
+    .S(sig0000006d),
+    .O(sig00000020)
+  );
+  XORCY   blk0000002f (
+    .CI(sig00000022),
+    .LI(sig0000006c),
+    .O(sig00000061)
+  );
+  MUXCY   blk00000030 (
+    .CI(sig00000022),
+    .DI(sig00000002),
+    .S(sig0000006c),
+    .O(sig00000021)
+  );
+  XORCY   blk00000031 (
+    .CI(sig00000023),
+    .LI(sig0000006b),
+    .O(sig00000060)
+  );
+  MUXCY   blk00000032 (
+    .CI(sig00000023),
+    .DI(sig00000002),
+    .S(sig0000006b),
+    .O(sig00000022)
+  );
+  XORCY   blk00000033 (
+    .CI(sig00000024),
+    .LI(sig0000006a),
+    .O(sig0000005f)
+  );
+  MUXCY   blk00000034 (
+    .CI(sig00000024),
+    .DI(sig00000002),
+    .S(sig0000006a),
+    .O(sig00000023)
+  );
+  XORCY   blk00000035 (
+    .CI(sig00000025),
+    .LI(sig00000069),
+    .O(sig0000005e)
+  );
+  MUXCY   blk00000036 (
+    .CI(sig00000025),
+    .DI(sig00000002),
+    .S(sig00000069),
+    .O(sig00000024)
+  );
+  XORCY   blk00000037 (
+    .CI(sig00000026),
+    .LI(sig00000068),
+    .O(sig0000005d)
+  );
+  MUXCY   blk00000038 (
+    .CI(sig00000026),
+    .DI(sig00000002),
+    .S(sig00000068),
+    .O(sig00000025)
+  );
+  XORCY   blk00000039 (
+    .CI(sig00000027),
+    .LI(sig00000067),
+    .O(sig0000005c)
+  );
+  MUXCY   blk0000003a (
+    .CI(sig00000027),
+    .DI(sig00000002),
+    .S(sig00000067),
+    .O(sig00000026)
+  );
+  XORCY   blk0000003b (
+    .CI(sig00000028),
+    .LI(sig00000066),
+    .O(sig0000005b)
+  );
+  MUXCY   blk0000003c (
+    .CI(sig00000028),
+    .DI(sig00000002),
+    .S(sig00000066),
+    .O(sig00000027)
+  );
+  XORCY   blk0000003d (
+    .CI(sig00000029),
+    .LI(sig00000065),
+    .O(sig0000005a)
+  );
+  MUXCY   blk0000003e (
+    .CI(sig00000029),
+    .DI(sig00000002),
+    .S(sig00000065),
+    .O(sig00000028)
+  );
+  XORCY   blk0000003f (
+    .CI(sig00000002),
+    .LI(sig0000002a),
+    .O(sig00000059)
+  );
+  MUXCY   blk00000040 (
+    .CI(sig00000002),
+    .DI(sig0000006f),
+    .S(sig0000002a),
+    .O(sig00000029)
+  );
+  XORCY   blk00000041 (
+    .CI(sig0000002b),
+    .LI(sig0000008c),
+    .O(sig0000007f)
+  );
+  XORCY   blk00000042 (
+    .CI(sig0000002c),
+    .LI(sig0000008b),
+    .O(sig0000007e)
+  );
+  MUXCY   blk00000043 (
+    .CI(sig0000002c),
+    .DI(sig00000002),
+    .S(sig0000008b),
+    .O(sig0000002b)
+  );
+  XORCY   blk00000044 (
+    .CI(sig0000002d),
+    .LI(sig0000008a),
+    .O(sig0000007d)
+  );
+  MUXCY   blk00000045 (
+    .CI(sig0000002d),
+    .DI(sig00000002),
+    .S(sig0000008a),
+    .O(sig0000002c)
+  );
+  XORCY   blk00000046 (
+    .CI(sig0000002e),
+    .LI(sig00000089),
+    .O(sig0000007c)
+  );
+  MUXCY   blk00000047 (
+    .CI(sig0000002e),
+    .DI(sig00000002),
+    .S(sig00000089),
+    .O(sig0000002d)
+  );
+  XORCY   blk00000048 (
+    .CI(sig0000002f),
+    .LI(sig00000088),
+    .O(sig0000007b)
+  );
+  MUXCY   blk00000049 (
+    .CI(sig0000002f),
+    .DI(sig00000002),
+    .S(sig00000088),
+    .O(sig0000002e)
+  );
+  XORCY   blk0000004a (
+    .CI(sig00000030),
+    .LI(sig00000087),
+    .O(sig0000007a)
+  );
+  MUXCY   blk0000004b (
+    .CI(sig00000030),
+    .DI(sig00000002),
+    .S(sig00000087),
+    .O(sig0000002f)
+  );
+  XORCY   blk0000004c (
+    .CI(sig00000031),
+    .LI(sig00000086),
+    .O(sig00000079)
+  );
+  MUXCY   blk0000004d (
+    .CI(sig00000031),
+    .DI(sig00000002),
+    .S(sig00000086),
+    .O(sig00000030)
+  );
+  XORCY   blk0000004e (
+    .CI(sig00000032),
+    .LI(sig00000085),
+    .O(sig00000078)
+  );
+  MUXCY   blk0000004f (
+    .CI(sig00000032),
+    .DI(sig00000002),
+    .S(sig00000085),
+    .O(sig00000031)
+  );
+  XORCY   blk00000050 (
+    .CI(sig00000033),
+    .LI(sig00000084),
+    .O(sig00000077)
+  );
+  MUXCY   blk00000051 (
+    .CI(sig00000033),
+    .DI(sig00000002),
+    .S(sig00000084),
+    .O(sig00000032)
+  );
+  XORCY   blk00000052 (
+    .CI(sig00000034),
+    .LI(sig00000083),
+    .O(sig00000076)
+  );
+  MUXCY   blk00000053 (
+    .CI(sig00000034),
+    .DI(sig00000002),
+    .S(sig00000083),
+    .O(sig00000033)
+  );
+  XORCY   blk00000054 (
+    .CI(sig00000035),
+    .LI(sig00000082),
+    .O(sig00000075)
+  );
+  MUXCY   blk00000055 (
+    .CI(sig00000035),
+    .DI(sig00000002),
+    .S(sig00000082),
+    .O(sig00000034)
+  );
+  XORCY   blk00000056 (
+    .CI(sig00000036),
+    .LI(sig00000081),
+    .O(sig00000074)
+  );
+  MUXCY   blk00000057 (
+    .CI(sig00000036),
+    .DI(sig00000002),
+    .S(sig00000081),
+    .O(sig00000035)
+  );
+  XORCY   blk00000058 (
+    .CI(sig00000037),
+    .LI(sig00000080),
+    .O(sig00000073)
+  );
+  MUXCY   blk00000059 (
+    .CI(sig00000037),
+    .DI(sig00000002),
+    .S(sig00000080),
+    .O(sig00000036)
+  );
+  MUXCY   blk0000005a (
+    .CI(sig00000002),
+    .DI(phase_in[14]),
+    .S(phase_in[0]),
+    .O(sig00000037)
+  );
+  MUXCY   blk0000005b (
+    .CI(sig00000039),
+    .DI(sig00000002),
+    .S(sig00000072),
+    .O(sig00000038)
+  );
+  MUXCY   blk0000005c (
+    .CI(sig0000003a),
+    .DI(sig00000002),
+    .S(sig00000071),
+    .O(sig00000039)
+  );
+  MUXCY   blk0000005d (
+    .CI(sig0000003b),
+    .DI(sig00000002),
+    .S(sig00000070),
+    .O(sig0000003a)
+  );
+  MUXCY   blk0000005e (
+    .CI(sig00000002),
+    .DI(sig00000001),
+    .S(sig0000003c),
+    .O(sig0000003b)
+  );
+  MUXCY   blk0000005f (
+    .CI(sig0000003e),
+    .DI(sig00000002),
+    .S(sig0000008d),
+    .O(sig0000003d)
+  );
+  MUXCY   blk00000060 (
+    .CI(sig0000003f),
+    .DI(sig00000002),
+    .S(sig000000e7),
+    .O(sig0000003e)
+  );
+  MUXCY   blk00000061 (
+    .CI(sig00000040),
+    .DI(sig00000002),
+    .S(sig000000e8),
+    .O(sig0000003f)
+  );
+  MUXCY   blk00000062 (
+    .CI(sig00000002),
+    .DI(sig00000001),
+    .S(sig00000041),
+    .O(sig00000040)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000063 (
+    .C(clk),
+    .D(sig0000007f),
+    .Q(sig0000009a)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000064 (
+    .C(clk),
+    .D(sig0000007e),
+    .Q(sig00000099)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000065 (
+    .C(clk),
+    .D(sig0000007d),
+    .Q(sig00000098)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000066 (
+    .C(clk),
+    .D(sig0000007c),
+    .Q(sig00000097)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000067 (
+    .C(clk),
+    .D(sig0000007b),
+    .Q(sig00000096)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000068 (
+    .C(clk),
+    .D(sig0000007a),
+    .Q(sig00000095)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000069 (
+    .C(clk),
+    .D(sig00000079),
+    .Q(sig00000094)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006a (
+    .C(clk),
+    .D(sig00000078),
+    .Q(sig00000093)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006b (
+    .C(clk),
+    .D(sig00000077),
+    .Q(sig00000092)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006c (
+    .C(clk),
+    .D(sig00000076),
+    .Q(sig00000091)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006d (
+    .C(clk),
+    .D(sig00000075),
+    .Q(sig00000090)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006e (
+    .C(clk),
+    .D(sig00000074),
+    .Q(sig0000008f)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000006f (
+    .C(clk),
+    .D(sig00000073),
+    .Q(sig0000008e)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000070 (
+    .C(clk),
+    .D(sig000000ca),
+    .Q(sig0000006f)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000071 (
+    .C(clk),
+    .D(phase_in[15]),
+    .Q(sig000000cc)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000072 (
+    .C(clk),
+    .D(phase_in[14]),
+    .Q(sig000000cb)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000073 (
+    .C(clk),
+    .D(sig00000038),
+    .Q(sig000000ce)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000074 (
+    .C(clk),
+    .D(sig0000003d),
+    .Q(sig000000cd)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000075 (
+    .C(clk),
+    .D(sig0000004d),
+    .Q(sig000000da)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000076 (
+    .C(clk),
+    .D(sig0000004c),
+    .Q(sig000000d9)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000077 (
+    .C(clk),
+    .D(sig0000004b),
+    .Q(sig000000d8)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000078 (
+    .C(clk),
+    .D(sig0000004a),
+    .Q(sig000000d7)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000079 (
+    .C(clk),
+    .D(sig00000049),
+    .Q(sig000000d6)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007a (
+    .C(clk),
+    .D(sig00000048),
+    .Q(sig000000d5)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007b (
+    .C(clk),
+    .D(sig00000047),
+    .Q(sig000000d4)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007c (
+    .C(clk),
+    .D(sig00000046),
+    .Q(sig000000d3)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007d (
+    .C(clk),
+    .D(sig00000045),
+    .Q(sig000000d2)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007e (
+    .C(clk),
+    .D(sig00000044),
+    .Q(sig000000d1)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000007f (
+    .C(clk),
+    .D(sig00000043),
+    .Q(sig000000d0)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000080 (
+    .C(clk),
+    .D(sig00000042),
+    .Q(sig000000cf)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000081 (
+    .C(clk),
+    .D(sig000000e6),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [11])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000082 (
+    .C(clk),
+    .D(sig000000e5),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [10])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000083 (
+    .C(clk),
+    .D(sig000000e4),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [9])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000084 (
+    .C(clk),
+    .D(sig000000e3),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [8])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000085 (
+    .C(clk),
+    .D(sig000000e2),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [7])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000086 (
+    .C(clk),
+    .D(sig000000e1),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [6])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000087 (
+    .C(clk),
+    .D(sig000000e0),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [5])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000088 (
+    .C(clk),
+    .D(sig000000df),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [4])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000089 (
+    .C(clk),
+    .D(sig000000de),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [3])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008a (
+    .C(clk),
+    .D(sig000000dd),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [2])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008b (
+    .C(clk),
+    .D(sig000000dc),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [1])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008c (
+    .C(clk),
+    .D(sig000000db),
+    .Q(\U0/i_synth/I_SINCOS.i_rom/i_rtl.i_quarter_table.i_trivial_map.i_op_reg_a/opt_has_pipe.pipe_2 [0])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008d (
+    .C(clk),
+    .D(sig00000064),
+    .Q(sig000000e6)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008e (
+    .C(clk),
+    .D(sig00000063),
+    .Q(sig000000e5)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk0000008f (
+    .C(clk),
+    .D(sig00000062),
+    .Q(sig000000e4)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000090 (
+    .C(clk),
+    .D(sig00000061),
+    .Q(sig000000e3)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000091 (
+    .C(clk),
+    .D(sig00000060),
+    .Q(sig000000e2)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000092 (
+    .C(clk),
+    .D(sig0000005f),
+    .Q(sig000000e1)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000093 (
+    .C(clk),
+    .D(sig0000005e),
+    .Q(sig000000e0)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000094 (
+    .C(clk),
+    .D(sig0000005d),
+    .Q(sig000000df)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000095 (
+    .C(clk),
+    .D(sig0000005c),
+    .Q(sig000000de)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000096 (
+    .C(clk),
+    .D(sig0000005b),
+    .Q(sig000000dd)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000097 (
+    .C(clk),
+    .D(sig0000005a),
+    .Q(sig000000dc)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk00000098 (
+    .C(clk),
+    .D(sig00000059),
+    .Q(sig000000db)
+  );
+  LUT4 #(
+    .INIT ( 16'h3C96 ))
+  blk00000099 (
+    .I0(sig000000b1),
+    .I1(sig000000eb),
+    .I2(sig000000c7),
+    .I3(sig000000c8),
+    .O(sig0000004e)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk0000009a (
+    .I0(sig000000bb),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000058)
+  );
+  LUT4 #(
+    .INIT ( 16'hC396 ))
+  blk0000009b (
+    .I0(sig000000b2),
+    .I1(sig000000eb),
+    .I2(sig000000c7),
+    .I3(sig000000c8),
+    .O(sig0000004f)
+  );
+  LUT4 #(
+    .INIT ( 16'hC396 ))
+  blk0000009c (
+    .I0(sig000000b3),
+    .I1(sig000000eb),
+    .I2(sig000000c7),
+    .I3(sig000000c8),
+    .O(sig00000050)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk0000009d (
+    .I0(sig000000b4),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000051)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk0000009e (
+    .I0(sig000000b5),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000052)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk0000009f (
+    .I0(sig000000b6),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000053)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk000000a0 (
+    .I0(sig000000b7),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000054)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk000000a1 (
+    .I0(sig000000b8),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000055)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk000000a2 (
+    .I0(sig000000b9),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000056)
+  );
+  LUT4 #(
+    .INIT ( 16'hC936 ))
+  blk000000a3 (
+    .I0(sig000000ba),
+    .I1(sig000000c7),
+    .I2(sig000000c8),
+    .I3(sig0000006f),
+    .O(sig00000057)
+  );
+  LUT3 #(
+    .INIT ( 8'h1E ))
+  blk000000a4 (
+    .I0(sig000000c6),
+    .I1(sig000000c9),
+    .I2(sig0000006f),
+    .O(sig0000006e)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000a5 (
+    .I0(sig000000bd),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig00000065)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000a6 (
+    .I0(sig000000be),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig00000066)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000a7 (
+    .I0(sig000000bf),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig00000067)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000a8 (
+    .I0(sig000000c0),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig00000068)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000a9 (
+    .I0(sig000000c1),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig00000069)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000aa (
+    .I0(sig000000c2),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig0000006a)
+  );
+  LUT3 #(
+    .INIT ( 8'h36 ))
+  blk000000ab (
+    .I0(sig000000c3),
+    .I1(sig000000eb),
+    .I2(sig000000c9),
+    .O(sig0000006b)
+  );
+  LUT3 #(
+    .INIT ( 8'h1E ))
+  blk000000ac (
+    .I0(sig000000c4),
+    .I1(sig000000c9),
+    .I2(sig0000006f),
+    .O(sig0000006c)
+  );
+  LUT3 #(
+    .INIT ( 8'h1E ))
+  blk000000ad (
+    .I0(sig000000c5),
+    .I1(sig000000c9),
+    .I2(sig0000006f),
+    .O(sig0000006d)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000ae (
+    .I0(phase_in[10]),
+    .I1(phase_in[14]),
+    .O(sig00000089)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000af (
+    .I0(phase_in[11]),
+    .I1(phase_in[14]),
+    .O(sig0000008a)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b0 (
+    .I0(phase_in[12]),
+    .I1(phase_in[14]),
+    .O(sig0000008b)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b1 (
+    .I0(phase_in[13]),
+    .I1(phase_in[14]),
+    .O(sig0000008c)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b2 (
+    .I0(phase_in[1]),
+    .I1(phase_in[14]),
+    .O(sig00000080)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b3 (
+    .I0(phase_in[2]),
+    .I1(phase_in[14]),
+    .O(sig00000081)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b4 (
+    .I0(phase_in[3]),
+    .I1(phase_in[14]),
+    .O(sig00000082)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b5 (
+    .I0(phase_in[4]),
+    .I1(phase_in[14]),
+    .O(sig00000083)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b6 (
+    .I0(phase_in[5]),
+    .I1(phase_in[14]),
+    .O(sig00000084)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b7 (
+    .I0(phase_in[6]),
+    .I1(phase_in[14]),
+    .O(sig00000085)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b8 (
+    .I0(phase_in[7]),
+    .I1(phase_in[14]),
+    .O(sig00000086)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000b9 (
+    .I0(phase_in[8]),
+    .I1(phase_in[14]),
+    .O(sig00000087)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000ba (
+    .I0(phase_in[9]),
+    .I1(phase_in[14]),
+    .O(sig00000088)
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  blk000000bb (
+    .I0(phase_in[4]),
+    .I1(phase_in[5]),
+    .I2(phase_in[6]),
+    .I3(phase_in[7]),
+    .O(sig00000070)
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  blk000000bc (
+    .I0(phase_in[10]),
+    .I1(phase_in[11]),
+    .I2(phase_in[8]),
+    .I3(phase_in[9]),
+    .O(sig00000071)
+  );
+  LUT3 #(
+    .INIT ( 8'h01 ))
+  blk000000bd (
+    .I0(phase_in[12]),
+    .I1(phase_in[13]),
+    .I2(phase_in[14]),
+    .O(sig00000072)
+  );
+  LUT3 #(
+    .INIT ( 8'h10 ))
+  blk000000be (
+    .I0(phase_in[12]),
+    .I1(phase_in[13]),
+    .I2(phase_in[14]),
+    .O(sig0000008d)
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  blk000000bf (
+    .I0(phase_in[10]),
+    .I1(phase_in[11]),
+    .I2(phase_in[8]),
+    .I3(phase_in[9]),
+    .O(sig000000e7)
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  blk000000c0 (
+    .I0(phase_in[4]),
+    .I1(phase_in[5]),
+    .I2(phase_in[6]),
+    .I3(phase_in[7]),
+    .O(sig000000e8)
+  );
+  LUT2 #(
+    .INIT ( 4'h6 ))
+  blk000000c1 (
+    .I0(sig000000c7),
+    .I1(sig0000006f),
+    .O(sig000000e9)
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  blk000000c2 (
+    .I0(sig0000006f),
+    .O(sig000000ea)
+  );
+  LUT2 #(
+    .INIT ( 4'h2 ))
+  blk000000c3 (
+    .I0(sig000000b1),
+    .I1(sig000000c8),
+    .O(sig0000001e)
+  );
+  LUT2 #(
+    .INIT ( 4'h2 ))
+  blk000000c4 (
+    .I0(sig000000bc),
+    .I1(sig000000c9),
+    .O(sig0000002a)
+  );
+  LUT4 #(
+    .INIT ( 16'hFFFE ))
+  blk000000c5 (
+    .I0(phase_in[0]),
+    .I1(phase_in[1]),
+    .I2(phase_in[2]),
+    .I3(phase_in[3]),
+    .O(sig0000003c)
+  );
+  LUT4 #(
+    .INIT ( 16'hFFFE ))
+  blk000000c6 (
+    .I0(phase_in[0]),
+    .I1(phase_in[1]),
+    .I2(phase_in[2]),
+    .I3(phase_in[3]),
+    .O(sig00000041)
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  blk000000c7 (
+    .C(clk),
+    .D(sig000000ca),
+    .Q(sig000000eb)
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_08 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_09 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000 ),
+    .INIT_0B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_10 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_11 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_12 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_13 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_14 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_15 ( 256'h000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_17 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_18 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_19 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1A ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1B ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1E ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1F ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_20 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_21 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_22 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000000000000000000 ),
+    .INIT_23 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_24 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_25 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_26 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_27 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_28 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_29 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_31 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_33 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_35 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000c8 (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000c8_DIPA<3>_UNCONNECTED , \NLW_blk000000c8_DIPA<2>_UNCONNECTED , \NLW_blk000000c8_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000c8_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000c8_DOA<31>_UNCONNECTED , \NLW_blk000000c8_DOA<30>_UNCONNECTED , \NLW_blk000000c8_DOA<29>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<28>_UNCONNECTED , \NLW_blk000000c8_DOA<27>_UNCONNECTED , \NLW_blk000000c8_DOA<26>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<25>_UNCONNECTED , \NLW_blk000000c8_DOA<24>_UNCONNECTED , \NLW_blk000000c8_DOA<23>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<22>_UNCONNECTED , \NLW_blk000000c8_DOA<21>_UNCONNECTED , \NLW_blk000000c8_DOA<20>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<19>_UNCONNECTED , \NLW_blk000000c8_DOA<18>_UNCONNECTED , \NLW_blk000000c8_DOA<17>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<16>_UNCONNECTED , \NLW_blk000000c8_DOA<15>_UNCONNECTED , \NLW_blk000000c8_DOA<14>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<13>_UNCONNECTED , \NLW_blk000000c8_DOA<12>_UNCONNECTED , \NLW_blk000000c8_DOA<11>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<10>_UNCONNECTED , \NLW_blk000000c8_DOA<9>_UNCONNECTED , \NLW_blk000000c8_DOA<8>_UNCONNECTED , 
+\NLW_blk000000c8_DOA<7>_UNCONNECTED , \NLW_blk000000c8_DOA<6>_UNCONNECTED , \NLW_blk000000c8_DOA<5>_UNCONNECTED , \NLW_blk000000c8_DOA<4>_UNCONNECTED 
+, \NLW_blk000000c8_DOA<3>_UNCONNECTED , \NLW_blk000000c8_DOA<2>_UNCONNECTED , \NLW_blk000000c8_DOA<1>_UNCONNECTED , sig000000af}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000c8_DIB<31>_UNCONNECTED , \NLW_blk000000c8_DIB<30>_UNCONNECTED , \NLW_blk000000c8_DIB<29>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<28>_UNCONNECTED , \NLW_blk000000c8_DIB<27>_UNCONNECTED , \NLW_blk000000c8_DIB<26>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<25>_UNCONNECTED , \NLW_blk000000c8_DIB<24>_UNCONNECTED , \NLW_blk000000c8_DIB<23>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<22>_UNCONNECTED , \NLW_blk000000c8_DIB<21>_UNCONNECTED , \NLW_blk000000c8_DIB<20>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<19>_UNCONNECTED , \NLW_blk000000c8_DIB<18>_UNCONNECTED , \NLW_blk000000c8_DIB<17>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<16>_UNCONNECTED , \NLW_blk000000c8_DIB<15>_UNCONNECTED , \NLW_blk000000c8_DIB<14>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<13>_UNCONNECTED , \NLW_blk000000c8_DIB<12>_UNCONNECTED , \NLW_blk000000c8_DIB<11>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<10>_UNCONNECTED , \NLW_blk000000c8_DIB<9>_UNCONNECTED , \NLW_blk000000c8_DIB<8>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<7>_UNCONNECTED , \NLW_blk000000c8_DIB<6>_UNCONNECTED , \NLW_blk000000c8_DIB<5>_UNCONNECTED , \NLW_blk000000c8_DIB<4>_UNCONNECTED 
+, \NLW_blk000000c8_DIB<3>_UNCONNECTED , \NLW_blk000000c8_DIB<2>_UNCONNECTED , \NLW_blk000000c8_DIB<1>_UNCONNECTED , 
+\NLW_blk000000c8_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000c8_DOPA<3>_UNCONNECTED , \NLW_blk000000c8_DOPA<2>_UNCONNECTED , \NLW_blk000000c8_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000c8_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000c8_DIPB<3>_UNCONNECTED , \NLW_blk000000c8_DIPB<2>_UNCONNECTED , \NLW_blk000000c8_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000c8_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000c8_DOPB<3>_UNCONNECTED , \NLW_blk000000c8_DOPB<2>_UNCONNECTED , \NLW_blk000000c8_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000c8_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000c8_DOB<31>_UNCONNECTED , \NLW_blk000000c8_DOB<30>_UNCONNECTED , \NLW_blk000000c8_DOB<29>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<28>_UNCONNECTED , \NLW_blk000000c8_DOB<27>_UNCONNECTED , \NLW_blk000000c8_DOB<26>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<25>_UNCONNECTED , \NLW_blk000000c8_DOB<24>_UNCONNECTED , \NLW_blk000000c8_DOB<23>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<22>_UNCONNECTED , \NLW_blk000000c8_DOB<21>_UNCONNECTED , \NLW_blk000000c8_DOB<20>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<19>_UNCONNECTED , \NLW_blk000000c8_DOB<18>_UNCONNECTED , \NLW_blk000000c8_DOB<17>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<16>_UNCONNECTED , \NLW_blk000000c8_DOB<15>_UNCONNECTED , \NLW_blk000000c8_DOB<14>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<13>_UNCONNECTED , \NLW_blk000000c8_DOB<12>_UNCONNECTED , \NLW_blk000000c8_DOB<11>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<10>_UNCONNECTED , \NLW_blk000000c8_DOB<9>_UNCONNECTED , \NLW_blk000000c8_DOB<8>_UNCONNECTED , 
+\NLW_blk000000c8_DOB<7>_UNCONNECTED , \NLW_blk000000c8_DOB<6>_UNCONNECTED , \NLW_blk000000c8_DOB<5>_UNCONNECTED , \NLW_blk000000c8_DOB<4>_UNCONNECTED 
+, \NLW_blk000000c8_DOB<3>_UNCONNECTED , \NLW_blk000000c8_DOB<2>_UNCONNECTED , \NLW_blk000000c8_DOB<1>_UNCONNECTED , sig000000a4}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000c8_DIA<31>_UNCONNECTED , \NLW_blk000000c8_DIA<30>_UNCONNECTED , \NLW_blk000000c8_DIA<29>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<28>_UNCONNECTED , \NLW_blk000000c8_DIA<27>_UNCONNECTED , \NLW_blk000000c8_DIA<26>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<25>_UNCONNECTED , \NLW_blk000000c8_DIA<24>_UNCONNECTED , \NLW_blk000000c8_DIA<23>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<22>_UNCONNECTED , \NLW_blk000000c8_DIA<21>_UNCONNECTED , \NLW_blk000000c8_DIA<20>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<19>_UNCONNECTED , \NLW_blk000000c8_DIA<18>_UNCONNECTED , \NLW_blk000000c8_DIA<17>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<16>_UNCONNECTED , \NLW_blk000000c8_DIA<15>_UNCONNECTED , \NLW_blk000000c8_DIA<14>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<13>_UNCONNECTED , \NLW_blk000000c8_DIA<12>_UNCONNECTED , \NLW_blk000000c8_DIA<11>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<10>_UNCONNECTED , \NLW_blk000000c8_DIA<9>_UNCONNECTED , \NLW_blk000000c8_DIA<8>_UNCONNECTED , 
+\NLW_blk000000c8_DIA<7>_UNCONNECTED , \NLW_blk000000c8_DIA<6>_UNCONNECTED , \NLW_blk000000c8_DIA<5>_UNCONNECTED , \NLW_blk000000c8_DIA<4>_UNCONNECTED 
+, \NLW_blk000000c8_DIA<3>_UNCONNECTED , \NLW_blk000000c8_DIA<2>_UNCONNECTED , \NLW_blk000000c8_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_05 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000 ),
+    .INIT_06 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_07 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_08 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_09 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0A ( 256'h000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0B ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0E ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0F ( 256'hFFFFFFFFFFFFFFFFFFFFF8000000000000000000000000000000000000000000 ),
+    .INIT_10 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_11 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_12 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_13 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_14 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_15 ( 256'h000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_17 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_18 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_19 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1A ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000000000000000000000000000000000 ),
+    .INIT_1C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_20 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_21 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_22 ( 256'h000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_23 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_24 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_25 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_26 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_27 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_28 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_29 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2A ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000000000000000000000000000 ),
+    .INIT_2C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_31 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_33 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_35 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000c9 (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000c9_DIPA<3>_UNCONNECTED , \NLW_blk000000c9_DIPA<2>_UNCONNECTED , \NLW_blk000000c9_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000c9_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000c9_DOA<31>_UNCONNECTED , \NLW_blk000000c9_DOA<30>_UNCONNECTED , \NLW_blk000000c9_DOA<29>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<28>_UNCONNECTED , \NLW_blk000000c9_DOA<27>_UNCONNECTED , \NLW_blk000000c9_DOA<26>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<25>_UNCONNECTED , \NLW_blk000000c9_DOA<24>_UNCONNECTED , \NLW_blk000000c9_DOA<23>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<22>_UNCONNECTED , \NLW_blk000000c9_DOA<21>_UNCONNECTED , \NLW_blk000000c9_DOA<20>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<19>_UNCONNECTED , \NLW_blk000000c9_DOA<18>_UNCONNECTED , \NLW_blk000000c9_DOA<17>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<16>_UNCONNECTED , \NLW_blk000000c9_DOA<15>_UNCONNECTED , \NLW_blk000000c9_DOA<14>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<13>_UNCONNECTED , \NLW_blk000000c9_DOA<12>_UNCONNECTED , \NLW_blk000000c9_DOA<11>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<10>_UNCONNECTED , \NLW_blk000000c9_DOA<9>_UNCONNECTED , \NLW_blk000000c9_DOA<8>_UNCONNECTED , 
+\NLW_blk000000c9_DOA<7>_UNCONNECTED , \NLW_blk000000c9_DOA<6>_UNCONNECTED , \NLW_blk000000c9_DOA<5>_UNCONNECTED , \NLW_blk000000c9_DOA<4>_UNCONNECTED 
+, \NLW_blk000000c9_DOA<3>_UNCONNECTED , \NLW_blk000000c9_DOA<2>_UNCONNECTED , \NLW_blk000000c9_DOA<1>_UNCONNECTED , sig000000ae}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000c9_DIB<31>_UNCONNECTED , \NLW_blk000000c9_DIB<30>_UNCONNECTED , \NLW_blk000000c9_DIB<29>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<28>_UNCONNECTED , \NLW_blk000000c9_DIB<27>_UNCONNECTED , \NLW_blk000000c9_DIB<26>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<25>_UNCONNECTED , \NLW_blk000000c9_DIB<24>_UNCONNECTED , \NLW_blk000000c9_DIB<23>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<22>_UNCONNECTED , \NLW_blk000000c9_DIB<21>_UNCONNECTED , \NLW_blk000000c9_DIB<20>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<19>_UNCONNECTED , \NLW_blk000000c9_DIB<18>_UNCONNECTED , \NLW_blk000000c9_DIB<17>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<16>_UNCONNECTED , \NLW_blk000000c9_DIB<15>_UNCONNECTED , \NLW_blk000000c9_DIB<14>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<13>_UNCONNECTED , \NLW_blk000000c9_DIB<12>_UNCONNECTED , \NLW_blk000000c9_DIB<11>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<10>_UNCONNECTED , \NLW_blk000000c9_DIB<9>_UNCONNECTED , \NLW_blk000000c9_DIB<8>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<7>_UNCONNECTED , \NLW_blk000000c9_DIB<6>_UNCONNECTED , \NLW_blk000000c9_DIB<5>_UNCONNECTED , \NLW_blk000000c9_DIB<4>_UNCONNECTED 
+, \NLW_blk000000c9_DIB<3>_UNCONNECTED , \NLW_blk000000c9_DIB<2>_UNCONNECTED , \NLW_blk000000c9_DIB<1>_UNCONNECTED , 
+\NLW_blk000000c9_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000c9_DOPA<3>_UNCONNECTED , \NLW_blk000000c9_DOPA<2>_UNCONNECTED , \NLW_blk000000c9_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000c9_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000c9_DIPB<3>_UNCONNECTED , \NLW_blk000000c9_DIPB<2>_UNCONNECTED , \NLW_blk000000c9_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000c9_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000c9_DOPB<3>_UNCONNECTED , \NLW_blk000000c9_DOPB<2>_UNCONNECTED , \NLW_blk000000c9_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000c9_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000c9_DOB<31>_UNCONNECTED , \NLW_blk000000c9_DOB<30>_UNCONNECTED , \NLW_blk000000c9_DOB<29>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<28>_UNCONNECTED , \NLW_blk000000c9_DOB<27>_UNCONNECTED , \NLW_blk000000c9_DOB<26>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<25>_UNCONNECTED , \NLW_blk000000c9_DOB<24>_UNCONNECTED , \NLW_blk000000c9_DOB<23>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<22>_UNCONNECTED , \NLW_blk000000c9_DOB<21>_UNCONNECTED , \NLW_blk000000c9_DOB<20>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<19>_UNCONNECTED , \NLW_blk000000c9_DOB<18>_UNCONNECTED , \NLW_blk000000c9_DOB<17>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<16>_UNCONNECTED , \NLW_blk000000c9_DOB<15>_UNCONNECTED , \NLW_blk000000c9_DOB<14>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<13>_UNCONNECTED , \NLW_blk000000c9_DOB<12>_UNCONNECTED , \NLW_blk000000c9_DOB<11>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<10>_UNCONNECTED , \NLW_blk000000c9_DOB<9>_UNCONNECTED , \NLW_blk000000c9_DOB<8>_UNCONNECTED , 
+\NLW_blk000000c9_DOB<7>_UNCONNECTED , \NLW_blk000000c9_DOB<6>_UNCONNECTED , \NLW_blk000000c9_DOB<5>_UNCONNECTED , \NLW_blk000000c9_DOB<4>_UNCONNECTED 
+, \NLW_blk000000c9_DOB<3>_UNCONNECTED , \NLW_blk000000c9_DOB<2>_UNCONNECTED , \NLW_blk000000c9_DOB<1>_UNCONNECTED , sig000000a3}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000c9_DIA<31>_UNCONNECTED , \NLW_blk000000c9_DIA<30>_UNCONNECTED , \NLW_blk000000c9_DIA<29>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<28>_UNCONNECTED , \NLW_blk000000c9_DIA<27>_UNCONNECTED , \NLW_blk000000c9_DIA<26>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<25>_UNCONNECTED , \NLW_blk000000c9_DIA<24>_UNCONNECTED , \NLW_blk000000c9_DIA<23>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<22>_UNCONNECTED , \NLW_blk000000c9_DIA<21>_UNCONNECTED , \NLW_blk000000c9_DIA<20>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<19>_UNCONNECTED , \NLW_blk000000c9_DIA<18>_UNCONNECTED , \NLW_blk000000c9_DIA<17>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<16>_UNCONNECTED , \NLW_blk000000c9_DIA<15>_UNCONNECTED , \NLW_blk000000c9_DIA<14>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<13>_UNCONNECTED , \NLW_blk000000c9_DIA<12>_UNCONNECTED , \NLW_blk000000c9_DIA<11>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<10>_UNCONNECTED , \NLW_blk000000c9_DIA<9>_UNCONNECTED , \NLW_blk000000c9_DIA<8>_UNCONNECTED , 
+\NLW_blk000000c9_DIA<7>_UNCONNECTED , \NLW_blk000000c9_DIA<6>_UNCONNECTED , \NLW_blk000000c9_DIA<5>_UNCONNECTED , \NLW_blk000000c9_DIA<4>_UNCONNECTED 
+, \NLW_blk000000c9_DIA<3>_UNCONNECTED , \NLW_blk000000c9_DIA<2>_UNCONNECTED , \NLW_blk000000c9_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_08 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_09 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0A ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0B ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0E ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0F ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_10 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_11 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_12 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_13 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_14 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_15 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000000 ),
+    .INIT_16 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_17 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_18 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_19 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_20 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_21 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_22 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_23 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_24 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_25 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_26 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_27 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_28 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_29 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_31 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_33 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_35 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000ca (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000ca_DIPA<3>_UNCONNECTED , \NLW_blk000000ca_DIPA<2>_UNCONNECTED , \NLW_blk000000ca_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000ca_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000ca_DOA<31>_UNCONNECTED , \NLW_blk000000ca_DOA<30>_UNCONNECTED , \NLW_blk000000ca_DOA<29>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<28>_UNCONNECTED , \NLW_blk000000ca_DOA<27>_UNCONNECTED , \NLW_blk000000ca_DOA<26>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<25>_UNCONNECTED , \NLW_blk000000ca_DOA<24>_UNCONNECTED , \NLW_blk000000ca_DOA<23>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<22>_UNCONNECTED , \NLW_blk000000ca_DOA<21>_UNCONNECTED , \NLW_blk000000ca_DOA<20>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<19>_UNCONNECTED , \NLW_blk000000ca_DOA<18>_UNCONNECTED , \NLW_blk000000ca_DOA<17>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<16>_UNCONNECTED , \NLW_blk000000ca_DOA<15>_UNCONNECTED , \NLW_blk000000ca_DOA<14>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<13>_UNCONNECTED , \NLW_blk000000ca_DOA<12>_UNCONNECTED , \NLW_blk000000ca_DOA<11>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<10>_UNCONNECTED , \NLW_blk000000ca_DOA<9>_UNCONNECTED , \NLW_blk000000ca_DOA<8>_UNCONNECTED , 
+\NLW_blk000000ca_DOA<7>_UNCONNECTED , \NLW_blk000000ca_DOA<6>_UNCONNECTED , \NLW_blk000000ca_DOA<5>_UNCONNECTED , \NLW_blk000000ca_DOA<4>_UNCONNECTED 
+, \NLW_blk000000ca_DOA<3>_UNCONNECTED , \NLW_blk000000ca_DOA<2>_UNCONNECTED , \NLW_blk000000ca_DOA<1>_UNCONNECTED , sig000000b0}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000ca_DIB<31>_UNCONNECTED , \NLW_blk000000ca_DIB<30>_UNCONNECTED , \NLW_blk000000ca_DIB<29>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<28>_UNCONNECTED , \NLW_blk000000ca_DIB<27>_UNCONNECTED , \NLW_blk000000ca_DIB<26>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<25>_UNCONNECTED , \NLW_blk000000ca_DIB<24>_UNCONNECTED , \NLW_blk000000ca_DIB<23>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<22>_UNCONNECTED , \NLW_blk000000ca_DIB<21>_UNCONNECTED , \NLW_blk000000ca_DIB<20>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<19>_UNCONNECTED , \NLW_blk000000ca_DIB<18>_UNCONNECTED , \NLW_blk000000ca_DIB<17>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<16>_UNCONNECTED , \NLW_blk000000ca_DIB<15>_UNCONNECTED , \NLW_blk000000ca_DIB<14>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<13>_UNCONNECTED , \NLW_blk000000ca_DIB<12>_UNCONNECTED , \NLW_blk000000ca_DIB<11>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<10>_UNCONNECTED , \NLW_blk000000ca_DIB<9>_UNCONNECTED , \NLW_blk000000ca_DIB<8>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<7>_UNCONNECTED , \NLW_blk000000ca_DIB<6>_UNCONNECTED , \NLW_blk000000ca_DIB<5>_UNCONNECTED , \NLW_blk000000ca_DIB<4>_UNCONNECTED 
+, \NLW_blk000000ca_DIB<3>_UNCONNECTED , \NLW_blk000000ca_DIB<2>_UNCONNECTED , \NLW_blk000000ca_DIB<1>_UNCONNECTED , 
+\NLW_blk000000ca_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000ca_DOPA<3>_UNCONNECTED , \NLW_blk000000ca_DOPA<2>_UNCONNECTED , \NLW_blk000000ca_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000ca_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000ca_DIPB<3>_UNCONNECTED , \NLW_blk000000ca_DIPB<2>_UNCONNECTED , \NLW_blk000000ca_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000ca_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000ca_DOPB<3>_UNCONNECTED , \NLW_blk000000ca_DOPB<2>_UNCONNECTED , \NLW_blk000000ca_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000ca_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000ca_DOB<31>_UNCONNECTED , \NLW_blk000000ca_DOB<30>_UNCONNECTED , \NLW_blk000000ca_DOB<29>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<28>_UNCONNECTED , \NLW_blk000000ca_DOB<27>_UNCONNECTED , \NLW_blk000000ca_DOB<26>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<25>_UNCONNECTED , \NLW_blk000000ca_DOB<24>_UNCONNECTED , \NLW_blk000000ca_DOB<23>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<22>_UNCONNECTED , \NLW_blk000000ca_DOB<21>_UNCONNECTED , \NLW_blk000000ca_DOB<20>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<19>_UNCONNECTED , \NLW_blk000000ca_DOB<18>_UNCONNECTED , \NLW_blk000000ca_DOB<17>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<16>_UNCONNECTED , \NLW_blk000000ca_DOB<15>_UNCONNECTED , \NLW_blk000000ca_DOB<14>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<13>_UNCONNECTED , \NLW_blk000000ca_DOB<12>_UNCONNECTED , \NLW_blk000000ca_DOB<11>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<10>_UNCONNECTED , \NLW_blk000000ca_DOB<9>_UNCONNECTED , \NLW_blk000000ca_DOB<8>_UNCONNECTED , 
+\NLW_blk000000ca_DOB<7>_UNCONNECTED , \NLW_blk000000ca_DOB<6>_UNCONNECTED , \NLW_blk000000ca_DOB<5>_UNCONNECTED , \NLW_blk000000ca_DOB<4>_UNCONNECTED 
+, \NLW_blk000000ca_DOB<3>_UNCONNECTED , \NLW_blk000000ca_DOB<2>_UNCONNECTED , \NLW_blk000000ca_DOB<1>_UNCONNECTED , sig000000a5}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000ca_DIA<31>_UNCONNECTED , \NLW_blk000000ca_DIA<30>_UNCONNECTED , \NLW_blk000000ca_DIA<29>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<28>_UNCONNECTED , \NLW_blk000000ca_DIA<27>_UNCONNECTED , \NLW_blk000000ca_DIA<26>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<25>_UNCONNECTED , \NLW_blk000000ca_DIA<24>_UNCONNECTED , \NLW_blk000000ca_DIA<23>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<22>_UNCONNECTED , \NLW_blk000000ca_DIA<21>_UNCONNECTED , \NLW_blk000000ca_DIA<20>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<19>_UNCONNECTED , \NLW_blk000000ca_DIA<18>_UNCONNECTED , \NLW_blk000000ca_DIA<17>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<16>_UNCONNECTED , \NLW_blk000000ca_DIA<15>_UNCONNECTED , \NLW_blk000000ca_DIA<14>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<13>_UNCONNECTED , \NLW_blk000000ca_DIA<12>_UNCONNECTED , \NLW_blk000000ca_DIA<11>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<10>_UNCONNECTED , \NLW_blk000000ca_DIA<9>_UNCONNECTED , \NLW_blk000000ca_DIA<8>_UNCONNECTED , 
+\NLW_blk000000ca_DIA<7>_UNCONNECTED , \NLW_blk000000ca_DIA<6>_UNCONNECTED , \NLW_blk000000ca_DIA<5>_UNCONNECTED , \NLW_blk000000ca_DIA<4>_UNCONNECTED 
+, \NLW_blk000000ca_DIA<3>_UNCONNECTED , \NLW_blk000000ca_DIA<2>_UNCONNECTED , \NLW_blk000000ca_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000 ),
+    .INIT_02 ( 256'h000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_03 ( 256'hFFFFFFFFFFFC0000000000000000000000000000000000000000000000000000 ),
+    .INIT_04 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_05 ( 256'h0000000000000000000000000000000000000000000000000000000003FFFFFF ),
+    .INIT_06 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000 ),
+    .INIT_07 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_08 ( 256'hF000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_09 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0A ( 256'h000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000000000000000000000 ),
+    .INIT_0C ( 256'h000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000 ),
+    .INIT_0F ( 256'h0000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_10 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_11 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000 ),
+    .INIT_12 ( 256'h00000000000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_13 ( 256'hFFFFFFF000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_14 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_15 ( 256'h000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'hFFFFFFFFFFC00000000000000000000000000000000000000000000000000000 ),
+    .INIT_17 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_18 ( 256'h00000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_19 ( 256'hFFFFF00000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1B ( 256'h0000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000 ),
+    .INIT_1E ( 256'h000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1F ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_20 ( 256'hFFFFFFFFFFFFFFFFFFE000000000000000000000000000000000000000000000 ),
+    .INIT_21 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_22 ( 256'h000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_23 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_24 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000000000000000000 ),
+    .INIT_25 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_26 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_27 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_28 ( 256'hFFC0000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_29 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2B ( 256'h00000000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000 ),
+    .INIT_2F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_31 ( 256'h00000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_33 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_34 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_35 ( 256'hFFFFFF0000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000cb (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000cb_DIPA<3>_UNCONNECTED , \NLW_blk000000cb_DIPA<2>_UNCONNECTED , \NLW_blk000000cb_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000cb_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000cb_DOA<31>_UNCONNECTED , \NLW_blk000000cb_DOA<30>_UNCONNECTED , \NLW_blk000000cb_DOA<29>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<28>_UNCONNECTED , \NLW_blk000000cb_DOA<27>_UNCONNECTED , \NLW_blk000000cb_DOA<26>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<25>_UNCONNECTED , \NLW_blk000000cb_DOA<24>_UNCONNECTED , \NLW_blk000000cb_DOA<23>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<22>_UNCONNECTED , \NLW_blk000000cb_DOA<21>_UNCONNECTED , \NLW_blk000000cb_DOA<20>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<19>_UNCONNECTED , \NLW_blk000000cb_DOA<18>_UNCONNECTED , \NLW_blk000000cb_DOA<17>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<16>_UNCONNECTED , \NLW_blk000000cb_DOA<15>_UNCONNECTED , \NLW_blk000000cb_DOA<14>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<13>_UNCONNECTED , \NLW_blk000000cb_DOA<12>_UNCONNECTED , \NLW_blk000000cb_DOA<11>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<10>_UNCONNECTED , \NLW_blk000000cb_DOA<9>_UNCONNECTED , \NLW_blk000000cb_DOA<8>_UNCONNECTED , 
+\NLW_blk000000cb_DOA<7>_UNCONNECTED , \NLW_blk000000cb_DOA<6>_UNCONNECTED , \NLW_blk000000cb_DOA<5>_UNCONNECTED , \NLW_blk000000cb_DOA<4>_UNCONNECTED 
+, \NLW_blk000000cb_DOA<3>_UNCONNECTED , \NLW_blk000000cb_DOA<2>_UNCONNECTED , \NLW_blk000000cb_DOA<1>_UNCONNECTED , sig000000ac}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000cb_DIB<31>_UNCONNECTED , \NLW_blk000000cb_DIB<30>_UNCONNECTED , \NLW_blk000000cb_DIB<29>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<28>_UNCONNECTED , \NLW_blk000000cb_DIB<27>_UNCONNECTED , \NLW_blk000000cb_DIB<26>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<25>_UNCONNECTED , \NLW_blk000000cb_DIB<24>_UNCONNECTED , \NLW_blk000000cb_DIB<23>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<22>_UNCONNECTED , \NLW_blk000000cb_DIB<21>_UNCONNECTED , \NLW_blk000000cb_DIB<20>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<19>_UNCONNECTED , \NLW_blk000000cb_DIB<18>_UNCONNECTED , \NLW_blk000000cb_DIB<17>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<16>_UNCONNECTED , \NLW_blk000000cb_DIB<15>_UNCONNECTED , \NLW_blk000000cb_DIB<14>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<13>_UNCONNECTED , \NLW_blk000000cb_DIB<12>_UNCONNECTED , \NLW_blk000000cb_DIB<11>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<10>_UNCONNECTED , \NLW_blk000000cb_DIB<9>_UNCONNECTED , \NLW_blk000000cb_DIB<8>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<7>_UNCONNECTED , \NLW_blk000000cb_DIB<6>_UNCONNECTED , \NLW_blk000000cb_DIB<5>_UNCONNECTED , \NLW_blk000000cb_DIB<4>_UNCONNECTED 
+, \NLW_blk000000cb_DIB<3>_UNCONNECTED , \NLW_blk000000cb_DIB<2>_UNCONNECTED , \NLW_blk000000cb_DIB<1>_UNCONNECTED , 
+\NLW_blk000000cb_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000cb_DOPA<3>_UNCONNECTED , \NLW_blk000000cb_DOPA<2>_UNCONNECTED , \NLW_blk000000cb_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000cb_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000cb_DIPB<3>_UNCONNECTED , \NLW_blk000000cb_DIPB<2>_UNCONNECTED , \NLW_blk000000cb_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000cb_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000cb_DOPB<3>_UNCONNECTED , \NLW_blk000000cb_DOPB<2>_UNCONNECTED , \NLW_blk000000cb_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000cb_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000cb_DOB<31>_UNCONNECTED , \NLW_blk000000cb_DOB<30>_UNCONNECTED , \NLW_blk000000cb_DOB<29>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<28>_UNCONNECTED , \NLW_blk000000cb_DOB<27>_UNCONNECTED , \NLW_blk000000cb_DOB<26>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<25>_UNCONNECTED , \NLW_blk000000cb_DOB<24>_UNCONNECTED , \NLW_blk000000cb_DOB<23>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<22>_UNCONNECTED , \NLW_blk000000cb_DOB<21>_UNCONNECTED , \NLW_blk000000cb_DOB<20>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<19>_UNCONNECTED , \NLW_blk000000cb_DOB<18>_UNCONNECTED , \NLW_blk000000cb_DOB<17>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<16>_UNCONNECTED , \NLW_blk000000cb_DOB<15>_UNCONNECTED , \NLW_blk000000cb_DOB<14>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<13>_UNCONNECTED , \NLW_blk000000cb_DOB<12>_UNCONNECTED , \NLW_blk000000cb_DOB<11>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<10>_UNCONNECTED , \NLW_blk000000cb_DOB<9>_UNCONNECTED , \NLW_blk000000cb_DOB<8>_UNCONNECTED , 
+\NLW_blk000000cb_DOB<7>_UNCONNECTED , \NLW_blk000000cb_DOB<6>_UNCONNECTED , \NLW_blk000000cb_DOB<5>_UNCONNECTED , \NLW_blk000000cb_DOB<4>_UNCONNECTED 
+, \NLW_blk000000cb_DOB<3>_UNCONNECTED , \NLW_blk000000cb_DOB<2>_UNCONNECTED , \NLW_blk000000cb_DOB<1>_UNCONNECTED , sig000000a1}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000cb_DIA<31>_UNCONNECTED , \NLW_blk000000cb_DIA<30>_UNCONNECTED , \NLW_blk000000cb_DIA<29>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<28>_UNCONNECTED , \NLW_blk000000cb_DIA<27>_UNCONNECTED , \NLW_blk000000cb_DIA<26>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<25>_UNCONNECTED , \NLW_blk000000cb_DIA<24>_UNCONNECTED , \NLW_blk000000cb_DIA<23>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<22>_UNCONNECTED , \NLW_blk000000cb_DIA<21>_UNCONNECTED , \NLW_blk000000cb_DIA<20>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<19>_UNCONNECTED , \NLW_blk000000cb_DIA<18>_UNCONNECTED , \NLW_blk000000cb_DIA<17>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<16>_UNCONNECTED , \NLW_blk000000cb_DIA<15>_UNCONNECTED , \NLW_blk000000cb_DIA<14>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<13>_UNCONNECTED , \NLW_blk000000cb_DIA<12>_UNCONNECTED , \NLW_blk000000cb_DIA<11>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<10>_UNCONNECTED , \NLW_blk000000cb_DIA<9>_UNCONNECTED , \NLW_blk000000cb_DIA<8>_UNCONNECTED , 
+\NLW_blk000000cb_DIA<7>_UNCONNECTED , \NLW_blk000000cb_DIA<6>_UNCONNECTED , \NLW_blk000000cb_DIA<5>_UNCONNECTED , \NLW_blk000000cb_DIA<4>_UNCONNECTED 
+, \NLW_blk000000cb_DIA<3>_UNCONNECTED , \NLW_blk000000cb_DIA<2>_UNCONNECTED , \NLW_blk000000cb_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'hFFFFFF00000000000000000000000000000000000000000FFFFFFFFFFFFFFFFF ),
+    .INIT_02 ( 256'h000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_03 ( 256'h000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000 ),
+    .INIT_04 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000000000000000000000 ),
+    .INIT_05 ( 256'hFFFFFFFFFFFFFFFF800000000000000000000000000000000000000003FFFFFF ),
+    .INIT_06 ( 256'h000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_07 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00 ),
+    .INIT_08 ( 256'h0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000 ),
+    .INIT_09 ( 256'hFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000000000000 ),
+    .INIT_0A ( 256'hFFE000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0B ( 256'h0000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0C ( 256'h000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000000000000 ),
+    .INIT_0D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000 ),
+    .INIT_0E ( 256'hF00000000000000000000000000000000000000000003FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0F ( 256'h0000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_10 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000 ),
+    .INIT_11 ( 256'hFFFFFFFFFFFFFFFE000000000000000000000000000000000000000000003FFF ),
+    .INIT_12 ( 256'h00000000000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_13 ( 256'h0000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000 ),
+    .INIT_14 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFE000000000000000000000000000000000000000 ),
+    .INIT_15 ( 256'h000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'h00000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000 ),
+    .INIT_17 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000000000000000000000000 ),
+    .INIT_18 ( 256'h00000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_19 ( 256'h00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000 ),
+    .INIT_1A ( 256'hFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000000000 ),
+    .INIT_1B ( 256'h0000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000 ),
+    .INIT_1D ( 256'h0000000000000000000000000000000000000000000000000000FFFFFFFFFFFF ),
+    .INIT_1E ( 256'h000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800 ),
+    .INIT_1F ( 256'hFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000 ),
+    .INIT_20 ( 256'h0000000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_21 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000000000000000000000 ),
+    .INIT_22 ( 256'h000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_23 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000 ),
+    .INIT_24 ( 256'h0000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_25 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000 ),
+    .INIT_26 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_27 ( 256'hFFFFFFFFFFFFE000000000000000000000000000000000000000000000000000 ),
+    .INIT_28 ( 256'h003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_29 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000 ),
+    .INIT_2B ( 256'h00000000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'hFFFFFFFFFFF80000000000000000000000000000000000000000000000000000 ),
+    .INIT_2D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2E ( 256'h0000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'hFFFFFFFFF0000000000000000000000000000000000000000000000000000000 ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_31 ( 256'h00000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_33 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000000000000000000 ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_35 ( 256'h000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_37 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_38 ( 256'hFFE0000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000cc (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000cc_DIPA<3>_UNCONNECTED , \NLW_blk000000cc_DIPA<2>_UNCONNECTED , \NLW_blk000000cc_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000cc_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000cc_DOA<31>_UNCONNECTED , \NLW_blk000000cc_DOA<30>_UNCONNECTED , \NLW_blk000000cc_DOA<29>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<28>_UNCONNECTED , \NLW_blk000000cc_DOA<27>_UNCONNECTED , \NLW_blk000000cc_DOA<26>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<25>_UNCONNECTED , \NLW_blk000000cc_DOA<24>_UNCONNECTED , \NLW_blk000000cc_DOA<23>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<22>_UNCONNECTED , \NLW_blk000000cc_DOA<21>_UNCONNECTED , \NLW_blk000000cc_DOA<20>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<19>_UNCONNECTED , \NLW_blk000000cc_DOA<18>_UNCONNECTED , \NLW_blk000000cc_DOA<17>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<16>_UNCONNECTED , \NLW_blk000000cc_DOA<15>_UNCONNECTED , \NLW_blk000000cc_DOA<14>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<13>_UNCONNECTED , \NLW_blk000000cc_DOA<12>_UNCONNECTED , \NLW_blk000000cc_DOA<11>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<10>_UNCONNECTED , \NLW_blk000000cc_DOA<9>_UNCONNECTED , \NLW_blk000000cc_DOA<8>_UNCONNECTED , 
+\NLW_blk000000cc_DOA<7>_UNCONNECTED , \NLW_blk000000cc_DOA<6>_UNCONNECTED , \NLW_blk000000cc_DOA<5>_UNCONNECTED , \NLW_blk000000cc_DOA<4>_UNCONNECTED 
+, \NLW_blk000000cc_DOA<3>_UNCONNECTED , \NLW_blk000000cc_DOA<2>_UNCONNECTED , \NLW_blk000000cc_DOA<1>_UNCONNECTED , sig000000ab}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000cc_DIB<31>_UNCONNECTED , \NLW_blk000000cc_DIB<30>_UNCONNECTED , \NLW_blk000000cc_DIB<29>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<28>_UNCONNECTED , \NLW_blk000000cc_DIB<27>_UNCONNECTED , \NLW_blk000000cc_DIB<26>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<25>_UNCONNECTED , \NLW_blk000000cc_DIB<24>_UNCONNECTED , \NLW_blk000000cc_DIB<23>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<22>_UNCONNECTED , \NLW_blk000000cc_DIB<21>_UNCONNECTED , \NLW_blk000000cc_DIB<20>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<19>_UNCONNECTED , \NLW_blk000000cc_DIB<18>_UNCONNECTED , \NLW_blk000000cc_DIB<17>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<16>_UNCONNECTED , \NLW_blk000000cc_DIB<15>_UNCONNECTED , \NLW_blk000000cc_DIB<14>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<13>_UNCONNECTED , \NLW_blk000000cc_DIB<12>_UNCONNECTED , \NLW_blk000000cc_DIB<11>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<10>_UNCONNECTED , \NLW_blk000000cc_DIB<9>_UNCONNECTED , \NLW_blk000000cc_DIB<8>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<7>_UNCONNECTED , \NLW_blk000000cc_DIB<6>_UNCONNECTED , \NLW_blk000000cc_DIB<5>_UNCONNECTED , \NLW_blk000000cc_DIB<4>_UNCONNECTED 
+, \NLW_blk000000cc_DIB<3>_UNCONNECTED , \NLW_blk000000cc_DIB<2>_UNCONNECTED , \NLW_blk000000cc_DIB<1>_UNCONNECTED , 
+\NLW_blk000000cc_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000cc_DOPA<3>_UNCONNECTED , \NLW_blk000000cc_DOPA<2>_UNCONNECTED , \NLW_blk000000cc_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000cc_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000cc_DIPB<3>_UNCONNECTED , \NLW_blk000000cc_DIPB<2>_UNCONNECTED , \NLW_blk000000cc_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000cc_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000cc_DOPB<3>_UNCONNECTED , \NLW_blk000000cc_DOPB<2>_UNCONNECTED , \NLW_blk000000cc_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000cc_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000cc_DOB<31>_UNCONNECTED , \NLW_blk000000cc_DOB<30>_UNCONNECTED , \NLW_blk000000cc_DOB<29>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<28>_UNCONNECTED , \NLW_blk000000cc_DOB<27>_UNCONNECTED , \NLW_blk000000cc_DOB<26>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<25>_UNCONNECTED , \NLW_blk000000cc_DOB<24>_UNCONNECTED , \NLW_blk000000cc_DOB<23>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<22>_UNCONNECTED , \NLW_blk000000cc_DOB<21>_UNCONNECTED , \NLW_blk000000cc_DOB<20>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<19>_UNCONNECTED , \NLW_blk000000cc_DOB<18>_UNCONNECTED , \NLW_blk000000cc_DOB<17>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<16>_UNCONNECTED , \NLW_blk000000cc_DOB<15>_UNCONNECTED , \NLW_blk000000cc_DOB<14>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<13>_UNCONNECTED , \NLW_blk000000cc_DOB<12>_UNCONNECTED , \NLW_blk000000cc_DOB<11>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<10>_UNCONNECTED , \NLW_blk000000cc_DOB<9>_UNCONNECTED , \NLW_blk000000cc_DOB<8>_UNCONNECTED , 
+\NLW_blk000000cc_DOB<7>_UNCONNECTED , \NLW_blk000000cc_DOB<6>_UNCONNECTED , \NLW_blk000000cc_DOB<5>_UNCONNECTED , \NLW_blk000000cc_DOB<4>_UNCONNECTED 
+, \NLW_blk000000cc_DOB<3>_UNCONNECTED , \NLW_blk000000cc_DOB<2>_UNCONNECTED , \NLW_blk000000cc_DOB<1>_UNCONNECTED , sig000000a0}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000cc_DIA<31>_UNCONNECTED , \NLW_blk000000cc_DIA<30>_UNCONNECTED , \NLW_blk000000cc_DIA<29>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<28>_UNCONNECTED , \NLW_blk000000cc_DIA<27>_UNCONNECTED , \NLW_blk000000cc_DIA<26>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<25>_UNCONNECTED , \NLW_blk000000cc_DIA<24>_UNCONNECTED , \NLW_blk000000cc_DIA<23>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<22>_UNCONNECTED , \NLW_blk000000cc_DIA<21>_UNCONNECTED , \NLW_blk000000cc_DIA<20>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<19>_UNCONNECTED , \NLW_blk000000cc_DIA<18>_UNCONNECTED , \NLW_blk000000cc_DIA<17>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<16>_UNCONNECTED , \NLW_blk000000cc_DIA<15>_UNCONNECTED , \NLW_blk000000cc_DIA<14>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<13>_UNCONNECTED , \NLW_blk000000cc_DIA<12>_UNCONNECTED , \NLW_blk000000cc_DIA<11>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<10>_UNCONNECTED , \NLW_blk000000cc_DIA<9>_UNCONNECTED , \NLW_blk000000cc_DIA<8>_UNCONNECTED , 
+\NLW_blk000000cc_DIA<7>_UNCONNECTED , \NLW_blk000000cc_DIA<6>_UNCONNECTED , \NLW_blk000000cc_DIA<5>_UNCONNECTED , \NLW_blk000000cc_DIA<4>_UNCONNECTED 
+, \NLW_blk000000cc_DIA<3>_UNCONNECTED , \NLW_blk000000cc_DIA<2>_UNCONNECTED , \NLW_blk000000cc_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_02 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000000000000000000000 ),
+    .INIT_03 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_04 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_05 ( 256'h0000000000000000000000000000000000000000000000000000000003FFFFFF ),
+    .INIT_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_07 ( 256'hFFFFFFFFFFFFFFFFFFFF80000000000000000000000000000000000000000000 ),
+    .INIT_08 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_09 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0A ( 256'h000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0B ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0C ( 256'hFFF0000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_0D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_0F ( 256'h0000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_10 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_11 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_12 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000000000000000000000 ),
+    .INIT_13 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_14 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_15 ( 256'h000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_17 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_18 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000 ),
+    .INIT_19 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1B ( 256'h0000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1E ( 256'hFFFFFE0000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_1F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_20 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_21 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_22 ( 256'h000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_23 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_24 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_25 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_26 ( 256'hFFFFFFFFFFFFFFFFFFFF80000000000000000000000000000000000000000000 ),
+    .INIT_27 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_28 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_29 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2B ( 256'h00000000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2D ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2E ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_2F ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_30 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_31 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000000000000000000000000000000 ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_33 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_35 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000cd (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000cd_DIPA<3>_UNCONNECTED , \NLW_blk000000cd_DIPA<2>_UNCONNECTED , \NLW_blk000000cd_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000cd_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000cd_DOA<31>_UNCONNECTED , \NLW_blk000000cd_DOA<30>_UNCONNECTED , \NLW_blk000000cd_DOA<29>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<28>_UNCONNECTED , \NLW_blk000000cd_DOA<27>_UNCONNECTED , \NLW_blk000000cd_DOA<26>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<25>_UNCONNECTED , \NLW_blk000000cd_DOA<24>_UNCONNECTED , \NLW_blk000000cd_DOA<23>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<22>_UNCONNECTED , \NLW_blk000000cd_DOA<21>_UNCONNECTED , \NLW_blk000000cd_DOA<20>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<19>_UNCONNECTED , \NLW_blk000000cd_DOA<18>_UNCONNECTED , \NLW_blk000000cd_DOA<17>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<16>_UNCONNECTED , \NLW_blk000000cd_DOA<15>_UNCONNECTED , \NLW_blk000000cd_DOA<14>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<13>_UNCONNECTED , \NLW_blk000000cd_DOA<12>_UNCONNECTED , \NLW_blk000000cd_DOA<11>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<10>_UNCONNECTED , \NLW_blk000000cd_DOA<9>_UNCONNECTED , \NLW_blk000000cd_DOA<8>_UNCONNECTED , 
+\NLW_blk000000cd_DOA<7>_UNCONNECTED , \NLW_blk000000cd_DOA<6>_UNCONNECTED , \NLW_blk000000cd_DOA<5>_UNCONNECTED , \NLW_blk000000cd_DOA<4>_UNCONNECTED 
+, \NLW_blk000000cd_DOA<3>_UNCONNECTED , \NLW_blk000000cd_DOA<2>_UNCONNECTED , \NLW_blk000000cd_DOA<1>_UNCONNECTED , sig000000ad}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000cd_DIB<31>_UNCONNECTED , \NLW_blk000000cd_DIB<30>_UNCONNECTED , \NLW_blk000000cd_DIB<29>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<28>_UNCONNECTED , \NLW_blk000000cd_DIB<27>_UNCONNECTED , \NLW_blk000000cd_DIB<26>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<25>_UNCONNECTED , \NLW_blk000000cd_DIB<24>_UNCONNECTED , \NLW_blk000000cd_DIB<23>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<22>_UNCONNECTED , \NLW_blk000000cd_DIB<21>_UNCONNECTED , \NLW_blk000000cd_DIB<20>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<19>_UNCONNECTED , \NLW_blk000000cd_DIB<18>_UNCONNECTED , \NLW_blk000000cd_DIB<17>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<16>_UNCONNECTED , \NLW_blk000000cd_DIB<15>_UNCONNECTED , \NLW_blk000000cd_DIB<14>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<13>_UNCONNECTED , \NLW_blk000000cd_DIB<12>_UNCONNECTED , \NLW_blk000000cd_DIB<11>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<10>_UNCONNECTED , \NLW_blk000000cd_DIB<9>_UNCONNECTED , \NLW_blk000000cd_DIB<8>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<7>_UNCONNECTED , \NLW_blk000000cd_DIB<6>_UNCONNECTED , \NLW_blk000000cd_DIB<5>_UNCONNECTED , \NLW_blk000000cd_DIB<4>_UNCONNECTED 
+, \NLW_blk000000cd_DIB<3>_UNCONNECTED , \NLW_blk000000cd_DIB<2>_UNCONNECTED , \NLW_blk000000cd_DIB<1>_UNCONNECTED , 
+\NLW_blk000000cd_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000cd_DOPA<3>_UNCONNECTED , \NLW_blk000000cd_DOPA<2>_UNCONNECTED , \NLW_blk000000cd_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000cd_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000cd_DIPB<3>_UNCONNECTED , \NLW_blk000000cd_DIPB<2>_UNCONNECTED , \NLW_blk000000cd_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000cd_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000cd_DOPB<3>_UNCONNECTED , \NLW_blk000000cd_DOPB<2>_UNCONNECTED , \NLW_blk000000cd_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000cd_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000cd_DOB<31>_UNCONNECTED , \NLW_blk000000cd_DOB<30>_UNCONNECTED , \NLW_blk000000cd_DOB<29>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<28>_UNCONNECTED , \NLW_blk000000cd_DOB<27>_UNCONNECTED , \NLW_blk000000cd_DOB<26>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<25>_UNCONNECTED , \NLW_blk000000cd_DOB<24>_UNCONNECTED , \NLW_blk000000cd_DOB<23>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<22>_UNCONNECTED , \NLW_blk000000cd_DOB<21>_UNCONNECTED , \NLW_blk000000cd_DOB<20>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<19>_UNCONNECTED , \NLW_blk000000cd_DOB<18>_UNCONNECTED , \NLW_blk000000cd_DOB<17>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<16>_UNCONNECTED , \NLW_blk000000cd_DOB<15>_UNCONNECTED , \NLW_blk000000cd_DOB<14>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<13>_UNCONNECTED , \NLW_blk000000cd_DOB<12>_UNCONNECTED , \NLW_blk000000cd_DOB<11>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<10>_UNCONNECTED , \NLW_blk000000cd_DOB<9>_UNCONNECTED , \NLW_blk000000cd_DOB<8>_UNCONNECTED , 
+\NLW_blk000000cd_DOB<7>_UNCONNECTED , \NLW_blk000000cd_DOB<6>_UNCONNECTED , \NLW_blk000000cd_DOB<5>_UNCONNECTED , \NLW_blk000000cd_DOB<4>_UNCONNECTED 
+, \NLW_blk000000cd_DOB<3>_UNCONNECTED , \NLW_blk000000cd_DOB<2>_UNCONNECTED , \NLW_blk000000cd_DOB<1>_UNCONNECTED , sig000000a2}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000cd_DIA<31>_UNCONNECTED , \NLW_blk000000cd_DIA<30>_UNCONNECTED , \NLW_blk000000cd_DIA<29>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<28>_UNCONNECTED , \NLW_blk000000cd_DIA<27>_UNCONNECTED , \NLW_blk000000cd_DIA<26>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<25>_UNCONNECTED , \NLW_blk000000cd_DIA<24>_UNCONNECTED , \NLW_blk000000cd_DIA<23>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<22>_UNCONNECTED , \NLW_blk000000cd_DIA<21>_UNCONNECTED , \NLW_blk000000cd_DIA<20>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<19>_UNCONNECTED , \NLW_blk000000cd_DIA<18>_UNCONNECTED , \NLW_blk000000cd_DIA<17>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<16>_UNCONNECTED , \NLW_blk000000cd_DIA<15>_UNCONNECTED , \NLW_blk000000cd_DIA<14>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<13>_UNCONNECTED , \NLW_blk000000cd_DIA<12>_UNCONNECTED , \NLW_blk000000cd_DIA<11>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<10>_UNCONNECTED , \NLW_blk000000cd_DIA<9>_UNCONNECTED , \NLW_blk000000cd_DIA<8>_UNCONNECTED , 
+\NLW_blk000000cd_DIA<7>_UNCONNECTED , \NLW_blk000000cd_DIA<6>_UNCONNECTED , \NLW_blk000000cd_DIA<5>_UNCONNECTED , \NLW_blk000000cd_DIA<4>_UNCONNECTED 
+, \NLW_blk000000cd_DIA<3>_UNCONNECTED , \NLW_blk000000cd_DIA<2>_UNCONNECTED , \NLW_blk000000cd_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0007FFFFFFFFFC0000000001FFFFFFFFFF0000000000FFFFFFFFFF8000000000 ),
+    .INIT_01 ( 256'h000000FFFFFFFFFF80000000003FFFFFFFFFE0000000000FFFFFFFFFF8000000 ),
+    .INIT_02 ( 256'h000000001FFFFFFFFFF00000000007FFFFFFFFFC0000000001FFFFFFFFFF0000 ),
+    .INIT_03 ( 256'hF80000000003FFFFFFFFFE0000000000FFFFFFFFFF80000000003FFFFFFFFFC0 ),
+    .INIT_04 ( 256'hFFFE0000000000FFFFFFFFFF80000000003FFFFFFFFFE0000000000FFFFFFFFF ),
+    .INIT_05 ( 256'hFFFFFF00000000007FFFFFFFFFC0000000001FFFFFFFFFF00000000003FFFFFF ),
+    .INIT_06 ( 256'hFFFFFFFF00000000007FFFFFFFFFE0000000000FFFFFFFFFF80000000001FFFF ),
+    .INIT_07 ( 256'hFFFFFFFFFE00000000007FFFFFFFFFC0000000000FFFFFFFFFF80000000001FF ),
+    .INIT_08 ( 256'h0FFFFFFFFFF80000000001FFFFFFFFFF80000000003FFFFFFFFFF00000000003 ),
+    .INIT_09 ( 256'h00FFFFFFFFFFC0000000000FFFFFFFFFFC0000000000FFFFFFFFFFC000000000 ),
+    .INIT_0A ( 256'h001FFFFFFFFFF80000000000FFFFFFFFFFC0000000000FFFFFFFFFFC00000000 ),
+    .INIT_0B ( 256'h000FFFFFFFFFFE00000000003FFFFFFFFFF00000000003FFFFFFFFFF80000000 ),
+    .INIT_0C ( 256'h000FFFFFFFFFFE00000000003FFFFFFFFFF00000000001FFFFFFFFFFC0000000 ),
+    .INIT_0D ( 256'h007FFFFFFFFFF00000000000FFFFFFFFFFE00000000003FFFFFFFFFF80000000 ),
+    .INIT_0E ( 256'h0FFFFFFFFFFF00000000001FFFFFFFFFFE00000000003FFFFFFFFFFC00000000 ),
+    .INIT_0F ( 256'hFFFFFFFFFF800000000007FFFFFFFFFF800000000007FFFFFFFFFF0000000000 ),
+    .INIT_10 ( 256'hFFFFFFFE00000000001FFFFFFFFFFF00000000000FFFFFFFFFFF000000000007 ),
+    .INIT_11 ( 256'hFFFFC00000000001FFFFFFFFFFF000000000007FFFFFFFFFFC00000000003FFF ),
+    .INIT_12 ( 256'hC00000000001FFFFFFFFFFF800000000003FFFFFFFFFFF000000000007FFFFFF ),
+    .INIT_13 ( 256'h0000000FFFFFFFFFFFC00000000000FFFFFFFFFFFC00000000000FFFFFFFFFFF ),
+    .INIT_14 ( 256'h07FFFFFFFFFFF000000000001FFFFFFFFFFF800000000000FFFFFFFFFFFC0000 ),
+    .INIT_15 ( 256'hFFFFFF8000000000007FFFFFFFFFFF000000000001FFFFFFFFFFFC0000000000 ),
+    .INIT_16 ( 256'h00000000003FFFFFFFFFFFC000000000003FFFFFFFFFFFC000000000003FFFFF ),
+    .INIT_17 ( 256'h01FFFFFFFFFFFF0000000000007FFFFFFFFFFF8000000000003FFFFFFFFFFFC0 ),
+    .INIT_18 ( 256'hFFFF0000000000007FFFFFFFFFFFE000000000000FFFFFFFFFFFFC0000000000 ),
+    .INIT_19 ( 256'h00000FFFFFFFFFFFFE0000000000007FFFFFFFFFFFF0000000000003FFFFFFFF ),
+    .INIT_1A ( 256'hFFFFF8000000000000FFFFFFFFFFFFE0000000000001FFFFFFFFFFFFC0000000 ),
+    .INIT_1B ( 256'h0000FFFFFFFFFFFFF00000000000007FFFFFFFFFFFF80000000000007FFFFFFF ),
+    .INIT_1C ( 256'hFC0000000000001FFFFFFFFFFFFF80000000000003FFFFFFFFFFFFE000000000 ),
+    .INIT_1D ( 256'hFFFFFFFFFFF00000000000001FFFFFFFFFFFFF80000000000000FFFFFFFFFFFF ),
+    .INIT_1E ( 256'h000001FFFFFFFFFFFFFE00000000000001FFFFFFFFFFFFFC00000000000007FF ),
+    .INIT_1F ( 256'h0000000000000FFFFFFFFFFFFFF800000000000003FFFFFFFFFFFFFC00000000 ),
+    .INIT_20 ( 256'hFFFF800000000000001FFFFFFFFFFFFFFC00000000000000FFFFFFFFFFFFFFC0 ),
+    .INIT_21 ( 256'hFFFFFFFF8000000000000003FFFFFFFFFFFFFFC000000000000007FFFFFFFFFF ),
+    .INIT_22 ( 256'hFFFFFFFFFFF0000000000000003FFFFFFFFFFFFFFF0000000000000007FFFFFF ),
+    .INIT_23 ( 256'hFFFFFFFFFFFF0000000000000000FFFFFFFFFFFFFFFE0000000000000003FFFF ),
+    .INIT_24 ( 256'hFFFFFFFFFFF80000000000000003FFFFFFFFFFFFFFFE0000000000000000FFFF ),
+    .INIT_25 ( 256'hFFFFFFFF00000000000000000FFFFFFFFFFFFFFFFF00000000000000003FFFFF ),
+    .INIT_26 ( 256'hFFE000000000000000007FFFFFFFFFFFFFFFFE00000000000000000FFFFFFFFF ),
+    .INIT_27 ( 256'h0000000000001FFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFF ),
+    .INIT_28 ( 256'h003FFFFFFFFFFFFFFFFFF8000000000000000000FFFFFFFFFFFFFFFFFFC00000 ),
+    .INIT_29 ( 256'hFFFFFFFF80000000000000000000FFFFFFFFFFFFFFFFFFF80000000000000000 ),
+    .INIT_2A ( 256'h000000000000FFFFFFFFFFFFFFFFFFFF800000000000000000003FFFFFFFFFFF ),
+    .INIT_2B ( 256'hFFFFFFFFFFFFF0000000000000000000007FFFFFFFFFFFFFFFFFFFF800000000 ),
+    .INIT_2C ( 256'h000000000007FFFFFFFFFFFFFFFFFFFFFC0000000000000000000003FFFFFFFF ),
+    .INIT_2D ( 256'hFFFFFF000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFC00000000000 ),
+    .INIT_2E ( 256'hFFFFFFFFFFFFFFFFFFFFFC000000000000000000000000FFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'h000000000FFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000000000001FFF ),
+    .INIT_30 ( 256'h0000000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFF800000000000000000 ),
+    .INIT_31 ( 256'h00000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000 ),
+    .INIT_32 ( 256'h00000000000000000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000 ),
+    .INIT_33 ( 256'h0000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000 ),
+    .INIT_34 ( 256'h000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000 ),
+    .INIT_35 ( 256'h000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000000000000 ),
+    .INIT_36 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000 ),
+    .INIT_37 ( 256'h000000000000000000000000000000000000000000001FFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'h001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000 ),
+    .INIT_39 ( 256'hFFF0000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3B ( 256'h0000000000000000000000000000000000000000000000000000003FFFFFFFFF ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFE000000000000000000000000000000000000000000000000 ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000ce (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000ce_DIPA<3>_UNCONNECTED , \NLW_blk000000ce_DIPA<2>_UNCONNECTED , \NLW_blk000000ce_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000ce_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000ce_DOA<31>_UNCONNECTED , \NLW_blk000000ce_DOA<30>_UNCONNECTED , \NLW_blk000000ce_DOA<29>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<28>_UNCONNECTED , \NLW_blk000000ce_DOA<27>_UNCONNECTED , \NLW_blk000000ce_DOA<26>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<25>_UNCONNECTED , \NLW_blk000000ce_DOA<24>_UNCONNECTED , \NLW_blk000000ce_DOA<23>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<22>_UNCONNECTED , \NLW_blk000000ce_DOA<21>_UNCONNECTED , \NLW_blk000000ce_DOA<20>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<19>_UNCONNECTED , \NLW_blk000000ce_DOA<18>_UNCONNECTED , \NLW_blk000000ce_DOA<17>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<16>_UNCONNECTED , \NLW_blk000000ce_DOA<15>_UNCONNECTED , \NLW_blk000000ce_DOA<14>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<13>_UNCONNECTED , \NLW_blk000000ce_DOA<12>_UNCONNECTED , \NLW_blk000000ce_DOA<11>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<10>_UNCONNECTED , \NLW_blk000000ce_DOA<9>_UNCONNECTED , \NLW_blk000000ce_DOA<8>_UNCONNECTED , 
+\NLW_blk000000ce_DOA<7>_UNCONNECTED , \NLW_blk000000ce_DOA<6>_UNCONNECTED , \NLW_blk000000ce_DOA<5>_UNCONNECTED , \NLW_blk000000ce_DOA<4>_UNCONNECTED 
+, \NLW_blk000000ce_DOA<3>_UNCONNECTED , \NLW_blk000000ce_DOA<2>_UNCONNECTED , \NLW_blk000000ce_DOA<1>_UNCONNECTED , sig000000a9}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000ce_DIB<31>_UNCONNECTED , \NLW_blk000000ce_DIB<30>_UNCONNECTED , \NLW_blk000000ce_DIB<29>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<28>_UNCONNECTED , \NLW_blk000000ce_DIB<27>_UNCONNECTED , \NLW_blk000000ce_DIB<26>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<25>_UNCONNECTED , \NLW_blk000000ce_DIB<24>_UNCONNECTED , \NLW_blk000000ce_DIB<23>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<22>_UNCONNECTED , \NLW_blk000000ce_DIB<21>_UNCONNECTED , \NLW_blk000000ce_DIB<20>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<19>_UNCONNECTED , \NLW_blk000000ce_DIB<18>_UNCONNECTED , \NLW_blk000000ce_DIB<17>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<16>_UNCONNECTED , \NLW_blk000000ce_DIB<15>_UNCONNECTED , \NLW_blk000000ce_DIB<14>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<13>_UNCONNECTED , \NLW_blk000000ce_DIB<12>_UNCONNECTED , \NLW_blk000000ce_DIB<11>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<10>_UNCONNECTED , \NLW_blk000000ce_DIB<9>_UNCONNECTED , \NLW_blk000000ce_DIB<8>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<7>_UNCONNECTED , \NLW_blk000000ce_DIB<6>_UNCONNECTED , \NLW_blk000000ce_DIB<5>_UNCONNECTED , \NLW_blk000000ce_DIB<4>_UNCONNECTED 
+, \NLW_blk000000ce_DIB<3>_UNCONNECTED , \NLW_blk000000ce_DIB<2>_UNCONNECTED , \NLW_blk000000ce_DIB<1>_UNCONNECTED , 
+\NLW_blk000000ce_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000ce_DOPA<3>_UNCONNECTED , \NLW_blk000000ce_DOPA<2>_UNCONNECTED , \NLW_blk000000ce_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000ce_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000ce_DIPB<3>_UNCONNECTED , \NLW_blk000000ce_DIPB<2>_UNCONNECTED , \NLW_blk000000ce_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000ce_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000ce_DOPB<3>_UNCONNECTED , \NLW_blk000000ce_DOPB<2>_UNCONNECTED , \NLW_blk000000ce_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000ce_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000ce_DOB<31>_UNCONNECTED , \NLW_blk000000ce_DOB<30>_UNCONNECTED , \NLW_blk000000ce_DOB<29>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<28>_UNCONNECTED , \NLW_blk000000ce_DOB<27>_UNCONNECTED , \NLW_blk000000ce_DOB<26>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<25>_UNCONNECTED , \NLW_blk000000ce_DOB<24>_UNCONNECTED , \NLW_blk000000ce_DOB<23>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<22>_UNCONNECTED , \NLW_blk000000ce_DOB<21>_UNCONNECTED , \NLW_blk000000ce_DOB<20>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<19>_UNCONNECTED , \NLW_blk000000ce_DOB<18>_UNCONNECTED , \NLW_blk000000ce_DOB<17>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<16>_UNCONNECTED , \NLW_blk000000ce_DOB<15>_UNCONNECTED , \NLW_blk000000ce_DOB<14>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<13>_UNCONNECTED , \NLW_blk000000ce_DOB<12>_UNCONNECTED , \NLW_blk000000ce_DOB<11>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<10>_UNCONNECTED , \NLW_blk000000ce_DOB<9>_UNCONNECTED , \NLW_blk000000ce_DOB<8>_UNCONNECTED , 
+\NLW_blk000000ce_DOB<7>_UNCONNECTED , \NLW_blk000000ce_DOB<6>_UNCONNECTED , \NLW_blk000000ce_DOB<5>_UNCONNECTED , \NLW_blk000000ce_DOB<4>_UNCONNECTED 
+, \NLW_blk000000ce_DOB<3>_UNCONNECTED , \NLW_blk000000ce_DOB<2>_UNCONNECTED , \NLW_blk000000ce_DOB<1>_UNCONNECTED , sig0000009e}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000ce_DIA<31>_UNCONNECTED , \NLW_blk000000ce_DIA<30>_UNCONNECTED , \NLW_blk000000ce_DIA<29>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<28>_UNCONNECTED , \NLW_blk000000ce_DIA<27>_UNCONNECTED , \NLW_blk000000ce_DIA<26>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<25>_UNCONNECTED , \NLW_blk000000ce_DIA<24>_UNCONNECTED , \NLW_blk000000ce_DIA<23>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<22>_UNCONNECTED , \NLW_blk000000ce_DIA<21>_UNCONNECTED , \NLW_blk000000ce_DIA<20>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<19>_UNCONNECTED , \NLW_blk000000ce_DIA<18>_UNCONNECTED , \NLW_blk000000ce_DIA<17>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<16>_UNCONNECTED , \NLW_blk000000ce_DIA<15>_UNCONNECTED , \NLW_blk000000ce_DIA<14>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<13>_UNCONNECTED , \NLW_blk000000ce_DIA<12>_UNCONNECTED , \NLW_blk000000ce_DIA<11>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<10>_UNCONNECTED , \NLW_blk000000ce_DIA<9>_UNCONNECTED , \NLW_blk000000ce_DIA<8>_UNCONNECTED , 
+\NLW_blk000000ce_DIA<7>_UNCONNECTED , \NLW_blk000000ce_DIA<6>_UNCONNECTED , \NLW_blk000000ce_DIA<5>_UNCONNECTED , \NLW_blk000000ce_DIA<4>_UNCONNECTED 
+, \NLW_blk000000ce_DIA<3>_UNCONNECTED , \NLW_blk000000ce_DIA<2>_UNCONNECTED , \NLW_blk000000ce_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h0007FFFFC00003FFFFE00001FFFFE00000FFFFF00000FFFFF800007FFFFC0000 ),
+    .INIT_01 ( 256'hF00000FFFFF800007FFFFC00003FFFFE00001FFFFE00000FFFFF000007FFFF80 ),
+    .INIT_02 ( 256'hFFFE00001FFFFF00000FFFFF800007FFFFC00003FFFFC00001FFFFE00000FFFF ),
+    .INIT_03 ( 256'h07FFFF800003FFFFC00001FFFFE00000FFFFF000007FFFF800003FFFFC00003F ),
+    .INIT_04 ( 256'h0001FFFFE00000FFFFF000007FFFF800003FFFFC00001FFFFE00000FFFFF0000 ),
+    .INIT_05 ( 256'hE00000FFFFF000007FFFFC00003FFFFE00001FFFFF00000FFFFF800003FFFFC0 ),
+    .INIT_06 ( 256'hFFE00000FFFFF800007FFFFC00001FFFFE00000FFFFF800007FFFFC00001FFFF ),
+    .INIT_07 ( 256'hFFFFC00001FFFFF000007FFFFC00003FFFFE00000FFFFF800007FFFFC00001FF ),
+    .INIT_08 ( 256'h0FFFFF000007FFFFC00001FFFFF000007FFFFC00003FFFFE00000FFFFF800003 ),
+    .INIT_09 ( 256'h00FFFFF800003FFFFE00000FFFFF800003FFFFE00000FFFFF800003FFFFE0000 ),
+    .INIT_0A ( 256'h001FFFFF000007FFFFE00000FFFFF800003FFFFE00000FFFFF800003FFFFE000 ),
+    .INIT_0B ( 256'h000FFFFFC00001FFFFF000003FFFFE00000FFFFF800003FFFFF000007FFFFC00 ),
+    .INIT_0C ( 256'h000FFFFF800001FFFFF000003FFFFE00000FFFFFC00001FFFFF000003FFFFE00 ),
+    .INIT_0D ( 256'h007FFFFE00000FFFFFC00000FFFFF800001FFFFF000003FFFFE000007FFFFC00 ),
+    .INIT_0E ( 256'h0FFFFFC00000FFFFFC00001FFFFF800001FFFFF800003FFFFF000003FFFFE000 ),
+    .INIT_0F ( 256'hFFFFE000007FFFFE000007FFFFE000007FFFFE000007FFFFC00000FFFFFC0000 ),
+    .INIT_10 ( 256'hFF800001FFFFF800001FFFFFC00000FFFFFC00000FFFFFC00000FFFFFC000007 ),
+    .INIT_11 ( 256'h00003FFFFF800001FFFFF800000FFFFFC000007FFFFE000003FFFFF000003FFF ),
+    .INIT_12 ( 256'h3FFFFF800001FFFFFC000007FFFFF000003FFFFF800000FFFFFC000007FFFFE0 ),
+    .INIT_13 ( 256'hF800000FFFFFE000003FFFFF800000FFFFFE000003FFFFF800000FFFFFE00000 ),
+    .INIT_14 ( 256'h07FFFFF800000FFFFFE000001FFFFFC000007FFFFF000000FFFFFE000003FFFF ),
+    .INIT_15 ( 256'hC000007FFFFF8000007FFFFF000000FFFFFF000001FFFFFE000003FFFFFC0000 ),
+    .INIT_16 ( 256'hFFFFC000003FFFFFC000003FFFFFC000003FFFFFC000003FFFFFC000003FFFFF ),
+    .INIT_17 ( 256'h01FFFFFE000000FFFFFF0000007FFFFF8000007FFFFFC000003FFFFFC000003F ),
+    .INIT_18 ( 256'h0000FFFFFF8000007FFFFFC000001FFFFFF000000FFFFFF8000003FFFFFC0000 ),
+    .INIT_19 ( 256'h00000FFFFFFC000001FFFFFF0000007FFFFFE000000FFFFFF8000003FFFFFE00 ),
+    .INIT_1A ( 256'h000007FFFFFC000000FFFFFFC000001FFFFFF8000001FFFFFF0000003FFFFFE0 ),
+    .INIT_1B ( 256'h0000FFFFFFC000000FFFFFFE0000007FFFFFE0000007FFFFFE0000007FFFFFE0 ),
+    .INIT_1C ( 256'h03FFFFFF0000001FFFFFFC0000007FFFFFE0000003FFFFFF0000001FFFFFF800 ),
+    .INIT_1D ( 256'hFFFF8000000FFFFFFF0000001FFFFFFC0000007FFFFFF0000000FFFFFFE00000 ),
+    .INIT_1E ( 256'h000001FFFFFFE0000001FFFFFFE0000001FFFFFFC0000003FFFFFFC0000007FF ),
+    .INIT_1F ( 256'hFFFFFE0000000FFFFFFF00000007FFFFFF80000003FFFFFFC0000003FFFFFFE0 ),
+    .INIT_20 ( 256'h00007FFFFFFC0000001FFFFFFF80000003FFFFFFE0000000FFFFFFF80000003F ),
+    .INIT_21 ( 256'hE00000007FFFFFFF00000003FFFFFFF00000003FFFFFFF00000007FFFFFFE000 ),
+    .INIT_22 ( 256'hFFF80000000FFFFFFFE00000003FFFFFFF80000000FFFFFFFC00000007FFFFFF ),
+    .INIT_23 ( 256'hFFFF00000000FFFFFFFF00000000FFFFFFFF00000001FFFFFFFE00000003FFFF ),
+    .INIT_24 ( 256'hFFF000000007FFFFFFF800000003FFFFFFFE00000001FFFFFFFF00000000FFFF ),
+    .INIT_25 ( 256'h00000000FFFFFFFFC00000000FFFFFFFFC00000000FFFFFFFF800000003FFFFF ),
+    .INIT_26 ( 256'h001FFFFFFFFC000000007FFFFFFFF000000001FFFFFFFFC00000000FFFFFFFFC ),
+    .INIT_27 ( 256'hFFFE000000001FFFFFFFFF000000000FFFFFFFFF000000000FFFFFFFFE000000 ),
+    .INIT_28 ( 256'h003FFFFFFFFF0000000007FFFFFFFFE000000000FFFFFFFFF8000000003FFFFF ),
+    .INIT_29 ( 256'h000000007FFFFFFFFF8000000000FFFFFFFFFE0000000007FFFFFFFFF0000000 ),
+    .INIT_2A ( 256'hFE0000000000FFFFFFFFFF80000000007FFFFFFFFFC0000000003FFFFFFFFFC0 ),
+    .INIT_2B ( 256'hFF80000000000FFFFFFFFFFE00000000007FFFFFFFFFE00000000007FFFFFFFF ),
+    .INIT_2C ( 256'h000000000007FFFFFFFFFFC00000000003FFFFFFFFFFC00000000003FFFFFFFF ),
+    .INIT_2D ( 256'h000000FFFFFFFFFFFE000000000003FFFFFFFFFFF000000000003FFFFFFFFFFF ),
+    .INIT_2E ( 256'hFFFFFFFFF8000000000003FFFFFFFFFFFF000000000000FFFFFFFFFFFF000000 ),
+    .INIT_2F ( 256'h000000000FFFFFFFFFFFFF80000000000007FFFFFFFFFFFF0000000000001FFF ),
+    .INIT_30 ( 256'hFFFFE00000000000001FFFFFFFFFFFFFE00000000000007FFFFFFFFFFFFE0000 ),
+    .INIT_31 ( 256'hFFFFFFFFFFE000000000000003FFFFFFFFFFFFFF800000000000001FFFFFFFFF ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFF0000000000000001FFFFFFFFFFFFFFF8000000000000001FFFF ),
+    .INIT_33 ( 256'hFFFFFFFFFF800000000000000003FFFFFFFFFFFFFFFF80000000000000001FFF ),
+    .INIT_34 ( 256'hFE0000000000000000003FFFFFFFFFFFFFFFFFF000000000000000001FFFFFFF ),
+    .INIT_35 ( 256'h000000FFFFFFFFFFFFFFFFFFFFC00000000000000000003FFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'hFFFFC0000000000000000000000FFFFFFFFFFFFFFFFFFFFFF000000000000000 ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFF8000000000000000000000001FFFFFFFFFFFFFFFFFFF ),
+    .INIT_38 ( 256'h001FFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000000003FFFFF ),
+    .INIT_39 ( 256'h000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000 ),
+    .INIT_3A ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000000000000000000000000000 ),
+    .INIT_3B ( 256'hFFFFFFFF80000000000000000000000000000000000000000000003FFFFFFFFF ),
+    .INIT_3C ( 256'h0000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hE000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000cf (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000cf_DIPA<3>_UNCONNECTED , \NLW_blk000000cf_DIPA<2>_UNCONNECTED , \NLW_blk000000cf_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000cf_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000cf_DOA<31>_UNCONNECTED , \NLW_blk000000cf_DOA<30>_UNCONNECTED , \NLW_blk000000cf_DOA<29>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<28>_UNCONNECTED , \NLW_blk000000cf_DOA<27>_UNCONNECTED , \NLW_blk000000cf_DOA<26>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<25>_UNCONNECTED , \NLW_blk000000cf_DOA<24>_UNCONNECTED , \NLW_blk000000cf_DOA<23>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<22>_UNCONNECTED , \NLW_blk000000cf_DOA<21>_UNCONNECTED , \NLW_blk000000cf_DOA<20>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<19>_UNCONNECTED , \NLW_blk000000cf_DOA<18>_UNCONNECTED , \NLW_blk000000cf_DOA<17>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<16>_UNCONNECTED , \NLW_blk000000cf_DOA<15>_UNCONNECTED , \NLW_blk000000cf_DOA<14>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<13>_UNCONNECTED , \NLW_blk000000cf_DOA<12>_UNCONNECTED , \NLW_blk000000cf_DOA<11>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<10>_UNCONNECTED , \NLW_blk000000cf_DOA<9>_UNCONNECTED , \NLW_blk000000cf_DOA<8>_UNCONNECTED , 
+\NLW_blk000000cf_DOA<7>_UNCONNECTED , \NLW_blk000000cf_DOA<6>_UNCONNECTED , \NLW_blk000000cf_DOA<5>_UNCONNECTED , \NLW_blk000000cf_DOA<4>_UNCONNECTED 
+, \NLW_blk000000cf_DOA<3>_UNCONNECTED , \NLW_blk000000cf_DOA<2>_UNCONNECTED , \NLW_blk000000cf_DOA<1>_UNCONNECTED , sig000000a8}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000cf_DIB<31>_UNCONNECTED , \NLW_blk000000cf_DIB<30>_UNCONNECTED , \NLW_blk000000cf_DIB<29>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<28>_UNCONNECTED , \NLW_blk000000cf_DIB<27>_UNCONNECTED , \NLW_blk000000cf_DIB<26>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<25>_UNCONNECTED , \NLW_blk000000cf_DIB<24>_UNCONNECTED , \NLW_blk000000cf_DIB<23>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<22>_UNCONNECTED , \NLW_blk000000cf_DIB<21>_UNCONNECTED , \NLW_blk000000cf_DIB<20>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<19>_UNCONNECTED , \NLW_blk000000cf_DIB<18>_UNCONNECTED , \NLW_blk000000cf_DIB<17>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<16>_UNCONNECTED , \NLW_blk000000cf_DIB<15>_UNCONNECTED , \NLW_blk000000cf_DIB<14>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<13>_UNCONNECTED , \NLW_blk000000cf_DIB<12>_UNCONNECTED , \NLW_blk000000cf_DIB<11>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<10>_UNCONNECTED , \NLW_blk000000cf_DIB<9>_UNCONNECTED , \NLW_blk000000cf_DIB<8>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<7>_UNCONNECTED , \NLW_blk000000cf_DIB<6>_UNCONNECTED , \NLW_blk000000cf_DIB<5>_UNCONNECTED , \NLW_blk000000cf_DIB<4>_UNCONNECTED 
+, \NLW_blk000000cf_DIB<3>_UNCONNECTED , \NLW_blk000000cf_DIB<2>_UNCONNECTED , \NLW_blk000000cf_DIB<1>_UNCONNECTED , 
+\NLW_blk000000cf_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000cf_DOPA<3>_UNCONNECTED , \NLW_blk000000cf_DOPA<2>_UNCONNECTED , \NLW_blk000000cf_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000cf_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000cf_DIPB<3>_UNCONNECTED , \NLW_blk000000cf_DIPB<2>_UNCONNECTED , \NLW_blk000000cf_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000cf_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000cf_DOPB<3>_UNCONNECTED , \NLW_blk000000cf_DOPB<2>_UNCONNECTED , \NLW_blk000000cf_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000cf_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000cf_DOB<31>_UNCONNECTED , \NLW_blk000000cf_DOB<30>_UNCONNECTED , \NLW_blk000000cf_DOB<29>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<28>_UNCONNECTED , \NLW_blk000000cf_DOB<27>_UNCONNECTED , \NLW_blk000000cf_DOB<26>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<25>_UNCONNECTED , \NLW_blk000000cf_DOB<24>_UNCONNECTED , \NLW_blk000000cf_DOB<23>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<22>_UNCONNECTED , \NLW_blk000000cf_DOB<21>_UNCONNECTED , \NLW_blk000000cf_DOB<20>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<19>_UNCONNECTED , \NLW_blk000000cf_DOB<18>_UNCONNECTED , \NLW_blk000000cf_DOB<17>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<16>_UNCONNECTED , \NLW_blk000000cf_DOB<15>_UNCONNECTED , \NLW_blk000000cf_DOB<14>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<13>_UNCONNECTED , \NLW_blk000000cf_DOB<12>_UNCONNECTED , \NLW_blk000000cf_DOB<11>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<10>_UNCONNECTED , \NLW_blk000000cf_DOB<9>_UNCONNECTED , \NLW_blk000000cf_DOB<8>_UNCONNECTED , 
+\NLW_blk000000cf_DOB<7>_UNCONNECTED , \NLW_blk000000cf_DOB<6>_UNCONNECTED , \NLW_blk000000cf_DOB<5>_UNCONNECTED , \NLW_blk000000cf_DOB<4>_UNCONNECTED 
+, \NLW_blk000000cf_DOB<3>_UNCONNECTED , \NLW_blk000000cf_DOB<2>_UNCONNECTED , \NLW_blk000000cf_DOB<1>_UNCONNECTED , sig0000009d}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000cf_DIA<31>_UNCONNECTED , \NLW_blk000000cf_DIA<30>_UNCONNECTED , \NLW_blk000000cf_DIA<29>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<28>_UNCONNECTED , \NLW_blk000000cf_DIA<27>_UNCONNECTED , \NLW_blk000000cf_DIA<26>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<25>_UNCONNECTED , \NLW_blk000000cf_DIA<24>_UNCONNECTED , \NLW_blk000000cf_DIA<23>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<22>_UNCONNECTED , \NLW_blk000000cf_DIA<21>_UNCONNECTED , \NLW_blk000000cf_DIA<20>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<19>_UNCONNECTED , \NLW_blk000000cf_DIA<18>_UNCONNECTED , \NLW_blk000000cf_DIA<17>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<16>_UNCONNECTED , \NLW_blk000000cf_DIA<15>_UNCONNECTED , \NLW_blk000000cf_DIA<14>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<13>_UNCONNECTED , \NLW_blk000000cf_DIA<12>_UNCONNECTED , \NLW_blk000000cf_DIA<11>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<10>_UNCONNECTED , \NLW_blk000000cf_DIA<9>_UNCONNECTED , \NLW_blk000000cf_DIA<8>_UNCONNECTED , 
+\NLW_blk000000cf_DIA<7>_UNCONNECTED , \NLW_blk000000cf_DIA<6>_UNCONNECTED , \NLW_blk000000cf_DIA<5>_UNCONNECTED , \NLW_blk000000cf_DIA<4>_UNCONNECTED 
+, \NLW_blk000000cf_DIA<3>_UNCONNECTED , \NLW_blk000000cf_DIA<2>_UNCONNECTED , \NLW_blk000000cf_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'hFFF800000000000000000001FFFFFFFFFFFFFFFFFFFF00000000000000000000 ),
+    .INIT_01 ( 256'h000000FFFFFFFFFFFFFFFFFFFFC00000000000000000000FFFFFFFFFFFFFFFFF ),
+    .INIT_02 ( 256'hFFFFFFFFE000000000000000000007FFFFFFFFFFFFFFFFFFFE00000000000000 ),
+    .INIT_03 ( 256'h000000000003FFFFFFFFFFFFFFFFFFFF000000000000000000003FFFFFFFFFFF ),
+    .INIT_04 ( 256'hFFFFFFFFFFFFFF000000000000000000003FFFFFFFFFFFFFFFFFFFF000000000 ),
+    .INIT_05 ( 256'h00000000000000007FFFFFFFFFFFFFFFFFFFE000000000000000000003FFFFFF ),
+    .INIT_06 ( 256'hFFFFFFFFFFFFFFFFFF800000000000000000000FFFFFFFFFFFFFFFFFFFFE0000 ),
+    .INIT_07 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFF000000000000000000001FF ),
+    .INIT_08 ( 256'h0FFFFFFFFFFFFFFFFFFFFE000000000000000000003FFFFFFFFFFFFFFFFFFFFC ),
+    .INIT_09 ( 256'hFF000000000000000000000FFFFFFFFFFFFFFFFFFFFF00000000000000000000 ),
+    .INIT_0A ( 256'h001FFFFFFFFFFFFFFFFFFFFF000000000000000000000FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0B ( 256'hFFF0000000000000000000003FFFFFFFFFFFFFFFFFFFFC000000000000000000 ),
+    .INIT_0C ( 256'h000FFFFFFFFFFFFFFFFFFFFFC000000000000000000001FFFFFFFFFFFFFFFFFF ),
+    .INIT_0D ( 256'hFF8000000000000000000000FFFFFFFFFFFFFFFFFFFFFC000000000000000000 ),
+    .INIT_0E ( 256'h0FFFFFFFFFFFFFFFFFFFFFE0000000000000000000003FFFFFFFFFFFFFFFFFFF ),
+    .INIT_0F ( 256'h0000000000000000000007FFFFFFFFFFFFFFFFFFFFF800000000000000000000 ),
+    .INIT_10 ( 256'hFFFFFFFFFFFFFFFFFFE0000000000000000000000FFFFFFFFFFFFFFFFFFFFFF8 ),
+    .INIT_11 ( 256'h0000000000000001FFFFFFFFFFFFFFFFFFFFFF80000000000000000000003FFF ),
+    .INIT_12 ( 256'hFFFFFFFFFFFE00000000000000000000003FFFFFFFFFFFFFFFFFFFFFF8000000 ),
+    .INIT_13 ( 256'h0000000FFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000FFFFFFFFFFF ),
+    .INIT_14 ( 256'hF800000000000000000000001FFFFFFFFFFFFFFFFFFFFFFF0000000000000000 ),
+    .INIT_15 ( 256'hFFFFFFFFFFFFFFFFFF800000000000000000000001FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_16 ( 256'h00000000003FFFFFFFFFFFFFFFFFFFFFFFC000000000000000000000003FFFFF ),
+    .INIT_17 ( 256'hFE0000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFC0000000000000 ),
+    .INIT_18 ( 256'hFFFFFFFFFFFFFFFF8000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_19 ( 256'h00000FFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000000000003FFFFFFFF ),
+    .INIT_1A ( 256'h000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFE00000000000000000000 ),
+    .INIT_1B ( 256'hFFFF000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFF80000000 ),
+    .INIT_1C ( 256'hFFFFFFFFFFFFFFE000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_1D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFE000000000000000000000000000FFFFFFFFFFFF ),
+    .INIT_1E ( 256'h000001FFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000000000007FF ),
+    .INIT_1F ( 256'h0000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000 ),
+    .INIT_20 ( 256'h0000000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000 ),
+    .INIT_21 ( 256'h000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000 ),
+    .INIT_22 ( 256'h000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000000 ),
+    .INIT_23 ( 256'h0000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000 ),
+    .INIT_24 ( 256'h0000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000 ),
+    .INIT_25 ( 256'h0000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000 ),
+    .INIT_26 ( 256'h000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000 ),
+    .INIT_27 ( 256'h0000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000 ),
+    .INIT_28 ( 256'h003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000 ),
+    .INIT_29 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000 ),
+    .INIT_2A ( 256'hFFFFFFFFFFFF00000000000000000000000000000000000000003FFFFFFFFFFF ),
+    .INIT_2B ( 256'h00000000000000000000000000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_2C ( 256'h000000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC00000000 ),
+    .INIT_2D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000000000000000 ),
+    .INIT_2E ( 256'h0000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFF ),
+    .INIT_2F ( 256'h000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000 ),
+    .INIT_30 ( 256'hFFFFFFFFFFFFFFFFFFE000000000000000000000000000000000000000000000 ),
+    .INIT_31 ( 256'h00000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_32 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00000000000000000000000000000000000 ),
+    .INIT_33 ( 256'h0000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_34 ( 256'hFFFFFFFFFFFFFFFFFFFFC0000000000000000000000000000000000000000000 ),
+    .INIT_35 ( 256'h000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_36 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_37 ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000 ),
+    .INIT_38 ( 256'h001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_39 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_3A ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_3B ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000 ),
+    .INIT_3C ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3D ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000d0 (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000d0_DIPA<3>_UNCONNECTED , \NLW_blk000000d0_DIPA<2>_UNCONNECTED , \NLW_blk000000d0_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000d0_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000d0_DOA<31>_UNCONNECTED , \NLW_blk000000d0_DOA<30>_UNCONNECTED , \NLW_blk000000d0_DOA<29>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<28>_UNCONNECTED , \NLW_blk000000d0_DOA<27>_UNCONNECTED , \NLW_blk000000d0_DOA<26>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<25>_UNCONNECTED , \NLW_blk000000d0_DOA<24>_UNCONNECTED , \NLW_blk000000d0_DOA<23>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<22>_UNCONNECTED , \NLW_blk000000d0_DOA<21>_UNCONNECTED , \NLW_blk000000d0_DOA<20>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<19>_UNCONNECTED , \NLW_blk000000d0_DOA<18>_UNCONNECTED , \NLW_blk000000d0_DOA<17>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<16>_UNCONNECTED , \NLW_blk000000d0_DOA<15>_UNCONNECTED , \NLW_blk000000d0_DOA<14>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<13>_UNCONNECTED , \NLW_blk000000d0_DOA<12>_UNCONNECTED , \NLW_blk000000d0_DOA<11>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<10>_UNCONNECTED , \NLW_blk000000d0_DOA<9>_UNCONNECTED , \NLW_blk000000d0_DOA<8>_UNCONNECTED , 
+\NLW_blk000000d0_DOA<7>_UNCONNECTED , \NLW_blk000000d0_DOA<6>_UNCONNECTED , \NLW_blk000000d0_DOA<5>_UNCONNECTED , \NLW_blk000000d0_DOA<4>_UNCONNECTED 
+, \NLW_blk000000d0_DOA<3>_UNCONNECTED , \NLW_blk000000d0_DOA<2>_UNCONNECTED , \NLW_blk000000d0_DOA<1>_UNCONNECTED , sig000000aa}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000d0_DIB<31>_UNCONNECTED , \NLW_blk000000d0_DIB<30>_UNCONNECTED , \NLW_blk000000d0_DIB<29>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<28>_UNCONNECTED , \NLW_blk000000d0_DIB<27>_UNCONNECTED , \NLW_blk000000d0_DIB<26>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<25>_UNCONNECTED , \NLW_blk000000d0_DIB<24>_UNCONNECTED , \NLW_blk000000d0_DIB<23>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<22>_UNCONNECTED , \NLW_blk000000d0_DIB<21>_UNCONNECTED , \NLW_blk000000d0_DIB<20>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<19>_UNCONNECTED , \NLW_blk000000d0_DIB<18>_UNCONNECTED , \NLW_blk000000d0_DIB<17>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<16>_UNCONNECTED , \NLW_blk000000d0_DIB<15>_UNCONNECTED , \NLW_blk000000d0_DIB<14>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<13>_UNCONNECTED , \NLW_blk000000d0_DIB<12>_UNCONNECTED , \NLW_blk000000d0_DIB<11>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<10>_UNCONNECTED , \NLW_blk000000d0_DIB<9>_UNCONNECTED , \NLW_blk000000d0_DIB<8>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<7>_UNCONNECTED , \NLW_blk000000d0_DIB<6>_UNCONNECTED , \NLW_blk000000d0_DIB<5>_UNCONNECTED , \NLW_blk000000d0_DIB<4>_UNCONNECTED 
+, \NLW_blk000000d0_DIB<3>_UNCONNECTED , \NLW_blk000000d0_DIB<2>_UNCONNECTED , \NLW_blk000000d0_DIB<1>_UNCONNECTED , 
+\NLW_blk000000d0_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000d0_DOPA<3>_UNCONNECTED , \NLW_blk000000d0_DOPA<2>_UNCONNECTED , \NLW_blk000000d0_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000d0_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000d0_DIPB<3>_UNCONNECTED , \NLW_blk000000d0_DIPB<2>_UNCONNECTED , \NLW_blk000000d0_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000d0_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000d0_DOPB<3>_UNCONNECTED , \NLW_blk000000d0_DOPB<2>_UNCONNECTED , \NLW_blk000000d0_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000d0_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000d0_DOB<31>_UNCONNECTED , \NLW_blk000000d0_DOB<30>_UNCONNECTED , \NLW_blk000000d0_DOB<29>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<28>_UNCONNECTED , \NLW_blk000000d0_DOB<27>_UNCONNECTED , \NLW_blk000000d0_DOB<26>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<25>_UNCONNECTED , \NLW_blk000000d0_DOB<24>_UNCONNECTED , \NLW_blk000000d0_DOB<23>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<22>_UNCONNECTED , \NLW_blk000000d0_DOB<21>_UNCONNECTED , \NLW_blk000000d0_DOB<20>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<19>_UNCONNECTED , \NLW_blk000000d0_DOB<18>_UNCONNECTED , \NLW_blk000000d0_DOB<17>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<16>_UNCONNECTED , \NLW_blk000000d0_DOB<15>_UNCONNECTED , \NLW_blk000000d0_DOB<14>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<13>_UNCONNECTED , \NLW_blk000000d0_DOB<12>_UNCONNECTED , \NLW_blk000000d0_DOB<11>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<10>_UNCONNECTED , \NLW_blk000000d0_DOB<9>_UNCONNECTED , \NLW_blk000000d0_DOB<8>_UNCONNECTED , 
+\NLW_blk000000d0_DOB<7>_UNCONNECTED , \NLW_blk000000d0_DOB<6>_UNCONNECTED , \NLW_blk000000d0_DOB<5>_UNCONNECTED , \NLW_blk000000d0_DOB<4>_UNCONNECTED 
+, \NLW_blk000000d0_DOB<3>_UNCONNECTED , \NLW_blk000000d0_DOB<2>_UNCONNECTED , \NLW_blk000000d0_DOB<1>_UNCONNECTED , sig0000009f}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000d0_DIA<31>_UNCONNECTED , \NLW_blk000000d0_DIA<30>_UNCONNECTED , \NLW_blk000000d0_DIA<29>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<28>_UNCONNECTED , \NLW_blk000000d0_DIA<27>_UNCONNECTED , \NLW_blk000000d0_DIA<26>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<25>_UNCONNECTED , \NLW_blk000000d0_DIA<24>_UNCONNECTED , \NLW_blk000000d0_DIA<23>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<22>_UNCONNECTED , \NLW_blk000000d0_DIA<21>_UNCONNECTED , \NLW_blk000000d0_DIA<20>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<19>_UNCONNECTED , \NLW_blk000000d0_DIA<18>_UNCONNECTED , \NLW_blk000000d0_DIA<17>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<16>_UNCONNECTED , \NLW_blk000000d0_DIA<15>_UNCONNECTED , \NLW_blk000000d0_DIA<14>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<13>_UNCONNECTED , \NLW_blk000000d0_DIA<12>_UNCONNECTED , \NLW_blk000000d0_DIA<11>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<10>_UNCONNECTED , \NLW_blk000000d0_DIA<9>_UNCONNECTED , \NLW_blk000000d0_DIA<8>_UNCONNECTED , 
+\NLW_blk000000d0_DIA<7>_UNCONNECTED , \NLW_blk000000d0_DIA<6>_UNCONNECTED , \NLW_blk000000d0_DIA<5>_UNCONNECTED , \NLW_blk000000d0_DIA<4>_UNCONNECTED 
+, \NLW_blk000000d0_DIA<3>_UNCONNECTED , \NLW_blk000000d0_DIA<2>_UNCONNECTED , \NLW_blk000000d0_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'hE007FF003FF003FF001FF801FF801FF800FFC00FFC00FFE007FE007FE003FF00 ),
+    .INIT_01 ( 256'h0FFC00FFE007FE007FE003FF003FF001FF801FF801FFC00FFC00FFC007FE007F ),
+    .INIT_02 ( 256'hF801FF801FFC00FFC00FFC007FE007FE003FF003FF003FF801FF801FF800FFC0 ),
+    .INIT_03 ( 256'h07FE007FF003FF003FF801FF801FF800FFC00FFC007FE007FE003FF003FF003F ),
+    .INIT_04 ( 256'hF001FF801FF800FFC00FFE007FE007FF003FF003FF801FF801FFC00FFC00FFE0 ),
+    .INIT_05 ( 256'h1FF800FFC00FFE007FE003FF003FF001FF801FFC00FFC00FFE007FE003FF003F ),
+    .INIT_06 ( 256'h801FFC00FFC007FE007FF003FF001FF801FFC00FFC007FE007FF003FF001FF80 ),
+    .INIT_07 ( 256'hFF003FF801FFC00FFC007FE003FF003FF801FF800FFC007FE007FF003FF001FF ),
+    .INIT_08 ( 256'h0FFC00FFE007FF003FF801FFC00FFC007FE003FF003FF801FFC00FFE007FE003 ),
+    .INIT_09 ( 256'h00FFE007FF003FF801FFC00FFE007FF003FF001FF800FFC007FE003FF001FF80 ),
+    .INIT_0A ( 256'h801FFC00FFE007FF001FF800FFC007FE003FF001FF800FFC007FF003FF801FFC ),
+    .INIT_0B ( 256'hC00FFE003FF001FFC00FFE003FF001FF800FFE007FF003FF800FFC007FE003FF ),
+    .INIT_0C ( 256'h800FFE007FF001FF800FFE003FF001FFC00FFE003FF001FFC00FFE003FF001FF ),
+    .INIT_0D ( 256'h007FF001FFC00FFE003FF800FFC007FF001FFC00FFE003FF801FFC007FF003FF ),
+    .INIT_0E ( 256'h0FFE003FF800FFE003FF001FFC007FF001FFC007FF003FF800FFE003FF801FFC ),
+    .INIT_0F ( 256'hFF001FFC007FF001FFC007FF001FFC007FF001FFC007FF003FF800FFE003FF80 ),
+    .INIT_10 ( 256'h007FF001FFC007FF001FFC003FF800FFE003FF800FFE003FF800FFE003FFC007 ),
+    .INIT_11 ( 256'hFE003FF8007FF001FFC007FF800FFE003FFC007FF001FFC003FF800FFE003FF8 ),
+    .INIT_12 ( 256'h3FF8007FF001FFE003FFC007FF000FFE003FFC007FF000FFE003FFC007FF001F ),
+    .INIT_13 ( 256'h07FF800FFF001FFE003FFC007FF800FFF001FFE003FFC007FF800FFF001FFC00 ),
+    .INIT_14 ( 256'h07FF8007FF000FFF001FFE001FFC003FFC007FF800FFF000FFE001FFC003FFC0 ),
+    .INIT_15 ( 256'h3FF8007FF8007FF8007FF800FFF000FFF000FFE001FFE001FFE003FFC003FF80 ),
+    .INIT_16 ( 256'hFC003FFC003FFC003FFC003FFC003FFC003FFC003FFC003FFC003FFC003FFC00 ),
+    .INIT_17 ( 256'h01FFE001FFF000FFF000FFF0007FF8007FF8007FF8003FFC003FFC003FFC003F ),
+    .INIT_18 ( 256'hE000FFF0007FF8007FFC003FFE001FFE000FFF000FFF8007FF8003FFC003FFE0 ),
+    .INIT_19 ( 256'hFF000FFF8003FFC001FFF000FFF8007FFC001FFE000FFF0007FF8003FFC001FF ),
+    .INIT_1A ( 256'hFF0007FF8003FFE000FFF8003FFE001FFF0007FFC001FFE000FFF8003FFC001F ),
+    .INIT_1B ( 256'hE000FFF8003FFE000FFF8001FFF0007FFC001FFF0007FFC001FFF0007FFC001F ),
+    .INIT_1C ( 256'h03FFE000FFFC001FFF8003FFE0007FFC001FFF8003FFE000FFFC001FFF0007FF ),
+    .INIT_1D ( 256'hE0007FFC000FFFC000FFF8001FFF8003FFF0007FFE000FFFC000FFF8001FFF00 ),
+    .INIT_1E ( 256'hFF8001FFF8001FFF8001FFF8001FFF8001FFF0003FFF0003FFF0003FFE0007FF ),
+    .INIT_1F ( 256'hFF0001FFF8000FFFC000FFFE0007FFE0007FFF0003FFF0003FFF0003FFF0001F ),
+    .INIT_20 ( 256'hC0007FFE0003FFF8001FFFC0007FFE0003FFF8001FFFC000FFFE0007FFF0003F ),
+    .INIT_21 ( 256'h1FFFC0007FFF8000FFFE0003FFF8000FFFE0003FFF8000FFFC0007FFF0001FFF ),
+    .INIT_22 ( 256'h0007FFF8000FFFF0001FFFE0003FFFC0007FFF0000FFFE0003FFFC0007FFF000 ),
+    .INIT_23 ( 256'h0000FFFF0000FFFF0000FFFF0000FFFF0000FFFE0001FFFE0001FFFC0003FFFC ),
+    .INIT_24 ( 256'h000FFFF00007FFF80007FFFC0003FFFE0001FFFE0001FFFF0000FFFF0000FFFF ),
+    .INIT_25 ( 256'hFFFE0000FFFFC0003FFFE0000FFFF80003FFFE0000FFFF00007FFFC0003FFFE0 ),
+    .INIT_26 ( 256'h001FFFF00003FFFF00007FFFE0000FFFFC0001FFFF00003FFFE0000FFFF80003 ),
+    .INIT_27 ( 256'h0001FFFF80001FFFFC0000FFFFC0000FFFFC0000FFFFC0000FFFFC0001FFFF80 ),
+    .INIT_28 ( 256'h003FFFF80000FFFFE00007FFFF00001FFFFC0000FFFFE00007FFFF00003FFFF8 ),
+    .INIT_29 ( 256'hFFF800007FFFF800007FFFF00000FFFFE00001FFFFC00007FFFF00000FFFFE00 ),
+    .INIT_2A ( 256'h01FFFFE00000FFFFF000007FFFF800007FFFFC00003FFFFC00003FFFFC00003F ),
+    .INIT_2B ( 256'h007FFFFE00000FFFFFC00001FFFFF000007FFFFC00001FFFFF000007FFFFC000 ),
+    .INIT_2C ( 256'hFFFFFE000007FFFFF000003FFFFF000003FFFFF000003FFFFF000003FFFFF000 ),
+    .INIT_2D ( 256'h000000FFFFFF000001FFFFFE000003FFFFF800000FFFFFE000003FFFFF800000 ),
+    .INIT_2E ( 256'hFFF0000007FFFFFC000003FFFFFE000000FFFFFF000000FFFFFF000000FFFFFF ),
+    .INIT_2F ( 256'hFFC000000FFFFFFC0000007FFFFFE0000007FFFFFC000000FFFFFF8000001FFF ),
+    .INIT_30 ( 256'h00001FFFFFFE0000001FFFFFFE0000001FFFFFFC0000007FFFFFF0000001FFFF ),
+    .INIT_31 ( 256'hFFF80000001FFFFFFF80000003FFFFFFF00000007FFFFFFC0000001FFFFFFE00 ),
+    .INIT_32 ( 256'hFFFFF00000000FFFFFFFF00000001FFFFFFFC00000007FFFFFFF00000001FFFF ),
+    .INIT_33 ( 256'hFE000000007FFFFFFFF000000003FFFFFFFF000000007FFFFFFFC00000001FFF ),
+    .INIT_34 ( 256'h01FFFFFFFFF8000000003FFFFFFFFE000000000FFFFFFFFF000000001FFFFFFF ),
+    .INIT_35 ( 256'h000000FFFFFFFFFF80000000003FFFFFFFFFC0000000003FFFFFFFFF00000000 ),
+    .INIT_36 ( 256'h00003FFFFFFFFFFE00000000000FFFFFFFFFFF00000000000FFFFFFFFFFC0000 ),
+    .INIT_37 ( 256'hFFFFFFFC0000000000007FFFFFFFFFFFE000000000001FFFFFFFFFFFE0000000 ),
+    .INIT_38 ( 256'h001FFFFFFFFFFFFFF800000000000003FFFFFFFFFFFFF80000000000003FFFFF ),
+    .INIT_39 ( 256'h000FFFFFFFFFFFFFFFFE0000000000000000FFFFFFFFFFFFFFFC000000000000 ),
+    .INIT_3A ( 256'hFFFFFFFFFFF80000000000000000001FFFFFFFFFFFFFFFFFF800000000000000 ),
+    .INIT_3B ( 256'h000000007FFFFFFFFFFFFFFFFFFFFFFF80000000000000000000003FFFFFFFFF ),
+    .INIT_3C ( 256'h0000000000000001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000000000000 ),
+    .INIT_3D ( 256'h1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000 ),
+    .INIT_3E ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INIT_3F ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000 ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000d1 (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000d1_DIPA<3>_UNCONNECTED , \NLW_blk000000d1_DIPA<2>_UNCONNECTED , \NLW_blk000000d1_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000d1_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000d1_DOA<31>_UNCONNECTED , \NLW_blk000000d1_DOA<30>_UNCONNECTED , \NLW_blk000000d1_DOA<29>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<28>_UNCONNECTED , \NLW_blk000000d1_DOA<27>_UNCONNECTED , \NLW_blk000000d1_DOA<26>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<25>_UNCONNECTED , \NLW_blk000000d1_DOA<24>_UNCONNECTED , \NLW_blk000000d1_DOA<23>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<22>_UNCONNECTED , \NLW_blk000000d1_DOA<21>_UNCONNECTED , \NLW_blk000000d1_DOA<20>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<19>_UNCONNECTED , \NLW_blk000000d1_DOA<18>_UNCONNECTED , \NLW_blk000000d1_DOA<17>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<16>_UNCONNECTED , \NLW_blk000000d1_DOA<15>_UNCONNECTED , \NLW_blk000000d1_DOA<14>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<13>_UNCONNECTED , \NLW_blk000000d1_DOA<12>_UNCONNECTED , \NLW_blk000000d1_DOA<11>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<10>_UNCONNECTED , \NLW_blk000000d1_DOA<9>_UNCONNECTED , \NLW_blk000000d1_DOA<8>_UNCONNECTED , 
+\NLW_blk000000d1_DOA<7>_UNCONNECTED , \NLW_blk000000d1_DOA<6>_UNCONNECTED , \NLW_blk000000d1_DOA<5>_UNCONNECTED , \NLW_blk000000d1_DOA<4>_UNCONNECTED 
+, \NLW_blk000000d1_DOA<3>_UNCONNECTED , \NLW_blk000000d1_DOA<2>_UNCONNECTED , \NLW_blk000000d1_DOA<1>_UNCONNECTED , sig000000a7}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000d1_DIB<31>_UNCONNECTED , \NLW_blk000000d1_DIB<30>_UNCONNECTED , \NLW_blk000000d1_DIB<29>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<28>_UNCONNECTED , \NLW_blk000000d1_DIB<27>_UNCONNECTED , \NLW_blk000000d1_DIB<26>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<25>_UNCONNECTED , \NLW_blk000000d1_DIB<24>_UNCONNECTED , \NLW_blk000000d1_DIB<23>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<22>_UNCONNECTED , \NLW_blk000000d1_DIB<21>_UNCONNECTED , \NLW_blk000000d1_DIB<20>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<19>_UNCONNECTED , \NLW_blk000000d1_DIB<18>_UNCONNECTED , \NLW_blk000000d1_DIB<17>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<16>_UNCONNECTED , \NLW_blk000000d1_DIB<15>_UNCONNECTED , \NLW_blk000000d1_DIB<14>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<13>_UNCONNECTED , \NLW_blk000000d1_DIB<12>_UNCONNECTED , \NLW_blk000000d1_DIB<11>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<10>_UNCONNECTED , \NLW_blk000000d1_DIB<9>_UNCONNECTED , \NLW_blk000000d1_DIB<8>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<7>_UNCONNECTED , \NLW_blk000000d1_DIB<6>_UNCONNECTED , \NLW_blk000000d1_DIB<5>_UNCONNECTED , \NLW_blk000000d1_DIB<4>_UNCONNECTED 
+, \NLW_blk000000d1_DIB<3>_UNCONNECTED , \NLW_blk000000d1_DIB<2>_UNCONNECTED , \NLW_blk000000d1_DIB<1>_UNCONNECTED , 
+\NLW_blk000000d1_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000d1_DOPA<3>_UNCONNECTED , \NLW_blk000000d1_DOPA<2>_UNCONNECTED , \NLW_blk000000d1_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000d1_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000d1_DIPB<3>_UNCONNECTED , \NLW_blk000000d1_DIPB<2>_UNCONNECTED , \NLW_blk000000d1_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000d1_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000d1_DOPB<3>_UNCONNECTED , \NLW_blk000000d1_DOPB<2>_UNCONNECTED , \NLW_blk000000d1_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000d1_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000d1_DOB<31>_UNCONNECTED , \NLW_blk000000d1_DOB<30>_UNCONNECTED , \NLW_blk000000d1_DOB<29>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<28>_UNCONNECTED , \NLW_blk000000d1_DOB<27>_UNCONNECTED , \NLW_blk000000d1_DOB<26>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<25>_UNCONNECTED , \NLW_blk000000d1_DOB<24>_UNCONNECTED , \NLW_blk000000d1_DOB<23>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<22>_UNCONNECTED , \NLW_blk000000d1_DOB<21>_UNCONNECTED , \NLW_blk000000d1_DOB<20>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<19>_UNCONNECTED , \NLW_blk000000d1_DOB<18>_UNCONNECTED , \NLW_blk000000d1_DOB<17>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<16>_UNCONNECTED , \NLW_blk000000d1_DOB<15>_UNCONNECTED , \NLW_blk000000d1_DOB<14>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<13>_UNCONNECTED , \NLW_blk000000d1_DOB<12>_UNCONNECTED , \NLW_blk000000d1_DOB<11>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<10>_UNCONNECTED , \NLW_blk000000d1_DOB<9>_UNCONNECTED , \NLW_blk000000d1_DOB<8>_UNCONNECTED , 
+\NLW_blk000000d1_DOB<7>_UNCONNECTED , \NLW_blk000000d1_DOB<6>_UNCONNECTED , \NLW_blk000000d1_DOB<5>_UNCONNECTED , \NLW_blk000000d1_DOB<4>_UNCONNECTED 
+, \NLW_blk000000d1_DOB<3>_UNCONNECTED , \NLW_blk000000d1_DOB<2>_UNCONNECTED , \NLW_blk000000d1_DOB<1>_UNCONNECTED , sig0000009c}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000d1_DIA<31>_UNCONNECTED , \NLW_blk000000d1_DIA<30>_UNCONNECTED , \NLW_blk000000d1_DIA<29>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<28>_UNCONNECTED , \NLW_blk000000d1_DIA<27>_UNCONNECTED , \NLW_blk000000d1_DIA<26>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<25>_UNCONNECTED , \NLW_blk000000d1_DIA<24>_UNCONNECTED , \NLW_blk000000d1_DIA<23>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<22>_UNCONNECTED , \NLW_blk000000d1_DIA<21>_UNCONNECTED , \NLW_blk000000d1_DIA<20>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<19>_UNCONNECTED , \NLW_blk000000d1_DIA<18>_UNCONNECTED , \NLW_blk000000d1_DIA<17>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<16>_UNCONNECTED , \NLW_blk000000d1_DIA<15>_UNCONNECTED , \NLW_blk000000d1_DIA<14>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<13>_UNCONNECTED , \NLW_blk000000d1_DIA<12>_UNCONNECTED , \NLW_blk000000d1_DIA<11>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<10>_UNCONNECTED , \NLW_blk000000d1_DIA<9>_UNCONNECTED , \NLW_blk000000d1_DIA<8>_UNCONNECTED , 
+\NLW_blk000000d1_DIA<7>_UNCONNECTED , \NLW_blk000000d1_DIA<6>_UNCONNECTED , \NLW_blk000000d1_DIA<5>_UNCONNECTED , \NLW_blk000000d1_DIA<4>_UNCONNECTED 
+, \NLW_blk000000d1_DIA<3>_UNCONNECTED , \NLW_blk000000d1_DIA<2>_UNCONNECTED , \NLW_blk000000d1_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  RAMB16BWER #(
+    .INIT_00 ( 256'h1F07C0F83E0F83E0F81F07C1F07C1F07E0F83E0F83E0FC1F07C1F07C1F83E0F8 ),
+    .INIT_01 ( 256'h0F83E0FC1F07C1F07C1F83E0F83E0F81F07C1F07C1F03E0F83E0F83E07C1F07C ),
+    .INIT_02 ( 256'h07C1F07C1F03E0F83E0F83F07C1F07C1F03E0F83E0F83E07C1F07C1F07E0F83E ),
+    .INIT_03 ( 256'h07C1F07C0F83E0F83E07C1F07C1F07E0F83E0F83F07C1F07C1F03E0F83E0F83F ),
+    .INIT_04 ( 256'h0FC1F07C1F07E0F83E0F81F07C1F07C0F83E0F83E07C1F07C1F03E0F83E0F81F ),
+    .INIT_05 ( 256'h1F07E0F83E0FC1F07C1F03E0F83E0FC1F07C1F03E0F83E0FC1F07C1F03E0F83E ),
+    .INIT_06 ( 256'h7C1F83E0F83F07C1F07E0F83E0FC1F07C1F83E0F83E07C1F07C0F83E0F81F07C ),
+    .INIT_07 ( 256'hE0F83F07C1F03E0F83F07C1F03E0F83E07C1F07E0F83E07C1F07C0F83E0F81F0 ),
+    .INIT_08 ( 256'h0F83E0FC1F07E0F83E07C1F03E0F83F07C1F03E0F83F07C1F03E0F81F07C1F83 ),
+    .INIT_09 ( 256'hE0F81F07C0F83E07C1F03E0F81F07C0F83E0FC1F07E0F83F07C1F83E0F81F07C ),
+    .INIT_0A ( 256'h7C1F03E0FC1F07E0F81F07C0F83E07C1F83E0FC1F07E0F83F07C0F83E07C1F03 ),
+    .INIT_0B ( 256'h3E0FC1F03E0FC1F03E0FC1F03E0F81F07E0F81F07C0F83F07C0F83E07C1F83E0 ),
+    .INIT_0C ( 256'h7C0F81F07E0F81F07E0FC1F03E0FC1F03E0FC1F03E0FC1F03E0FC1F03E0FC1F0 ),
+    .INIT_0D ( 256'hF07E0F81F03E0FC1F83E07C0F83F07E0F81F03E0FC1F03E07C1F83E07C0F83F0 ),
+    .INIT_0E ( 256'h0FC1F83E07C0F81F03E0FC1F83F07E0F81F03E07C0F83F07E0FC1F03E07C1F83 ),
+    .INIT_0F ( 256'hC0F81F03E07C0F81F03E07C0F81F03E07C0F81F03E07C0F83F07E0FC1F83F07E ),
+    .INIT_10 ( 256'hE07C0F81F03F07E0FC1F83F03E07C0F81F03F07E0FC1F83F07E0FC1F83F03E07 ),
+    .INIT_11 ( 256'h81F03F07E07C0F81F83F07E07C0FC1F83F03E07C0FC1F83F03E07C0FC1F83F07 ),
+    .INIT_12 ( 256'h3F07E07C0FC1F81F03F03E07E0FC0F81F83F03E07E0FC0F81F83F03E07C0FC1F ),
+    .INIT_13 ( 256'h07E07C0FC0FC1F81F83F03F07E07E0FC0FC1F81F83F03E07E07C0FC0F81F83F0 ),
+    .INIT_14 ( 256'h07E07E07C0FC0FC0F81F81F81F03F03F03E07E07E0FC0FC0F81F81F83F03F03E ),
+    .INIT_15 ( 256'h3F07E07E07E07E07E07E07E0FC0FC0FC0FC0FC1F81F81F81F81F03F03F03F07E ),
+    .INIT_16 ( 256'h03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F03F0 ),
+    .INIT_17 ( 256'h81F81F81F80FC0FC0FC0FC0FC07E07E07E07E07E07E03F03F03F03F03F03F03F ),
+    .INIT_18 ( 256'h1F80FC0FC07E07E07F03F03F01F81F81FC0FC0FC0FE07E07E07F03F03F03F01F ),
+    .INIT_19 ( 256'h80FC0FE07E03F03F81F80FC0FE07E07F03F01F81F80FC0FE07E07F03F03F81F8 ),
+    .INIT_1A ( 256'h80FC07E07F03F81FC0FE07E03F01F81FC0FE07F03F01F81FC0FE07E03F03F81F ),
+    .INIT_1B ( 256'h1F80FC07F03F81FC0FE07F01F80FC07E03F01F80FC07E03F01F80FC07E03F01F ),
+    .INIT_1C ( 256'h03F01FC0FE03F81FC07E03F81FC07E03F81FC07E03F81FC0FE03F01FC0FE07F0 ),
+    .INIT_1D ( 256'h1FC07F03F80FE03F80FC07F01FC07E03F80FE07F01FC0FE03F80FC07F01F80FE ),
+    .INIT_1E ( 256'hC07F01FC07F01FC07F01FC07F01FC07F01F80FE03F80FE03F80FE03F81FC07F0 ),
+    .INIT_1F ( 256'h80FF01FC07F00FE03F80FE01FC07F01FC07F00FE03F80FE03F80FE03F80FF01F ),
+    .INIT_20 ( 256'h3F807F01FE03F807F01FE03F807F01FE03F807F01FC03F80FE01FC07F00FE03F ),
+    .INIT_21 ( 256'h1FE03FC07F807F00FE01FC03F807F00FE01FC03F807F00FE03FC07F80FF01FC0 ),
+    .INIT_22 ( 256'hF807F807F00FF00FF01FE01FC03FC03F807F80FF00FE01FE03FC03F807F00FF0 ),
+    .INIT_23 ( 256'hFF00FF00FF00FF00FF00FF00FF00FF00FF00FE01FE01FE01FE01FC03FC03FC03 ),
+    .INIT_24 ( 256'hE00FF00FF007F807F807FC03FC03FC01FE01FE01FE01FF00FF00FF00FF00FF00 ),
+    .INIT_25 ( 256'hFE01FF00FF803FC03FE01FF00FF807FC03FC01FE00FF00FF807F803FC03FE01F ),
+    .INIT_26 ( 256'hC01FF00FF803FE00FF007FC01FE00FF803FC01FF00FF803FC01FE00FF807FC03 ),
+    .INIT_27 ( 256'hFC01FF007FC01FF803FE00FF803FE00FF803FE00FF803FE00FF803FC01FF007F ),
+    .INIT_28 ( 256'h003FE007FC00FF801FF007FE00FFC01FF003FE00FFC01FF007FE00FF803FE007 ),
+    .INIT_29 ( 256'hF007FE007FE007FE007FC00FFC00FF801FF801FF003FF007FE00FFC00FF801FF ),
+    .INIT_2A ( 256'h01FF801FFC00FFC00FFE007FE007FE007FF003FF003FF003FF003FF003FF003F ),
+    .INIT_2B ( 256'h007FF001FFC00FFE003FF001FFC00FFE007FF003FF801FFC00FFE007FF003FF0 ),
+    .INIT_2C ( 256'hFFE001FFC007FF000FFE003FF800FFE003FF800FFE003FF800FFE003FF800FFE ),
+    .INIT_2D ( 256'hFFF000FFF000FFE001FFE001FFC003FFC007FF800FFF001FFE003FFC007FF800 ),
+    .INIT_2E ( 256'h000FFF0007FF8003FFC003FFE001FFE000FFF000FFF000FFF000FFF000FFF000 ),
+    .INIT_2F ( 256'h003FFE000FFF8003FFF0007FFC001FFF0007FF8003FFE000FFF8007FFC001FFE ),
+    .INIT_30 ( 256'hF8001FFF8001FFF8001FFF8001FFF8001FFF0003FFF0007FFE000FFFC001FFF0 ),
+    .INIT_31 ( 256'h0007FFF0001FFFC0007FFF0003FFF8000FFFC0007FFE0003FFF0001FFF8001FF ),
+    .INIT_32 ( 256'hE0000FFFF0000FFFF0000FFFE0001FFFE0003FFFC0007FFF8000FFFF0001FFFC ),
+    .INIT_33 ( 256'h01FFFF00007FFFE0000FFFF80003FFFE0000FFFF00007FFFC0003FFFE0001FFF ),
+    .INIT_34 ( 256'h01FFFFC00007FFFF00003FFFF80001FFFF80000FFFFC0000FFFFC0001FFFF800 ),
+    .INIT_35 ( 256'hE00000FFFFF800007FFFFC00003FFFFC00003FFFFC00003FFFF80000FFFFF000 ),
+    .INIT_36 ( 256'h00003FFFFF800001FFFFFC00000FFFFFC00000FFFFFC00000FFFFF800003FFFF ),
+    .INIT_37 ( 256'hF0000003FFFFFF0000007FFFFFC000001FFFFFE000001FFFFFE000001FFFFFE0 ),
+    .INIT_38 ( 256'h001FFFFFFF00000007FFFFFFC0000003FFFFFF80000007FFFFFF0000003FFFFF ),
+    .INIT_39 ( 256'h000FFFFFFFFC00000001FFFFFFFF00000000FFFFFFFF00000003FFFFFFF80000 ),
+    .INIT_3A ( 256'hF00000000007FFFFFFFFF8000000001FFFFFFFFF8000000007FFFFFFFF800000 ),
+    .INIT_3B ( 256'h000000007FFFFFFFFFFFC000000000007FFFFFFFFFFC00000000003FFFFFFFFF ),
+    .INIT_3C ( 256'h0000000000000001FFFFFFFFFFFFFFF800000000000001FFFFFFFFFFFFF80000 ),
+    .INIT_3D ( 256'h1FFFFFFFFFFFFFFFFFFFFFFFC00000000000000000001FFFFFFFFFFFFFFFFFF0 ),
+    .INIT_3E ( 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0000000000000000000000000000 ),
+    .INIT_3F ( 256'h0000000000000000000000000000000000000000000000000000000003FFFFFF ),
+    .INIT_A ( 36'h000000000 ),
+    .INIT_B ( 36'h000000000 ),
+    .WRITE_MODE_A ( "WRITE_FIRST" ),
+    .WRITE_MODE_B ( "WRITE_FIRST" ),
+    .DATA_WIDTH_A ( 1 ),
+    .DATA_WIDTH_B ( 1 ),
+    .DOA_REG ( 0 ),
+    .DOB_REG ( 0 ),
+    .EN_RSTRAM_A ( "TRUE" ),
+    .EN_RSTRAM_B ( "TRUE" ),
+    .INITP_00 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_01 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_02 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_03 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_04 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_05 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_06 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .INITP_07 ( 256'h0000000000000000000000000000000000000000000000000000000000000000 ),
+    .RST_PRIORITY_A ( "CE" ),
+    .RST_PRIORITY_B ( "CE" ),
+    .RSTTYPE ( "SYNC" ),
+    .SRVAL_A ( 36'h000000000 ),
+    .SRVAL_B ( 36'h000000000 ),
+    .SIM_COLLISION_CHECK ( "ALL" ),
+    .SIM_DEVICE ( "SPARTAN6" ),
+    .INIT_FILE ( "NONE" ))
+  blk000000d2 (
+    .REGCEA(sig00000002),
+    .CLKA(clk),
+    .ENB(sig00000001),
+    .RSTB(sig00000002),
+    .CLKB(clk),
+    .REGCEB(sig00000002),
+    .RSTA(sig00000002),
+    .ENA(sig00000001),
+    .DIPA({\NLW_blk000000d2_DIPA<3>_UNCONNECTED , \NLW_blk000000d2_DIPA<2>_UNCONNECTED , \NLW_blk000000d2_DIPA<1>_UNCONNECTED , 
+\NLW_blk000000d2_DIPA<0>_UNCONNECTED }),
+    .WEA({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DOA({\NLW_blk000000d2_DOA<31>_UNCONNECTED , \NLW_blk000000d2_DOA<30>_UNCONNECTED , \NLW_blk000000d2_DOA<29>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<28>_UNCONNECTED , \NLW_blk000000d2_DOA<27>_UNCONNECTED , \NLW_blk000000d2_DOA<26>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<25>_UNCONNECTED , \NLW_blk000000d2_DOA<24>_UNCONNECTED , \NLW_blk000000d2_DOA<23>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<22>_UNCONNECTED , \NLW_blk000000d2_DOA<21>_UNCONNECTED , \NLW_blk000000d2_DOA<20>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<19>_UNCONNECTED , \NLW_blk000000d2_DOA<18>_UNCONNECTED , \NLW_blk000000d2_DOA<17>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<16>_UNCONNECTED , \NLW_blk000000d2_DOA<15>_UNCONNECTED , \NLW_blk000000d2_DOA<14>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<13>_UNCONNECTED , \NLW_blk000000d2_DOA<12>_UNCONNECTED , \NLW_blk000000d2_DOA<11>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<10>_UNCONNECTED , \NLW_blk000000d2_DOA<9>_UNCONNECTED , \NLW_blk000000d2_DOA<8>_UNCONNECTED , 
+\NLW_blk000000d2_DOA<7>_UNCONNECTED , \NLW_blk000000d2_DOA<6>_UNCONNECTED , \NLW_blk000000d2_DOA<5>_UNCONNECTED , \NLW_blk000000d2_DOA<4>_UNCONNECTED 
+, \NLW_blk000000d2_DOA<3>_UNCONNECTED , \NLW_blk000000d2_DOA<2>_UNCONNECTED , \NLW_blk000000d2_DOA<1>_UNCONNECTED , sig000000a6}),
+    .ADDRA({sig0000009a, sig00000099, sig00000098, sig00000097, sig00000096, sig00000095, sig00000094, sig00000093, sig00000092, sig00000091, 
+sig00000090, sig0000008f, sig0000008e, sig00000003}),
+    .ADDRB({sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, sig00000002, 
+sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIB({\NLW_blk000000d2_DIB<31>_UNCONNECTED , \NLW_blk000000d2_DIB<30>_UNCONNECTED , \NLW_blk000000d2_DIB<29>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<28>_UNCONNECTED , \NLW_blk000000d2_DIB<27>_UNCONNECTED , \NLW_blk000000d2_DIB<26>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<25>_UNCONNECTED , \NLW_blk000000d2_DIB<24>_UNCONNECTED , \NLW_blk000000d2_DIB<23>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<22>_UNCONNECTED , \NLW_blk000000d2_DIB<21>_UNCONNECTED , \NLW_blk000000d2_DIB<20>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<19>_UNCONNECTED , \NLW_blk000000d2_DIB<18>_UNCONNECTED , \NLW_blk000000d2_DIB<17>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<16>_UNCONNECTED , \NLW_blk000000d2_DIB<15>_UNCONNECTED , \NLW_blk000000d2_DIB<14>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<13>_UNCONNECTED , \NLW_blk000000d2_DIB<12>_UNCONNECTED , \NLW_blk000000d2_DIB<11>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<10>_UNCONNECTED , \NLW_blk000000d2_DIB<9>_UNCONNECTED , \NLW_blk000000d2_DIB<8>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<7>_UNCONNECTED , \NLW_blk000000d2_DIB<6>_UNCONNECTED , \NLW_blk000000d2_DIB<5>_UNCONNECTED , \NLW_blk000000d2_DIB<4>_UNCONNECTED 
+, \NLW_blk000000d2_DIB<3>_UNCONNECTED , \NLW_blk000000d2_DIB<2>_UNCONNECTED , \NLW_blk000000d2_DIB<1>_UNCONNECTED , 
+\NLW_blk000000d2_DIB<0>_UNCONNECTED }),
+    .DOPA({\NLW_blk000000d2_DOPA<3>_UNCONNECTED , \NLW_blk000000d2_DOPA<2>_UNCONNECTED , \NLW_blk000000d2_DOPA<1>_UNCONNECTED , 
+\NLW_blk000000d2_DOPA<0>_UNCONNECTED }),
+    .DIPB({\NLW_blk000000d2_DIPB<3>_UNCONNECTED , \NLW_blk000000d2_DIPB<2>_UNCONNECTED , \NLW_blk000000d2_DIPB<1>_UNCONNECTED , 
+\NLW_blk000000d2_DIPB<0>_UNCONNECTED }),
+    .DOPB({\NLW_blk000000d2_DOPB<3>_UNCONNECTED , \NLW_blk000000d2_DOPB<2>_UNCONNECTED , \NLW_blk000000d2_DOPB<1>_UNCONNECTED , 
+\NLW_blk000000d2_DOPB<0>_UNCONNECTED }),
+    .DOB({\NLW_blk000000d2_DOB<31>_UNCONNECTED , \NLW_blk000000d2_DOB<30>_UNCONNECTED , \NLW_blk000000d2_DOB<29>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<28>_UNCONNECTED , \NLW_blk000000d2_DOB<27>_UNCONNECTED , \NLW_blk000000d2_DOB<26>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<25>_UNCONNECTED , \NLW_blk000000d2_DOB<24>_UNCONNECTED , \NLW_blk000000d2_DOB<23>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<22>_UNCONNECTED , \NLW_blk000000d2_DOB<21>_UNCONNECTED , \NLW_blk000000d2_DOB<20>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<19>_UNCONNECTED , \NLW_blk000000d2_DOB<18>_UNCONNECTED , \NLW_blk000000d2_DOB<17>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<16>_UNCONNECTED , \NLW_blk000000d2_DOB<15>_UNCONNECTED , \NLW_blk000000d2_DOB<14>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<13>_UNCONNECTED , \NLW_blk000000d2_DOB<12>_UNCONNECTED , \NLW_blk000000d2_DOB<11>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<10>_UNCONNECTED , \NLW_blk000000d2_DOB<9>_UNCONNECTED , \NLW_blk000000d2_DOB<8>_UNCONNECTED , 
+\NLW_blk000000d2_DOB<7>_UNCONNECTED , \NLW_blk000000d2_DOB<6>_UNCONNECTED , \NLW_blk000000d2_DOB<5>_UNCONNECTED , \NLW_blk000000d2_DOB<4>_UNCONNECTED 
+, \NLW_blk000000d2_DOB<3>_UNCONNECTED , \NLW_blk000000d2_DOB<2>_UNCONNECTED , \NLW_blk000000d2_DOB<1>_UNCONNECTED , sig0000009b}),
+    .WEB({sig00000002, sig00000002, sig00000002, sig00000002}),
+    .DIA({\NLW_blk000000d2_DIA<31>_UNCONNECTED , \NLW_blk000000d2_DIA<30>_UNCONNECTED , \NLW_blk000000d2_DIA<29>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<28>_UNCONNECTED , \NLW_blk000000d2_DIA<27>_UNCONNECTED , \NLW_blk000000d2_DIA<26>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<25>_UNCONNECTED , \NLW_blk000000d2_DIA<24>_UNCONNECTED , \NLW_blk000000d2_DIA<23>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<22>_UNCONNECTED , \NLW_blk000000d2_DIA<21>_UNCONNECTED , \NLW_blk000000d2_DIA<20>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<19>_UNCONNECTED , \NLW_blk000000d2_DIA<18>_UNCONNECTED , \NLW_blk000000d2_DIA<17>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<16>_UNCONNECTED , \NLW_blk000000d2_DIA<15>_UNCONNECTED , \NLW_blk000000d2_DIA<14>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<13>_UNCONNECTED , \NLW_blk000000d2_DIA<12>_UNCONNECTED , \NLW_blk000000d2_DIA<11>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<10>_UNCONNECTED , \NLW_blk000000d2_DIA<9>_UNCONNECTED , \NLW_blk000000d2_DIA<8>_UNCONNECTED , 
+\NLW_blk000000d2_DIA<7>_UNCONNECTED , \NLW_blk000000d2_DIA<6>_UNCONNECTED , \NLW_blk000000d2_DIA<5>_UNCONNECTED , \NLW_blk000000d2_DIA<4>_UNCONNECTED 
+, \NLW_blk000000d2_DIA<3>_UNCONNECTED , \NLW_blk000000d2_DIA<2>_UNCONNECTED , \NLW_blk000000d2_DIA<1>_UNCONNECTED , sig00000002})
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000d3 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000010),
+    .Q(sig000000ec),
+    .Q15(NLW_blk000000d3_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000d4 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000ec),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [13])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000d5 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000012),
+    .Q(sig000000ed),
+    .Q15(NLW_blk000000d5_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000d6 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000ed),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [15])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000d7 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000011),
+    .Q(sig000000ee),
+    .Q15(NLW_blk000000d7_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000d8 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000ee),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [14])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000d9 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000d),
+    .Q(sig000000ef),
+    .Q15(NLW_blk000000d9_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000da (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000ef),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [10])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000db (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000f),
+    .Q(sig000000f0),
+    .Q15(NLW_blk000000db_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000dc (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f0),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [12])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000dd (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000e),
+    .Q(sig000000f1),
+    .Q15(NLW_blk000000dd_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000de (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f1),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [11])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000df (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000a),
+    .Q(sig000000f2),
+    .Q15(NLW_blk000000df_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000e0 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f2),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [7])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000e1 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000c),
+    .Q(sig000000f3),
+    .Q15(NLW_blk000000e1_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000e2 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f3),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [9])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000e3 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000000b),
+    .Q(sig000000f4),
+    .Q15(NLW_blk000000e3_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000e4 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f4),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [8])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000e5 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000009),
+    .Q(sig000000f5),
+    .Q15(NLW_blk000000e5_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000e6 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f5),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [6])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000e7 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000008),
+    .Q(sig000000f6),
+    .Q15(NLW_blk000000e7_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000e8 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f6),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [5])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000e9 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000005),
+    .Q(sig000000f7),
+    .Q15(NLW_blk000000e9_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000ea (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f7),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [2])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000eb (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000007),
+    .Q(sig000000f8),
+    .Q15(NLW_blk000000eb_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000ec (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f8),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [4])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000ed (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000006),
+    .Q(sig000000f9),
+    .Q15(NLW_blk000000ed_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000ee (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000f9),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [3])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000ef (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000004),
+    .Q(sig000000fa),
+    .Q15(NLW_blk000000ef_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000f0 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000fa),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [1])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000f1 (
+    .A0(sig00000001),
+    .A1(sig00000001),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig00000003),
+    .Q(sig000000fb),
+    .Q15(NLW_blk000000f1_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000f2 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000fb),
+    .Q(\U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_6 [0])
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000f3 (
+    .A0(sig00000001),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000ce),
+    .Q(sig000000fc),
+    .Q15(NLW_blk000000f3_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000f4 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000fc),
+    .Q(sig000000c8)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000f5 (
+    .A0(sig00000001),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000cb),
+    .Q(sig000000fd),
+    .Q15(NLW_blk000000f5_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000f6 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000fd),
+    .Q(sig000000c7)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000f7 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000cc),
+    .Q(sig000000fe),
+    .Q15(NLW_blk000000f7_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000f8 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000fe),
+    .Q(sig000000ca)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000f9 (
+    .A0(sig00000001),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000cd),
+    .Q(sig000000ff),
+    .Q15(NLW_blk000000f9_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000fa (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig000000ff),
+    .Q(sig000000c9)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000fb (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a5),
+    .Q(sig00000100),
+    .Q15(NLW_blk000000fb_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000fc (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000100),
+    .Q(sig000000bb)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000fd (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a2),
+    .Q(sig00000101),
+    .Q15(NLW_blk000000fd_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk000000fe (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000101),
+    .Q(sig000000b8)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk000000ff (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a4),
+    .Q(sig00000102),
+    .Q15(NLW_blk000000ff_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000100 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000102),
+    .Q(sig000000ba)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000101 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a3),
+    .Q(sig00000103),
+    .Q15(NLW_blk00000101_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000102 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000103),
+    .Q(sig000000b9)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000103 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000009f),
+    .Q(sig00000104),
+    .Q15(NLW_blk00000103_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000104 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000104),
+    .Q(sig000000b5)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000105 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a1),
+    .Q(sig00000105),
+    .Q15(NLW_blk00000105_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000106 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000105),
+    .Q(sig000000b7)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000107 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a0),
+    .Q(sig00000106),
+    .Q15(NLW_blk00000107_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000108 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000106),
+    .Q(sig000000b6)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000109 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000009c),
+    .Q(sig00000107),
+    .Q15(NLW_blk00000109_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000010a (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000107),
+    .Q(sig000000b2)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000010b (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000009e),
+    .Q(sig00000108),
+    .Q15(NLW_blk0000010b_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000010c (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000108),
+    .Q(sig000000b4)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000010d (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000009d),
+    .Q(sig00000109),
+    .Q15(NLW_blk0000010d_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000010e (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000109),
+    .Q(sig000000b3)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000010f (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig0000009b),
+    .Q(sig0000010a),
+    .Q15(NLW_blk0000010f_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000110 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010a),
+    .Q(sig000000b1)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000111 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000b0),
+    .Q(sig0000010b),
+    .Q15(NLW_blk00000111_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000112 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010b),
+    .Q(sig000000c6)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000113 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000ad),
+    .Q(sig0000010c),
+    .Q15(NLW_blk00000113_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000114 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010c),
+    .Q(sig000000c3)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000115 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000af),
+    .Q(sig0000010d),
+    .Q15(NLW_blk00000115_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000116 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010d),
+    .Q(sig000000c5)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000117 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000ae),
+    .Q(sig0000010e),
+    .Q15(NLW_blk00000117_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000118 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010e),
+    .Q(sig000000c4)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000119 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000ac),
+    .Q(sig0000010f),
+    .Q15(NLW_blk00000119_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000011a (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig0000010f),
+    .Q(sig000000c2)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000011b (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000ab),
+    .Q(sig00000110),
+    .Q15(NLW_blk0000011b_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000011c (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000110),
+    .Q(sig000000c1)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000011d (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a8),
+    .Q(sig00000111),
+    .Q15(NLW_blk0000011d_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk0000011e (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000111),
+    .Q(sig000000be)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk0000011f (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000aa),
+    .Q(sig00000112),
+    .Q15(NLW_blk0000011f_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000120 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000112),
+    .Q(sig000000c0)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000121 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a9),
+    .Q(sig00000113),
+    .Q15(NLW_blk00000121_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000122 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000113),
+    .Q(sig000000bf)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000123 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a7),
+    .Q(sig00000114),
+    .Q15(NLW_blk00000123_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000124 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000114),
+    .Q(sig000000bd)
+  );
+  SRLC16E #(
+    .INIT ( 16'h0000 ))
+  blk00000125 (
+    .A0(sig00000002),
+    .A1(sig00000002),
+    .A2(sig00000002),
+    .A3(sig00000002),
+    .CE(sig00000001),
+    .CLK(clk),
+    .D(sig000000a6),
+    .Q(sig00000115),
+    .Q15(NLW_blk00000125_Q15_UNCONNECTED)
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  blk00000126 (
+    .C(clk),
+    .CE(sig00000001),
+    .D(sig00000115),
+    .Q(sig000000bc)
+  );
+
+// synthesis translate_on
+
+endmodule
+
+// synthesis translate_off
+
+`ifndef GLBL
+`define GLBL
+
+`timescale  1 ps / 1 ps
+
+module glbl ();
+
+    parameter ROC_WIDTH = 100000;
+    parameter TOC_WIDTH = 0;
+
+//--------   STARTUP Globals --------------
+    wire GSR;
+    wire GTS;
+    wire GWE;
+    wire PRLD;
+    tri1 p_up_tmp;
+    tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
+
+    wire PROGB_GLBL;
+    wire CCLKO_GLBL;
+
+    reg GSR_int;
+    reg GTS_int;
+    reg PRLD_int;
+
+//--------   JTAG Globals --------------
+    wire JTAG_TDO_GLBL;
+    wire JTAG_TCK_GLBL;
+    wire JTAG_TDI_GLBL;
+    wire JTAG_TMS_GLBL;
+    wire JTAG_TRST_GLBL;
+
+    reg JTAG_CAPTURE_GLBL;
+    reg JTAG_RESET_GLBL;
+    reg JTAG_SHIFT_GLBL;
+    reg JTAG_UPDATE_GLBL;
+    reg JTAG_RUNTEST_GLBL;
+
+    reg JTAG_SEL1_GLBL = 0;
+    reg JTAG_SEL2_GLBL = 0 ;
+    reg JTAG_SEL3_GLBL = 0;
+    reg JTAG_SEL4_GLBL = 0;
+
+    reg JTAG_USER_TDO1_GLBL = 1'bz;
+    reg JTAG_USER_TDO2_GLBL = 1'bz;
+    reg JTAG_USER_TDO3_GLBL = 1'bz;
+    reg JTAG_USER_TDO4_GLBL = 1'bz;
+
+    assign (weak1, weak0) GSR = GSR_int;
+    assign (weak1, weak0) GTS = GTS_int;
+    assign (weak1, weak0) PRLD = PRLD_int;
+
+    initial begin
+	GSR_int = 1'b1;
+	PRLD_int = 1'b1;
+	#(ROC_WIDTH)
+	GSR_int = 1'b0;
+	PRLD_int = 1'b0;
+    end
+
+    initial begin
+	GTS_int = 1'b1;
+	#(TOC_WIDTH)
+	GTS_int = 1'b0;
+    end
+
+endmodule
+
+`endif
+
+// synthesis translate_on
