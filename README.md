@@ -1,5 +1,7 @@
 Experiments with DSP on an old xilinx spartan-6 FPGA board
 
+Note: remember to re-generate all IP cores when checking out different commits/branches
+
 Note: how to fix java for ISE (required for certain core IP generation to work):
 ```
 sudo apt install openjdk-8-jre
