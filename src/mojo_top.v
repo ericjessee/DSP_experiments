@@ -177,14 +177,14 @@ module mojo_top(
     .dout(o_dac_adata)
   );
 
-  integer tmp_ctr;
-  initial begin
-    tmp_ctr = 0;
-  end
-  always @(negedge i_adc_bck) begin
-    $display("%d, %d,", tmp_ctr, l_tx_word);
-    tmp_ctr = tmp_ctr + 1;
-  end
+  // integer tmp_ctr;
+  // initial begin
+  //   tmp_ctr = 0;
+  // end
+  // always @(negedge i_adc_bck) begin
+  //   $display("%d, %d,", tmp_ctr, l_tx_word);
+  //   tmp_ctr = tmp_ctr + 1;
+  // end
 
   reg prev_lrck;
   integer i;

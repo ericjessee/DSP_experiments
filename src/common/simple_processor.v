@@ -25,6 +25,7 @@ assign input_buff_ptr = buff_ptr;
 assign output_buff_ptr = buff_ptr;
 
 reg filter_new_data;
+reg filter_new_data_next;
 wire filter_output_ready;
 assign output_buff_write_pulse = filter_output_ready && (state == state_wait_proc);
 wire filter_ready_for_data;
@@ -34,13 +35,34 @@ wire filter_ready_for_data;
 // assign output_buff_sample = filtered_data[39:16];
 // assign output_buff_sample = input_buff_sample;
 
-filter filter_0(
-    .rfd(filter_ready_for_data),
-    .rdy(filter_output_ready),
-    .nd(filter_new_data),
-    .clk(clk),
-    .dout(output_buff_sample),
-    .din(input_buff_sample)
+// filter filter_0(
+//     .rfd(filter_ready_for_data),
+//     .rdy(filter_output_ready),
+//     .coef_we(1'b0),
+//     .nd(filter_new_data),
+//     .clk(clk),
+//     .coef_ld(1'b0),
+//     .coef_din(16'b0),
+//     .dout(output_buff_sample),
+//     .din(input_buff_sample)
+// );
+
+filter_2 filter_0(
+    .aclk(clk),
+    .s_axis_data_tvalid(filter_new_data),
+    .s_axis_config_tvalid(1'b0),
+    .s_axis_reload_tvalid(1'b0),
+    .s_axis_reload_tlast(1'b0),
+    .s_axis_data_tready(filter_ready_for_data),
+    .s_axis_config_tready(),
+    .s_axis_reload_tready(),
+    .m_axis_data_tvalid(filter_output_ready),
+    .event_s_reload_tlast_missing(),
+    .event_s_reload_tlast_unexpected(),
+    .s_axis_data_tdata(input_buff_sample),
+    .s_axis_config_tdata(8'b0),
+    .s_axis_reload_tdata(16'b0),
+    .m_axis_data_tdata(output_buff_sample)
 );
 
 localparam [1:0] 
@@ -96,15 +118,16 @@ end
 always @(*) begin
     chunk_start_delay_ctr_next = 0;
     buff_ptr_next = buff_ptr;
-    filter_new_data = 0;
+    filter_new_data_next = 0;
     if (state == state_chunk_delay) begin
         if (chunk_start_delay_ctr < chunk_start_delay-1) begin
             chunk_start_delay_ctr_next = chunk_start_delay_ctr + 1;
         end else begin
             chunk_start_delay_ctr_next = 0;
         end
+    end else if (state == state_wait_ready) begin
+        filter_new_data_next = (next_state == state_wait_proc); //only want a single pulse
     end else if (state == state_wait_proc) begin
-        filter_new_data = 1;
         if (filter_output_ready) begin
             if (output_buff_ptr >= IO_BUFF_SIZE-1) begin
                 buff_ptr_next = 0;
@@ -121,10 +144,12 @@ always @(posedge clk) begin
         state <= state_idle;
         buff_ptr <= 0;
         chunk_start_delay_ctr <= 0;
+        filter_new_data <= 0;
     end else begin
         state <= next_state;
         buff_ptr <= buff_ptr_next;
         chunk_start_delay_ctr <= chunk_start_delay_ctr_next;
+        filter_new_data<= filter_new_data_next;
     end
 end
 
