@@ -10,6 +10,9 @@ reg i_adc_bck;
 wire i_adc_lrck;
 wire i_adc_adata;
 
+//dac signals 
+wire o_dac_adata;
+
 mojo_top mojo_top_dut(
     // 50MHz clock input
     .clk(clk),
@@ -67,8 +70,8 @@ initial begin
     rst_n <= 0;
     #800
     rst_n <= 1;
-    #14209440
-    rst_n <= 1;
+    $display(">>>begin<<<");
+    #14209440;
     $finish;
 end
 

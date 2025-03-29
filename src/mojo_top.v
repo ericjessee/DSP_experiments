@@ -89,6 +89,9 @@ module mojo_top(
     .r_dout(r_rx_data)
   );
 
+  always @(l_rx_sample)
+    $display ("i,%0d", l_rx_sample);
+
   simple_ram l_rx_buffer_0(
     .clka(i_adc_bck),
     .wea(!buff_sel),
@@ -123,6 +126,11 @@ module mojo_top(
   wire [23:0] l_tx_sample_0;
   wire [23:0] l_tx_sample_1;
   assign l_tx_word = buff_sel ? {l_tx_sample_0, 8'b0} : {l_tx_sample_1, 8'b0};
+
+  wire signed [23:0] debug_l_tx_samp;
+  assign debug_l_tx_samp = l_tx_word[31:8];
+  always @(debug_l_tx_samp)
+    $display("o,%0d", debug_l_tx_samp);
 
   wire        [IO_BUFF_PTR_BITS-1:0] l_proc_out_buff_ptr;
   wire signed [SAMPLE_SIZE-1:0]      l_proc_out_buff_sample;
